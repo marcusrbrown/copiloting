@@ -1,0 +1,22 @@
+{
+  "name": "copiloting",
+  "private": true,
+  "description": "Some experiments with GitHub Copilot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusrbrown/copiloting.git"
+  },
+  "keywords": [
+    "GitHub Copilot"
+  ],
+  "author": "Marcus R. Brown <contact@marcusrbrown.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcusrbrown/copiloting/issues"
+  },
+  "homepage": "https://github.com/marcusrbrown/copiloting#readme"
+}
