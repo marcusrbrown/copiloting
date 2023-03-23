@@ -1,0 +1,32 @@
+---
+name: CI
+'on':
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main, 'renovate/**']
+  workflow_dispatch:
+
+env:
+  FORCE_COLOR: true
+  NODE_VERSION: 18 # renovate: datasource=node depName=node
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          cache: pnpm
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --strict-peer-dependencies

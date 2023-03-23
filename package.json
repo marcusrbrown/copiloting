@@ -1,10 +1,13 @@
 {
   "name": "copiloting",
   "private": true,
+  "packageManager": "pnpm@7.30.0",
   "description": "Some experiments with GitHub Copilot",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": "Marcus R. Brown <contact@marcusrbrown.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
   },
   "repository": {
     "type": "git",
@@ -13,10 +16,12 @@
   "keywords": [
     "GitHub Copilot"
   ],
-  "author": "Marcus R. Brown <contact@marcusrbrown.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/marcusrbrown/copiloting/issues"
   },
-  "homepage": "https://github.com/marcusrbrown/copiloting#readme"
+  "homepage": "https://github.com/marcusrbrown/copiloting#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
