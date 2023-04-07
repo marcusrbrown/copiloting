@@ -1,9 +1,0 @@
-// Find all images without alternate text and give them a red border
-function processImages() {
-  var images = document.getElementsByTagName('img');
-  for (var i = 0; i < images.length; i++) {
-    if (images[i].alt == '') {
-      images[i].style.border = '1px solid red';
-    }
-  }
-}
