@@ -1,7 +1,10 @@
 {
+  "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
     "target": "es2022",
-    "module": "nodenext"
+    "module": "nodenext",
+    "outDir": "dist"
   },
+  "exclude": ["node_modules"],
   "include": ["**/*.ts"]
 }

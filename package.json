@@ -1,6 +1,8 @@
 {
   "name": "copiloting",
   "private": true,
+  "version": "0.0.0-development",
+  "type": "module",
   "packageManager": "pnpm@8.1.1",
   "description": "Some experiments with GitHub Copilot",
   "author": "Marcus R. Brown <contact@marcusrbrown.com>",
@@ -22,10 +24,14 @@
   "homepage": "https://github.com/marcusrbrown/copiloting#readme",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf dist",
+    "build": "pnpm run clean && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@tsconfig/strictest": "2.0.0",
     "@types/node": "18.15.11",
+    "rimraf": "4.4.1",
     "typescript": "5.0.3"
   }
 }
