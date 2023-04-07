@@ -30,3 +30,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --strict-peer-dependencies
+
+      - name: Build
+        run: pnpm build
