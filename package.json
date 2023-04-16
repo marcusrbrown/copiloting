@@ -26,12 +26,18 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "pnpm run clean && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pnpm run build && node -r dotenv/config dist/index.js",
+    "start:quickstart-llms": "pnpm run build && node -r dotenv/config dist/quickstart-llms.js"
   },
   "devDependencies": {
     "@tsconfig/strictest": "2.0.0",
     "@types/node": "18.15.11",
+    "dotenv": "16.0.3",
     "rimraf": "5.0.0",
     "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "langchain": "0.0.56"
   }
 }
