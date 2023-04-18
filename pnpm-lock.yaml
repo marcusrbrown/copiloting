@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   langchain:
-    specifier: 0.0.57
-    version: 0.0.57
+    specifier: 0.0.59
+    version: 0.0.59
 
 devDependencies:
   '@tsconfig/strictest':
@@ -172,8 +172,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.57:
-    resolution: {integrity: sha512-Ik8SGMzl6woXkqmdWnNIqY7ds3+y1b6FLYDhCXpTT3fHHD+vsNgiapAAdJ/lkThnYQ0y0i3gtv1pHbjfsYS5qw==}
+  /langchain@0.0.59:
+    resolution: {integrity: sha512-aggECWjvunoOnh2v5iCjaTp+CMsPW69xBFGqle8o5waMfpRd4v+YYASFqeihp0pDrwM8OtSKCJUhYCROMZ35lw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-lambda': ^3.310.0
@@ -194,7 +194,7 @@ packages:
       html-to-text: ^9.0.5
       mammoth: '*'
       mongodb: ^5.2.0
-      pdfjs-dist: ^3.4.120
+      pdf-parse: 1.1.1
       playwright: ^1.32.1
       puppeteer: ^19.7.2
       redis: ^4.6.4
@@ -239,7 +239,7 @@ packages:
         optional: true
       mongodb:
         optional: true
-      pdfjs-dist:
+      pdf-parse:
         optional: true
       playwright:
         optional: true

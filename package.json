@@ -39,6 +39,6 @@
     "typescript": "5.0.4"
   },
   "dependencies": {
-    "langchain": "0.0.57"
+    "langchain": "0.0.59"
   }
 }
