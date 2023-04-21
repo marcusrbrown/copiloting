@@ -31,7 +31,7 @@
     "start:quickstart-llms": "pnpm run build && node -r dotenv/config dist/quickstart-llms.js"
   },
   "devDependencies": {
-    "@tsconfig/strictest": "2.0.0",
+    "@tsconfig/strictest": "2.0.1",
     "@types/node": "18.15.12",
     "dotenv": "16.0.3",
     "prettier": "2.8.7",
