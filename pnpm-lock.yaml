@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   langchain:
-    specifier: 0.0.59
-    version: 0.0.59
+    specifier: 0.0.61
+    version: 0.0.61
 
 devDependencies:
   '@tsconfig/strictest':
@@ -172,8 +172,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.59:
-    resolution: {integrity: sha512-aggECWjvunoOnh2v5iCjaTp+CMsPW69xBFGqle8o5waMfpRd4v+YYASFqeihp0pDrwM8OtSKCJUhYCROMZ35lw==}
+  /langchain@0.0.61:
+    resolution: {integrity: sha512-6cdMKO6R2Fthh6LwEENbir/skQjPexltKKSyRAdLGZ5BgUaE/qCwPf8fMasQw0ZtB0lhf7MAKW5YTEj7HJcxFQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-lambda': ^3.310.0
@@ -271,6 +271,7 @@ packages:
       uuid: 9.0.0
       yaml: 2.2.1
       zod: 3.21.4
+      zod-to-json-schema: 3.20.4(zod@3.21.4)
     transitivePeerDependencies:
       - debug
       - encoding
@@ -451,6 +452,14 @@ packages:
   /yaml@2.2.1:
     resolution: {integrity: sha512-e0WHiYql7+9wr4cWMx3TVQrNwejKaEe7/rHNmQmqRjazfOP5W8PB6Jpebb5o6fIapbz9o9+2ipcaTM2ZwDI6lw==}
     engines: {node: '>= 14'}
+    dev: false
+
+  /zod-to-json-schema@3.20.4(zod@3.21.4):
+    resolution: {integrity: sha512-Un9+kInJ2Zt63n6Z7mLqBifzzPcOyX+b+Exuzf7L1+xqck9Q2EPByyTRduV3kmSPaXaRer1JCsucubpgL1fipg==}
+    peerDependencies:
+      zod: ^3.20.0
+    dependencies:
+      zod: 3.21.4
     dev: false
 
   /zod@3.21.4:
