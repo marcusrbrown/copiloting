@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   langchain:
-    specifier: 0.0.63
-    version: 0.0.63
+    specifier: 0.0.64
+    version: 0.0.64
 
 devDependencies:
   '@tsconfig/strictest':
@@ -172,8 +172,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.63:
-    resolution: {integrity: sha512-iC1qOJU5UT+GWSNH35dtmP1O5DxgK+rAdXtjTsi5Oi4+mo2k/cU2GMJGvPy4WaucdbvduLSWLw7l/tuUVqCtkg==}
+  /langchain@0.0.64:
+    resolution: {integrity: sha512-EPR5igtuSemtPAesQ8oa8SF/xjTA+bYJW00JNJ/8PYkPNiU+uc+cifOEH3H/DFam+oDY9XhR7WV+GhBEskVNNA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-lambda': ^3.310.0
@@ -184,7 +184,7 @@ packages:
       '@pinecone-database/pinecone': '*'
       '@supabase/supabase-js': ^2.10.0
       '@zilliz/milvus2-sdk-node': ^2.2.0
-      axios: ^0.26.0
+      axios: '*'
       cheerio: ^1.0.0-rc.12
       chromadb: ^1.4.0
       cohere-ai: ^5.0.2
