@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@tsconfig/strictest": "2.0.1",
-    "@types/node": "18.16.2",
+    "@types/node": "18.16.3",
     "dotenv": "16.0.3",
     "prettier": "2.8.8",
     "rimraf": "5.0.0",
