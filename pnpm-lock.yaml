@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   langchain:
-    specifier: 0.0.70
-    version: 0.0.70
+    specifier: 0.0.71
+    version: 0.0.71
 
 devDependencies:
   '@tsconfig/strictest':
@@ -177,8 +177,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.70:
-    resolution: {integrity: sha512-QfTbWl3oP8LwiDsLM4pvJQF+MDnf709Okvf4tQKrxf2rUxd9L0Dgli7/sNaQfaR/uZK2NOf/aO106p7I+P3Law==}
+  /langchain@0.0.71:
+    resolution: {integrity: sha512-xMaKOfNPdKn4diI5adhys6P9J/dHLq/oCtXraotbBeHvOeYkQ6Xo2ywtqQZN+OywhOUv/2Kg34QnFnKPDjn3xA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-lambda': ^3.310.0
