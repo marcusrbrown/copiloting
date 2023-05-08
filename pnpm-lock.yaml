@@ -10,8 +10,8 @@ devDependencies:
     specifier: 2.0.1
     version: 2.0.1
   '@types/node':
-    specifier: 18.16.5
-    version: 18.16.5
+    specifier: 18.16.6
+    version: 18.16.6
   dotenv:
     specifier: 16.0.3
     version: 16.0.3
@@ -49,8 +49,8 @@ packages:
     resolution: {integrity: sha512-7JHHCbyCsGUxLd0pDbp24yz3zjxw2t673W5oAP6HCEdr/UUhaRhYd3SSnUsGCk+VnPVJVA4mXROzbhI+nyIk+w==}
     dev: true
 
-  /@types/node@18.16.5:
-    resolution: {integrity: sha512-seOA34WMo9KB+UA78qaJoCO20RJzZGVXQ5Sh6FWu0g/hfT44nKXnej3/tCQl7FL97idFpBhisLYCTB50S0EirA==}
+  /@types/node@18.16.6:
+    resolution: {integrity: sha512-N7KINmeB8IN3vRR8dhgHEp+YpWvGFcpDoh5XZ8jB5a00AdFKCKEyyGTOPTddUf4JqU1ZKTVxkOxakDvchNVI2Q==}
     dev: true
 
   /@types/retry@0.12.0:
