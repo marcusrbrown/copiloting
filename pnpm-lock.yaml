@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   langchain:
-    specifier: 0.0.72
-    version: 0.0.72
+    specifier: 0.0.73
+    version: 0.0.73
 
 devDependencies:
   '@tsconfig/strictest':
@@ -177,10 +177,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.72:
-    resolution: {integrity: sha512-ueCad5qvrieyiAJCL0oiYSHuxE0QklpCeal7fANTyYznrEo37L+b24XJIvmsIfNkYHZ6d22Xd2a/oeGkywIIbQ==}
+  /langchain@0.0.73:
+    resolution: {integrity: sha512-AkmLBOlDeE3iYecBZlGdhaIU+YSiugvwKpUErR8OiuiWg8SH9wV5vhK3982W9OQRDiuxNxPlrJQfFemK242hZA==}
     engines: {node: '>=18'}
     peerDependencies:
+      '@aws-sdk/client-dynamodb': ^3.310.0
       '@aws-sdk/client-lambda': ^3.310.0
       '@aws-sdk/client-s3': ^3.310.0
       '@clickhouse/client': ^0.0.14
@@ -212,6 +213,8 @@ packages:
       typeorm: ^0.3.12
       weaviate-ts-client: ^1.0.0
     peerDependenciesMeta:
+      '@aws-sdk/client-dynamodb':
+        optional: true
       '@aws-sdk/client-lambda':
         optional: true
       '@aws-sdk/client-s3':
