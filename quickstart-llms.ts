@@ -2,16 +2,26 @@
 // This tutorial is a quick walkthrough about building an end-to-end language model application using LangChain.
 
 import {OpenAI} from 'langchain/llms/openai';
-import {PromptTemplate} from 'langchain/prompts';
-import {LLMChain} from 'langchain/chains';
+import {initializeAgentExecutorWithOptions} from 'langchain/agents';
+import {SerpAPI} from 'langchain/tools';
+import {Calculator} from 'langchain/tools/calculator';
 
-const llm = new OpenAI({temperature: 0.9});
-const template =
-  'What is a good name for a {product} that is powered by AI and ML? Come up with at least 40 names.';
-const prompt = new PromptTemplate({
-  template,
-  inputVariables: ['product'],
+const llm = new OpenAI({temperature: 0});
+const tools = [
+  new SerpAPI(process.env['SERPAPI_API_KEY'], {
+    location: 'Maricopa, Arizona, United States',
+    hl: 'en',
+    gl: 'us',
+  }),
+  new Calculator(),
+];
+const executor = await initializeAgentExecutorWithOptions(tools, llm, {
+  agentType: 'zero-shot-react-description',
 });
-const chain = new LLMChain({llm, prompt});
-const response = await chain.call({product: 'personal assistant'});
-console.log(response);
+const input =
+  'How old was Prince when he died?' +
+  ' What is his age raised to the 0.23 power?';
+console.log(`Executing agent with input: ${input}`);
+
+const result = await executor.call({input});
+console.log(`Result: ${result['output']}`);
