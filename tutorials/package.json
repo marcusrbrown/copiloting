@@ -1,0 +1,12 @@
+{
+  "name": "@copiloting/tutorials",
+  "version": "0.0.0-development",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "pnpm run clean && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:quickstart-llms": "pnpm run build && node -r dotenv/config dist/quickstart-llms.js"
+  }
+}
