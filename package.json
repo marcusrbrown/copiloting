@@ -2,7 +2,6 @@
   "name": "copiloting",
   "private": true,
   "version": "0.0.0-development",
-  "type": "module",
   "packageManager": "pnpm@8.5.1",
   "description": "Some experiments with GitHub Copilot",
   "author": "Marcus R. Brown <contact@marcusrbrown.com>",
@@ -22,13 +21,9 @@
     "url": "https://github.com/marcusrbrown/copiloting/issues"
   },
   "homepage": "https://github.com/marcusrbrown/copiloting#readme",
-  "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "pnpm run clean && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pnpm run build && node -r dotenv/config dist/index.js",
-    "start:quickstart-llms": "pnpm run build && node -r dotenv/config dist/quickstart-llms.js"
+    "build": "pnpm -r run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@tsconfig/strictest": "2.0.1",
