@@ -5,8 +5,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.76
-        version: 0.0.76
+        specifier: 0.0.77
+        version: 0.0.77
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -280,13 +280,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.76:
-    resolution: {integrity: sha512-ioZNf+ATR3diGAg8clXw4+B9Cng1uwwYy/8cXdDKY3n0FoLSO5jF3FTFfntH/CnqXkZa7R7msAHH/1DVXjPcdw==}
+  /langchain@0.0.77:
+    resolution: {integrity: sha512-0cTpYt/58iagb/hlcNNoSmYKjB7gJRornITqru3wczmP8ykhaq7dYn+1mO1sI8MBRfUnp6UTCJJ0bkGzs3SWpQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
       '@aws-sdk/client-lambda': ^3.310.0
       '@aws-sdk/client-s3': ^3.310.0
+      '@aws-sdk/client-sagemaker-runtime': ^3.310.0
       '@clickhouse/client': ^0.0.14
       '@getmetal/metal-sdk': '*'
       '@huggingface/inference': ^1.5.1
@@ -307,6 +308,7 @@ packages:
       hnswlib-node: ^1.4.2
       html-to-text: ^9.0.5
       mammoth: '*'
+      meriyah: '*'
       mongodb: ^5.2.0
       pdf-parse: 1.1.1
       playwright: ^1.32.1
@@ -322,6 +324,8 @@ packages:
       '@aws-sdk/client-lambda':
         optional: true
       '@aws-sdk/client-s3':
+        optional: true
+      '@aws-sdk/client-sagemaker-runtime':
         optional: true
       '@clickhouse/client':
         optional: true
@@ -362,6 +366,8 @@ packages:
       html-to-text:
         optional: true
       mammoth:
+        optional: true
+      meriyah:
         optional: true
       mongodb:
         optional: true
