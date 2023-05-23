@@ -5,8 +5,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.78
-        version: 0.0.78
+        specifier: 0.0.81
+        version: 0.0.81
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -280,8 +280,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.78:
-    resolution: {integrity: sha512-AXoai3V1fJyQ2vDSS3KqRJr1VxRoAxX0L1sFeuXGvwyEzfzv6/dDKPJ7K1Onew3Jmfzu23t1qqhwsSMZOmwo7g==}
+  /langchain@0.0.81:
+    resolution: {integrity: sha512-G4UOijTSA4Q8Anqn2Hdq3P4c2w2zJryAffh90kS5x2Lv+MugM/vPPcZXy9y3kZIET7Hdj/KTpkFOCofejpvWHA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -297,17 +297,19 @@ packages:
       '@tensorflow-models/universal-sentence-encoder': '*'
       '@tensorflow/tfjs-converter': '*'
       '@tensorflow/tfjs-core': '*'
-      '@zilliz/milvus2-sdk-node': ^2.2.0
+      '@zilliz/milvus2-sdk-node': '>=2.2.7'
       apify-client: ^2.7.1
       axios: '*'
       cheerio: ^1.0.0-rc.12
-      chromadb: ^1.4.0
+      chromadb: ^1.4.2
       cohere-ai: ^5.0.2
       d3-dsv: ^2.0.0
       epub2: ^3.0.1
       faiss-node: ^0.1.1
+      google-auth-library: ^8.8.0
       hnswlib-node: ^1.4.2
       html-to-text: ^9.0.5
+      ignore: ^5.2.0
       mammoth: '*'
       meriyah: '*'
       mongodb: ^5.2.0
@@ -365,9 +367,13 @@ packages:
         optional: true
       faiss-node:
         optional: true
+      google-auth-library:
+        optional: true
       hnswlib-node:
         optional: true
       html-to-text:
+        optional: true
+      ignore:
         optional: true
       mammoth:
         optional: true
