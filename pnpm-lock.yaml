@@ -5,8 +5,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.81
-        version: 0.0.81
+        specifier: 0.0.82
+        version: 0.0.82
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -280,8 +280,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.81:
-    resolution: {integrity: sha512-G4UOijTSA4Q8Anqn2Hdq3P4c2w2zJryAffh90kS5x2Lv+MugM/vPPcZXy9y3kZIET7Hdj/KTpkFOCofejpvWHA==}
+  /langchain@0.0.82:
+    resolution: {integrity: sha512-tRIfr7ktPHgB2IZBE5/dr6ExCnFv9CrF8+WhQH3rfpI9VBzMs8xAgyB4o4u5bYFVw8AKfd6e7Uj+LdYHS+Dlrg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -293,10 +293,12 @@ packages:
       '@huggingface/inference': ^1.5.1
       '@opensearch-project/opensearch': '*'
       '@pinecone-database/pinecone': '*'
+      '@qdrant/js-client-rest': ^1.2.0
       '@supabase/supabase-js': ^2.10.0
       '@tensorflow-models/universal-sentence-encoder': '*'
       '@tensorflow/tfjs-converter': '*'
       '@tensorflow/tfjs-core': '*'
+      '@upstash/redis': ^1.20.6
       '@zilliz/milvus2-sdk-node': '>=2.2.7'
       apify-client: ^2.7.1
       axios: '*'
@@ -341,6 +343,8 @@ packages:
         optional: true
       '@pinecone-database/pinecone':
         optional: true
+      '@qdrant/js-client-rest':
+        optional: true
       '@supabase/supabase-js':
         optional: true
       '@tensorflow-models/universal-sentence-encoder':
@@ -348,6 +352,8 @@ packages:
       '@tensorflow/tfjs-converter':
         optional: true
       '@tensorflow/tfjs-core':
+        optional: true
+      '@upstash/redis':
         optional: true
       '@zilliz/milvus2-sdk-node':
         optional: true
