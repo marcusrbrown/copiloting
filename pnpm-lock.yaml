@@ -5,8 +5,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.83
-        version: 0.0.83
+        specifier: 0.0.84
+        version: 0.0.84
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -280,8 +280,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.83:
-    resolution: {integrity: sha512-XS5H7g2/JRIi70D3UjfYpYlnkl5Q0lnsU9wT3fHexPazopUr4yvfg8ocHi+IyAQUOKSoEuyQQxxgaPsh2iyyxg==}
+  /langchain@0.0.84:
+    resolution: {integrity: sha512-7b7CIwHE1vB973wRRC0GmU9Jj2bt/xN5SA17VeoHa6zuNunawC2wFUfjQzNtSw+RHtMX0VHUjoBOqQCKGktbXQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -298,6 +298,7 @@ packages:
       '@tensorflow-models/universal-sentence-encoder': '*'
       '@tensorflow/tfjs-converter': '*'
       '@tensorflow/tfjs-core': '*'
+      '@tigrisdata/vector': ^1.1.0
       '@upstash/redis': ^1.20.6
       '@zilliz/milvus2-sdk-node': '>=2.2.7'
       apify-client: ^2.7.1
@@ -307,7 +308,7 @@ packages:
       cohere-ai: ^5.0.2
       d3-dsv: ^2.0.0
       epub2: ^3.0.1
-      faiss-node: ^0.1.1
+      faiss-node: ^0.2.0
       google-auth-library: ^8.8.0
       hnswlib-node: ^1.4.2
       html-to-text: ^9.0.5
@@ -352,6 +353,8 @@ packages:
       '@tensorflow/tfjs-converter':
         optional: true
       '@tensorflow/tfjs-core':
+        optional: true
+      '@tigrisdata/vector':
         optional: true
       '@upstash/redis':
         optional: true
