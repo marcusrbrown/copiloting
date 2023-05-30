@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.84
-        version: 0.0.84
+        specifier: 0.0.85
+        version: 0.0.85
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -284,8 +284,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.84:
-    resolution: {integrity: sha512-7b7CIwHE1vB973wRRC0GmU9Jj2bt/xN5SA17VeoHa6zuNunawC2wFUfjQzNtSw+RHtMX0VHUjoBOqQCKGktbXQ==}
+  /langchain@0.0.85:
+    resolution: {integrity: sha512-GssYCXYJtsBhBSBGxMEZB9e3OdCAWMWDpiqcHjzMlDi5vxWs47NZERjRIkc5b7qG03EeWVK6XuDGFNt6egCafw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -294,6 +294,8 @@ packages:
       '@aws-sdk/client-sagemaker-runtime': ^3.310.0
       '@clickhouse/client': ^0.0.14
       '@getmetal/metal-sdk': '*'
+      '@getzep/zep-js': ^0.3.1
+      '@gomomento/sdk': ^1.23.0
       '@huggingface/inference': ^1.5.1
       '@opensearch-project/opensearch': '*'
       '@pinecone-database/pinecone': '*'
@@ -341,6 +343,10 @@ packages:
       '@clickhouse/client':
         optional: true
       '@getmetal/metal-sdk':
+        optional: true
+      '@getzep/zep-js':
+        optional: true
+      '@gomomento/sdk':
         optional: true
       '@huggingface/inference':
         optional: true
