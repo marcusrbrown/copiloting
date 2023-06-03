@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.89
-        version: 0.0.89
+        specifier: 0.0.90
+        version: 0.0.90
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -284,8 +284,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.89:
-    resolution: {integrity: sha512-G2tq0JPBeEm1LopaTxQJXp97EGp0OiKlVvNYV1lFaeBWZVkzsfUR9Amac7QHSGrzJSsRy0nv7XRoIC8pn9CHEA==}
+  /langchain@0.0.90:
+    resolution: {integrity: sha512-epspekRrpQnyXhjBCrcsWrmOg6ofaYch/vneyv10gPFhp3OhYWD6D9fsUaJHUFJuoXAB0Y4nyOAC6jzeTwBU5A==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -311,7 +311,7 @@ packages:
       apify-client: ^2.7.1
       axios: '*'
       cheerio: ^1.0.0-rc.12
-      chromadb: ^1.4.2
+      chromadb: ^1.5.2
       cohere-ai: ^5.0.2
       d3-dsv: ^2.0.0
       epub2: ^3.0.1
@@ -325,6 +325,7 @@ packages:
       mysql2: ^3.3.3
       pdf-parse: 1.1.1
       peggy: ^3.0.2
+      pg: ^8.11.0
       pickleparser: ^0.1.0
       playwright: ^1.32.1
       puppeteer: ^19.7.2
@@ -407,6 +408,8 @@ packages:
       pdf-parse:
         optional: true
       peggy:
+        optional: true
+      pg:
         optional: true
       pickleparser:
         optional: true
