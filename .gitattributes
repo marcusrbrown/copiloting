@@ -1,1 +1,5 @@
-* text=auto eof=lf
+* text=auto eol=lf
+
+.vscode/*.json linguist-language=JSON-with-Comments
+
+pnpm-lock.yaml merge=binary
