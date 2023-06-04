@@ -8,14 +8,16 @@
         "text",
         "!json"
     ],
+
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
-    "editor.formatOnPaste": false,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "typescript.enablePromptUseWorkspaceTsdk": true,
+
+    "typescript.enablePromptUseWorkspaceTsdk": false,
     "typescript.tsdk": "./node_modules/typescript/lib",
+
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -27,5 +29,14 @@
     },
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+
+    // Enable Sourcegraph Cody experimental features
+    "cody.experimental.chatPredictions": true,
+    "cody.experimental.inline": true,
+    "cody.experimental.nonStop": true,
+    "cody.experimental.suggestions": true,
+
+    // Disable GitHub Copilot suggestions in favor of Cody AI
+    "github.copilot.inlineSuggest.enable": false
 }
