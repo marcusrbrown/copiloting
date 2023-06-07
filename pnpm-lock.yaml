@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.91
-        version: 0.0.91
+        specifier: 0.0.92
+        version: 0.0.92
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -284,8 +284,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.91:
-    resolution: {integrity: sha512-oCilhNDZDSt8rdvnuVv5J3BIZ1FwCccdqdO6xHddiCko26UkAJ+wKRWmV8YQOYUDZzoRjp4ogDIifETfhfb30w==}
+  /langchain@0.0.92:
+    resolution: {integrity: sha512-77528kXJu9C391qV1a5jDzZLEjIblq/VtpH7xd4BwavgvhRmeSXR9WkrHHmih/Phpae4Ss3dtb7pcyd78rp/YA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -315,7 +315,7 @@ packages:
       cohere-ai: ^5.0.2
       d3-dsv: ^2.0.0
       epub2: ^3.0.1
-      faiss-node: ^0.2.0
+      faiss-node: ^0.2.1
       google-auth-library: ^8.8.0
       hnswlib-node: ^1.4.2
       html-to-text: ^9.0.5
