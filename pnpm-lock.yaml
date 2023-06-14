@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.93
-        version: 0.0.93
+        specifier: 0.0.94
+        version: 0.0.94
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -303,8 +303,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.93:
-    resolution: {integrity: sha512-ThpbT8vk9aQAMZkgqZwDm1je5CkIjwaQdy+dhwXimgGWUj0cxF/7sl0vLjwMqdG7BZBWXrC7vLhORomRUTPNFA==}
+  /langchain@0.0.94:
+    resolution: {integrity: sha512-RafU2Nk005jnNgOPSi5LhXtwOhdf8nwLSWU4hRyMXwB1l3lNCwTKlYWfKwMQ9VaSEe+4fEaO8lM9yVp+y3aa9w==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -462,7 +462,7 @@ packages:
       langchainplus-sdk: 0.0.11
       ml-distance: 4.0.0
       object-hash: 3.0.0
-      openai: 3.2.1
+      openai: 3.3.0
       p-queue: 6.6.2
       p-retry: 4.6.2
       uuid: 9.0.0
@@ -567,8 +567,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /openai@3.2.1:
-    resolution: {integrity: sha512-762C9BNlJPbjjlWZi4WYK9iM2tAVAv0uUp1UmI34vb0CN5T2mjB/qM6RYBmNKMh/dN9fC+bxqPwWJZUTWW052A==}
+  /openai@3.3.0:
+    resolution: {integrity: sha512-uqxI/Au+aPRnsaQRe8CojU0eCR7I0mBiKjD3sNMzY6DaC1ZVrc85u98mtJW6voDug8fgGN+DIZmTDxTthxb7dQ==}
     dependencies:
       axios: 0.26.1
       form-data: 4.0.0
