@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.94
-        version: 0.0.94
+        specifier: 0.0.95
+        version: 0.0.95
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -303,8 +303,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.94:
-    resolution: {integrity: sha512-RafU2Nk005jnNgOPSi5LhXtwOhdf8nwLSWU4hRyMXwB1l3lNCwTKlYWfKwMQ9VaSEe+4fEaO8lM9yVp+y3aa9w==}
+  /langchain@0.0.95:
+    resolution: {integrity: sha512-UjOr1XArTTSZB4uCayKzQs69pCahHCq/CVTc66fAymCD5uKerh8AvcemPxgRpTi8tgcdhY76j//c0e06l5aFdA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -353,6 +353,7 @@ packages:
       replicate: ^0.9.0
       srt-parser-2: ^1.2.2
       typeorm: ^0.3.12
+      typesense: ^1.5.3
       weaviate-ts-client: ^1.0.0
     peerDependenciesMeta:
       '@aws-sdk/client-dynamodb':
@@ -446,6 +447,8 @@ packages:
       srt-parser-2:
         optional: true
       typeorm:
+        optional: true
+      typesense:
         optional: true
       weaviate-ts-client:
         optional: true
