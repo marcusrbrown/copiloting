@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.98
-        version: 0.0.98
+        specifier: 0.0.99
+        version: 0.0.99
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -303,8 +303,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.98:
-    resolution: {integrity: sha512-2VHLReMeN9MCgk7nU7/GGLIYbZgUwLP2BHaGRETA3uGn6L9Un2rtqZBiBtrZcjaQy+XarpAMKiO/DUfRdpNGRg==}
+  /langchain@0.0.99:
+    resolution: {integrity: sha512-4pECzTgNJq06jCBx5B7QtbMxKdx6yDiKo5jjoZhGXgpmabqtSiQkzw/wjJiER+OfLjb52kQIXentxZcBKJZtLg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
