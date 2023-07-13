@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.107
-        version: 0.0.107
+        specifier: 0.0.108
+        version: 0.0.108
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -447,8 +447,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.107:
-    resolution: {integrity: sha512-Axrjk6y02ZdBa3UeNM515hXxNg6G0foIc9V6YcCxM3dNNGZNiH14pdz1pT0lkOR5vgZt0cbEhi//7QcsuS9zGA==}
+  /langchain@0.0.108:
+    resolution: {integrity: sha512-sC3sxJA1oTQnvGz3J2o2Vy6vg2p56fn9limpCANzLgLzQYnk7/Zw7naiZ5QSmYaeFcYqJowpaM/3UrL+s93Bng==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -487,6 +487,7 @@ packages:
       hnswlib-node: ^1.4.2
       html-to-text: ^9.0.5
       ignore: ^5.2.0
+      ioredis: ^5.3.2
       mammoth: '*'
       mongodb: ^5.2.0
       mysql2: ^3.3.3
@@ -577,6 +578,8 @@ packages:
       html-to-text:
         optional: true
       ignore:
+        optional: true
+      ioredis:
         optional: true
       mammoth:
         optional: true
