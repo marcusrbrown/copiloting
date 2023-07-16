@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.109
-        version: 0.0.109
+        specifier: 0.0.110
+        version: 0.0.110
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -447,8 +447,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.109:
-    resolution: {integrity: sha512-+H8UP6jtgyHzwOfNqs0iIlc8LPq3ZWfuJ96cOvRbwdJoGKzS5FbxtEFHeh/aMzqLR0zcg6kHezYITX7UOnpFMg==}
+  /langchain@0.0.110:
+    resolution: {integrity: sha512-GM7j5jwLTg17206NJR8vI8VbPd9KOqR3XjX41S9rm814gAS2LsFR43CK3cQFVfM5DlEA+o5qOx9CUvWwFvxRMw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -461,6 +461,7 @@ packages:
       '@getmetal/metal-sdk': '*'
       '@getzep/zep-js': ^0.4.1
       '@gomomento/sdk': ^1.23.0
+      '@google-ai/generativelanguage': ^0.2.1
       '@google-cloud/storage': ^6.10.1
       '@huggingface/inference': ^1.5.1
       '@notionhq/client': ^2.2.5
@@ -483,7 +484,7 @@ packages:
       d3-dsv: ^2.0.0
       epub2: ^3.0.1
       faiss-node: ^0.2.1
-      google-auth-library: ^8.8.0
+      google-auth-library: ^8.9.0
       hnswlib-node: ^1.4.2
       html-to-text: ^9.0.5
       ignore: ^5.2.0
@@ -526,6 +527,8 @@ packages:
       '@getzep/zep-js':
         optional: true
       '@gomomento/sdk':
+        optional: true
+      '@google-ai/generativelanguage':
         optional: true
       '@google-cloud/storage':
         optional: true
