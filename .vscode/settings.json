@@ -32,10 +32,9 @@
     },
 
     // Enable Sourcegraph Cody experimental features
+    "cody.autocomplete.experimental.triggerMoreEagerly": true,
     "cody.experimental.chatPredictions": true,
-    "cody.experimental.inline": true,
-    "cody.experimental.nonStop": true,
-    "cody.experimental.suggestions": true,
+    "cody.debug.enable": true,
 
     // Disable GitHub Copilot suggestions in favor of Cody AI
     "github.copilot.inlineSuggest.enable": false
