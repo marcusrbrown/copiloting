@@ -23,6 +23,8 @@
   "homepage": "https://github.com/marcusrbrown/copiloting#readme",
   "scripts": {
     "build": "pnpm -r run build",
+    "check-format": "prettier --check .",
+    "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
