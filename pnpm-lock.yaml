@@ -16,8 +16,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1
       '@types/node':
-        specifier: 18.17.0
-        version: 18.17.0
+        specifier: 18.17.1
+        version: 18.17.1
       dotenv:
         specifier: 16.3.1
         version: 16.3.1
@@ -38,7 +38,7 @@ packages:
   /@anthropic-ai/sdk@0.5.7:
     resolution: {integrity: sha512-0uLvrn24D9ehe8KXBFKohmdvMdhPk8jGYGaROOZo46fgbHKSTEOkEv1zmbYw4fAiF/qdPDBNav+8zfW0iD2WOg==}
     dependencies:
-      '@types/node': 18.17.0
+      '@types/node': 18.17.1
       '@types/node-fetch': 2.6.4
       abort-controller: 3.0.0
       agentkeepalive: 4.3.0
@@ -77,12 +77,12 @@ packages:
   /@types/node-fetch@2.6.4:
     resolution: {integrity: sha512-1ZX9fcN4Rvkvgv4E6PAY5WXUFWFcRWxZa3EW83UjycOB9ljJCedb2CupIP4RZMEwF/M3eTcCihbBRgwtGbg5Rg==}
     dependencies:
-      '@types/node': 18.17.0
+      '@types/node': 18.17.1
       form-data: 3.0.1
     dev: false
 
-  /@types/node@18.17.0:
-    resolution: {integrity: sha512-GXZxEtOxYGFchyUzxvKI14iff9KZ2DI+A6a37o6EQevtg6uO9t+aUZKcaC1Te5Ng1OnLM7K9NVVj+FbecD9cJg==}
+  /@types/node@18.17.1:
+    resolution: {integrity: sha512-xlR1jahfizdplZYRU59JlUx9uzF1ARa8jbhM11ccpCJya8kvos5jwdm2ZAgxSCwOl0fq21svP18EVwPBXMQudw==}
 
   /@types/retry@0.12.0:
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
