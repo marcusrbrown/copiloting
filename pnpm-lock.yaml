@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.118
-        version: 0.0.118
+        specifier: 0.0.119
+        version: 0.0.119
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -404,8 +404,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.118:
-    resolution: {integrity: sha512-MzadedGsgvF5Rf+S94o+mY2Gkf5QEQFjLrCsaKcKeOREMJZ2GTszPlkDpwLWwe5MVugY1DhtC2c4gI13R+WtTw==}
+  /langchain@0.0.119:
+    resolution: {integrity: sha512-LIABHsHgtTVW6IqRofpdcThnPwqlTdak+vfC6moewg871qiSPQlA31mh3CMEvXAJ6HU+jzJz05uqO1BPEGgYYA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -414,6 +414,7 @@ packages:
       '@aws-sdk/client-s3': ^3.310.0
       '@aws-sdk/client-sagemaker-runtime': ^3.310.0
       '@aws-sdk/client-sfn': ^3.310.0
+      '@azure/storage-blob': ^12.15.0
       '@clickhouse/client': ^0.0.14
       '@elastic/elasticsearch': ^8.4.0
       '@getmetal/metal-sdk': '*'
@@ -480,6 +481,8 @@ packages:
       '@aws-sdk/client-sagemaker-runtime':
         optional: true
       '@aws-sdk/client-sfn':
+        optional: true
+      '@azure/storage-blob':
         optional: true
       '@clickhouse/client':
         optional: true
