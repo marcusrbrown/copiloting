@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.120
-        version: 0.0.120
+        specifier: 0.0.122
+        version: 0.0.122
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -404,8 +404,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.120:
-    resolution: {integrity: sha512-QDtoluHiyZnOWsweb3b7rW9ULj2HzGJqgWhxaGviwnA3SrE1om9BMKCY5eI0NMIL/dd5MutenGGlD+VGL0MVWA==}
+  /langchain@0.0.122:
+    resolution: {integrity: sha512-M/w6CZH+Y12jrts5ENFLpQF3ZzwI6bluubeL0wjyqz/btd8puXsHyyyt58bKg8bIMZF02Y2Tjr1qyqKQKTaJ0Q==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -435,6 +435,7 @@ packages:
       '@tensorflow/tfjs-core': '*'
       '@tigrisdata/vector': ^1.1.0
       '@upstash/redis': ^1.20.6
+      '@xata.io/client': ^0.25.1
       '@zilliz/milvus2-sdk-node': '>=2.2.7'
       apify-client: ^2.7.1
       axios: '*'
@@ -524,6 +525,8 @@ packages:
         optional: true
       '@upstash/redis':
         optional: true
+      '@xata.io/client':
+        optional: true
       '@zilliz/milvus2-sdk-node':
         optional: true
       apify-client:
@@ -603,7 +606,7 @@ packages:
       js-tiktoken: 1.0.7
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.0.11
+      langsmith: 0.0.17
       ml-distance: 4.0.0
       object-hash: 3.0.0
       openai: 3.3.0
@@ -620,8 +623,8 @@ packages:
       - supports-color
     dev: false
 
-  /langsmith@0.0.11:
-    resolution: {integrity: sha512-4JTYIog+l3DncDZ9qcHILWYRUz8aI3tfF5arLAKg1k3U7Ivk9SXaYJqF8HPHeCrFxwHeY66NdPc7DqLUKCyoHQ==}
+  /langsmith@0.0.17:
+    resolution: {integrity: sha512-K9AmQSd84Uvbdej1pIzxiybTN4cGZkSpDuR3RK1QqkWA2sFpN169AkhQsxUMPP6gnJZ3ThwFLFQqClJi1PcX2A==}
     hasBin: true
     dependencies:
       '@types/uuid': 9.0.2
