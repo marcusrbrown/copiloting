@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.122
-        version: 0.0.122
+        specifier: 0.0.127
+        version: 0.0.127
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -404,8 +404,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.122:
-    resolution: {integrity: sha512-M/w6CZH+Y12jrts5ENFLpQF3ZzwI6bluubeL0wjyqz/btd8puXsHyyyt58bKg8bIMZF02Y2Tjr1qyqKQKTaJ0Q==}
+  /langchain@0.0.127:
+    resolution: {integrity: sha512-1y2zoK43eZvnJDxr4cADXzv9FmCW5JPzcRD6B5QedwduMGyKlS8OAoKhCGw/Q1Df8qZkNuYP9fE6hLhucJpzKg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-dynamodb': ^3.310.0
@@ -418,7 +418,7 @@ packages:
       '@clickhouse/client': ^0.0.14
       '@elastic/elasticsearch': ^8.4.0
       '@getmetal/metal-sdk': '*'
-      '@getzep/zep-js': ^0.4.1
+      '@getzep/zep-js': ^0.6.3
       '@gomomento/sdk': ^1.23.0
       '@google-ai/generativelanguage': ^0.2.1
       '@google-cloud/storage': ^6.10.1
@@ -428,6 +428,7 @@ packages:
       '@pinecone-database/pinecone': '*'
       '@planetscale/database': ^1.8.0
       '@qdrant/js-client-rest': ^1.2.0
+      '@raycast/api': ^1.55.2
       '@supabase/postgrest-js': ^1.1.1
       '@supabase/supabase-js': ^2.10.0
       '@tensorflow-models/universal-sentence-encoder': '*'
@@ -468,8 +469,9 @@ packages:
       srt-parser-2: ^1.2.2
       typeorm: ^0.3.12
       typesense: ^1.5.3
+      usearch: ^1.1.1
       vectordb: ^0.1.4
-      weaviate-ts-client: ^1.0.0
+      weaviate-ts-client: ^1.4.0
     peerDependenciesMeta:
       '@aws-sdk/client-dynamodb':
         optional: true
@@ -510,6 +512,8 @@ packages:
       '@planetscale/database':
         optional: true
       '@qdrant/js-client-rest':
+        optional: true
+      '@raycast/api':
         optional: true
       '@supabase/postgrest-js':
         optional: true
@@ -590,6 +594,8 @@ packages:
       typeorm:
         optional: true
       typesense:
+        optional: true
+      usearch:
         optional: true
       vectordb:
         optional: true
