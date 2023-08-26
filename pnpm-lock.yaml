@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.131
-        version: 0.0.131
+        specifier: 0.0.134
+        version: 0.0.134
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -404,8 +404,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.131:
-    resolution: {integrity: sha512-7SDDiixSjcxOb9IUEL1DIwzsPMA508z/VFT6+X29dZ1bsNlna60pue1962VtHJOS5rqWVjztrV2WNWgUwisDyw==}
+  /langchain@0.0.134:
+    resolution: {integrity: sha512-hKszH/C0+PFYvwJ4VhBGovsu3H55iA8d0Bv1XRZ9rTF9btlhOnW+Mxo6P92tfWmVQIAEz2NETFOFVswzcQhzsQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -434,6 +434,8 @@ packages:
       '@planetscale/database': ^1.8.0
       '@qdrant/js-client-rest': ^1.2.0
       '@raycast/api': ^1.55.2
+      '@smithy/eventstream-codec': ^2.0.5
+      '@smithy/util-utf8': ^2.0.0
       '@supabase/postgrest-js': ^1.1.1
       '@supabase/supabase-js': ^2.10.0
       '@tensorflow-models/universal-sentence-encoder': '*'
@@ -458,6 +460,7 @@ packages:
       ignore: ^5.2.0
       ioredis: ^5.3.2
       jsdom: '*'
+      langchainhub: ~0.0.3
       mammoth: '*'
       mongodb: ^5.2.0
       mysql2: ^3.3.3
@@ -533,6 +536,10 @@ packages:
         optional: true
       '@raycast/api':
         optional: true
+      '@smithy/eventstream-codec':
+        optional: true
+      '@smithy/util-utf8':
+        optional: true
       '@supabase/postgrest-js':
         optional: true
       '@supabase/supabase-js':
@@ -580,6 +587,8 @@ packages:
       ioredis:
         optional: true
       jsdom:
+        optional: true
+      langchainhub:
         optional: true
       mammoth:
         optional: true
@@ -636,7 +645,7 @@ packages:
       js-tiktoken: 1.0.7
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.0.17
+      langsmith: 0.0.26
       ml-distance: 4.0.0
       object-hash: 3.0.0
       openai: 3.3.0
@@ -653,8 +662,8 @@ packages:
       - supports-color
     dev: false
 
-  /langsmith@0.0.17:
-    resolution: {integrity: sha512-K9AmQSd84Uvbdej1pIzxiybTN4cGZkSpDuR3RK1QqkWA2sFpN169AkhQsxUMPP6gnJZ3ThwFLFQqClJi1PcX2A==}
+  /langsmith@0.0.26:
+    resolution: {integrity: sha512-TecBjdgYGMxNaWp2L2X0OVgu8lge2WeQ5UpDXluwF3x+kH/WHFVSuR1RCuP+k2628GSVFvXxVIyXvzrHYxrZSw==}
     hasBin: true
     dependencies:
       '@types/uuid': 9.0.2
