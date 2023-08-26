@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.134
-        version: 0.0.134
+        specifier: 0.0.135
+        version: 0.0.135
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.1
@@ -404,8 +404,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.134:
-    resolution: {integrity: sha512-hKszH/C0+PFYvwJ4VhBGovsu3H55iA8d0Bv1XRZ9rTF9btlhOnW+Mxo6P92tfWmVQIAEz2NETFOFVswzcQhzsQ==}
+  /langchain@0.0.135:
+    resolution: {integrity: sha512-H/WdGi6o4BkkD6dU6KlC0U5TAOA22yiuf+kS6AmN16QPSTU25JtcZZK3kYx+0luoJE1iCsxrec09D7Fgy3hEUQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -443,6 +443,7 @@ packages:
       '@tensorflow/tfjs-core': '*'
       '@tigrisdata/vector': ^1.1.0
       '@upstash/redis': ^1.20.6
+      '@writerai/writer-sdk': ^0.40.2
       '@xata.io/client': ^0.25.1
       '@zilliz/milvus2-sdk-node': '>=2.2.7'
       apify-client: ^2.7.1
@@ -553,6 +554,8 @@ packages:
       '@tigrisdata/vector':
         optional: true
       '@upstash/redis':
+        optional: true
+      '@writerai/writer-sdk':
         optional: true
       '@xata.io/client':
         optional: true
