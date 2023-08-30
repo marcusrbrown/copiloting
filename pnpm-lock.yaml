@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.136
-        version: 0.0.136
+        specifier: 0.0.137
+        version: 0.0.137
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -404,8 +404,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.136:
-    resolution: {integrity: sha512-gqh83F6XQMbKuxMvBKPlRQ7npxJEQk6jY/A5A2xXvwjFaxTIWxcZ4WxAEeaDoF7MAyjmJSyO8eUa4qAzRx3HgQ==}
+  /langchain@0.0.137:
+    resolution: {integrity: sha512-jJ/34ZYjMkqeYCFiYKFSKjBscqul4eZyuj9h2Uw2JWZi9Wz2dMd/4qlgWTYx4nxm0QrW2mRlxP+yei6A3u6+Zw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -465,6 +465,7 @@ packages:
       mammoth: '*'
       mongodb: ^5.2.0
       mysql2: ^3.3.3
+      node-llama-cpp: '*'
       notion-to-md: ^3.1.0
       pdf-parse: 1.1.1
       peggy: ^3.0.2
@@ -598,6 +599,8 @@ packages:
       mongodb:
         optional: true
       mysql2:
+        optional: true
+      node-llama-cpp:
         optional: true
       notion-to-md:
         optional: true
