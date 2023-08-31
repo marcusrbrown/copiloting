@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.137
-        version: 0.0.137
+        specifier: 0.0.138
+        version: 0.0.138
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -404,8 +404,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.137:
-    resolution: {integrity: sha512-jJ/34ZYjMkqeYCFiYKFSKjBscqul4eZyuj9h2Uw2JWZi9Wz2dMd/4qlgWTYx4nxm0QrW2mRlxP+yei6A3u6+Zw==}
+  /langchain@0.0.138:
+    resolution: {integrity: sha512-1TlrsK7yeGJitZn3r+gyCewveuaDK+g36u5ARuwdxHWYsW432w0Emy+lgW2SWkAjwvyZEvyaBuyvmjJKuSD8VQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -422,7 +422,7 @@ packages:
       '@clickhouse/client': ^0.0.14
       '@elastic/elasticsearch': ^8.4.0
       '@getmetal/metal-sdk': '*'
-      '@getzep/zep-js': ^0.6.3
+      '@getzep/zep-js': ^0.7.0
       '@gomomento/sdk': ^1.23.0
       '@google-ai/generativelanguage': ^0.2.1
       '@google-cloud/storage': ^6.10.1
