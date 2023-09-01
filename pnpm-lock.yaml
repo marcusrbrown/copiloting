@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.138
-        version: 0.0.138
+        specifier: 0.0.139
+        version: 0.0.139
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -35,8 +35,8 @@ importers:
 
 packages:
 
-  /@anthropic-ai/sdk@0.5.7:
-    resolution: {integrity: sha512-0uLvrn24D9ehe8KXBFKohmdvMdhPk8jGYGaROOZo46fgbHKSTEOkEv1zmbYw4fAiF/qdPDBNav+8zfW0iD2WOg==}
+  /@anthropic-ai/sdk@0.6.2:
+    resolution: {integrity: sha512-fB9PUj9RFT+XjkL+E9Ol864ZIJi+1P8WnbHspN3N3/GK2uSzjd0cbVIKTGgf4v3N8MwaQu+UWnU7C4BG/fap/g==}
     dependencies:
       '@types/node': 18.17.12
       '@types/node-fetch': 2.6.4
@@ -404,8 +404,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.138:
-    resolution: {integrity: sha512-1TlrsK7yeGJitZn3r+gyCewveuaDK+g36u5ARuwdxHWYsW432w0Emy+lgW2SWkAjwvyZEvyaBuyvmjJKuSD8VQ==}
+  /langchain@0.0.139:
+    resolution: {integrity: sha512-cd0eQipIqt9mnU7K9r4kYxAMCMkM6GQ6rubteUo8WfkcR5biepeuoPhxQb9Lnd/kKg7Oo628JrdRItk5DJSrLQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -454,6 +454,7 @@ packages:
       d3-dsv: ^2.0.0
       epub2: ^3.0.1
       faiss-node: ^0.3.0
+      fast-xml-parser: ^4.2.7
       firebase-admin: ^11.9.0
       google-auth-library: ^8.9.0
       hnswlib-node: ^1.4.2
@@ -578,6 +579,8 @@ packages:
         optional: true
       faiss-node:
         optional: true
+      fast-xml-parser:
+        optional: true
       firebase-admin:
         optional: true
       google-auth-library:
@@ -641,7 +644,7 @@ packages:
       youtubei.js:
         optional: true
     dependencies:
-      '@anthropic-ai/sdk': 0.5.7
+      '@anthropic-ai/sdk': 0.6.2
       ansi-styles: 5.2.0
       binary-extensions: 2.2.0
       camelcase: 6.3.0
@@ -651,7 +654,7 @@ packages:
       js-tiktoken: 1.0.7
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.0.26
+      langsmith: 0.0.32
       ml-distance: 4.0.0
       object-hash: 3.0.0
       openai: 3.3.0
@@ -668,8 +671,8 @@ packages:
       - supports-color
     dev: false
 
-  /langsmith@0.0.26:
-    resolution: {integrity: sha512-TecBjdgYGMxNaWp2L2X0OVgu8lge2WeQ5UpDXluwF3x+kH/WHFVSuR1RCuP+k2628GSVFvXxVIyXvzrHYxrZSw==}
+  /langsmith@0.0.32:
+    resolution: {integrity: sha512-Q9Ozp14Q4IV7iqDs3xlHl8uL9ZjmQ5WOdXQJKE+Zmv2L/M8oePU8N9uClNKCTjtJbYLXgCAVan4erWXSX4qK3Q==}
     hasBin: true
     dependencies:
       '@types/uuid': 9.0.2
