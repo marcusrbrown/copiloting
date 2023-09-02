@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.139
-        version: 0.0.139
+        specifier: 0.0.140
+        version: 0.0.140
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -404,8 +404,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.139:
-    resolution: {integrity: sha512-cd0eQipIqt9mnU7K9r4kYxAMCMkM6GQ6rubteUo8WfkcR5biepeuoPhxQb9Lnd/kKg7Oo628JrdRItk5DJSrLQ==}
+  /langchain@0.0.140:
+    resolution: {integrity: sha512-xr7ETbbjDVhAaJmqU61w0r8r4eFKokjvlCo0gh0EGBLQqRyHtMn1XT6Jdi9QugJviQrNfA2BECm9bYK0aY3usQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -462,7 +462,6 @@ packages:
       ignore: ^5.2.0
       ioredis: ^5.3.2
       jsdom: '*'
-      langchainhub: ~0.0.3
       mammoth: '*'
       mongodb: ^5.2.0
       mysql2: ^3.3.3
@@ -595,8 +594,6 @@ packages:
         optional: true
       jsdom:
         optional: true
-      langchainhub:
-        optional: true
       mammoth:
         optional: true
       mongodb:
@@ -654,6 +651,7 @@ packages:
       js-tiktoken: 1.0.7
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
+      langchainhub: 0.0.6
       langsmith: 0.0.32
       ml-distance: 4.0.0
       object-hash: 3.0.0
@@ -669,6 +667,10 @@ packages:
       - debug
       - encoding
       - supports-color
+    dev: false
+
+  /langchainhub@0.0.6:
+    resolution: {integrity: sha512-SW6105T+YP1cTe0yMf//7kyshCgvCTyFBMTgH2H3s9rTAR4e+78DA/BBrUL/Mt4Q5eMWui7iGuAYb3pgGsdQ9w==}
     dev: false
 
   /langsmith@0.0.32:
