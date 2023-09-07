@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.144
-        version: 0.0.144
+        specifier: 0.0.145
+        version: 0.0.145
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -377,8 +377,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.144:
-    resolution: {integrity: sha512-EZvLejRuq/bAVRdy1YRs33ETO/Dr8NUfM8VQflUnAVrFx7G+8G53f9kPeZ4l6Qw4d6phxTbAPLCQNn2/F69lUg==}
+  /langchain@0.0.145:
+    resolution: {integrity: sha512-hgCYArkLgibyjka75muVwDlId2q8D+UPpqtr1XCJvZxU01bYagCKi22jDXiLpIdGTaDYbrAZpNENFphurXQ0Wg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -422,8 +422,8 @@ packages:
       apify-client: ^2.7.1
       axios: '*'
       cheerio: ^1.0.0-rc.12
-      chromadb: ^1.5.3
-      cohere-ai: ^5.0.2
+      chromadb: '*'
+      cohere-ai: '>=6.0.0'
       d3-dsv: ^2.0.0
       epub2: ^3.0.1
       faiss-node: ^0.3.0
