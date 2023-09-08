@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.145
-        version: 0.0.145
+        specifier: 0.0.146
+        version: 0.0.146
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -377,8 +377,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.145:
-    resolution: {integrity: sha512-hgCYArkLgibyjka75muVwDlId2q8D+UPpqtr1XCJvZxU01bYagCKi22jDXiLpIdGTaDYbrAZpNENFphurXQ0Wg==}
+  /langchain@0.0.146:
+    resolution: {integrity: sha512-WPkvlYNBH1cqPH0/mcDzfNjht5VJSD7dJMHCjhagLneVD7v69yMiNNkrme+DKHOqnPBbNUHDmlXGLAnTs4gpDQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -435,7 +435,7 @@ packages:
       ignore: ^5.2.0
       ioredis: ^5.3.2
       jsdom: '*'
-      llmonitor: ^0.5.4
+      llmonitor: '*'
       mammoth: '*'
       mongodb: ^5.2.0
       mysql2: ^3.3.3
@@ -456,6 +456,7 @@ packages:
       typesense: ^1.5.3
       usearch: ^1.1.1
       vectordb: ^0.1.4
+      voy-search: 0.6.2
       weaviate-ts-client: ^1.4.0
       youtube-transcript: ^1.0.6
       youtubei.js: ^5.8.0
@@ -609,6 +610,8 @@ packages:
       usearch:
         optional: true
       vectordb:
+        optional: true
+      voy-search:
         optional: true
       weaviate-ts-client:
         optional: true
