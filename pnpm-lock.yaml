@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.146
-        version: 0.0.146
+        specifier: 0.0.148
+        version: 0.0.148
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -377,8 +377,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.146:
-    resolution: {integrity: sha512-WPkvlYNBH1cqPH0/mcDzfNjht5VJSD7dJMHCjhagLneVD7v69yMiNNkrme+DKHOqnPBbNUHDmlXGLAnTs4gpDQ==}
+  /langchain@0.0.148:
+    resolution: {integrity: sha512-t2BA7+TRhFOiFaXOMeZIZ6gEwhdwYsczITH9B8pCeuWdbNQENtUALWWMW8wtxmV5NUbzxpv5NoW8JRbinObMtg==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -401,7 +401,7 @@ packages:
       '@google-cloud/storage': ^6.10.1
       '@huggingface/inference': ^1.5.1
       '@mozilla/readability': '*'
-      '@notionhq/client': ^2.2.5
+      '@notionhq/client': ^2.2.10
       '@opensearch-project/opensearch': '*'
       '@pinecone-database/pinecone': '*'
       '@planetscale/database': ^1.8.0
@@ -458,6 +458,7 @@ packages:
       vectordb: ^0.1.4
       voy-search: 0.6.2
       weaviate-ts-client: ^1.4.0
+      web-auth-library: ^1.0.3
       youtube-transcript: ^1.0.6
       youtubei.js: ^5.8.0
     peerDependenciesMeta:
@@ -614,6 +615,8 @@ packages:
       voy-search:
         optional: true
       weaviate-ts-client:
+        optional: true
+      web-auth-library:
         optional: true
       youtube-transcript:
         optional: true
