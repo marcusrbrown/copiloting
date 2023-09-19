@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.150
-        version: 0.0.150
+        specifier: 0.0.151
+        version: 0.0.151
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -377,8 +377,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.150:
-    resolution: {integrity: sha512-UXpz9vbMgIOfSmV705FxBRaooleaKITcWcZVgLntetaJmciFTzAlMmF4ca63XGwiGPSpPb/cfLFkE55x8jxUFg==}
+  /langchain@0.0.151:
+    resolution: {integrity: sha512-RA7/ELK5dqUgv5glIP5Wm5JmbnrjH/eeROYdKGDGaDUNZrRJ2CLuEu+oJH7hcE5hpPoPlkLBCs/vz4hvr/YtYw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
