@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.156
-        version: 0.0.156
+        specifier: 0.0.157
+        version: 0.0.157
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -377,8 +377,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.156:
-    resolution: {integrity: sha512-mEaRqQdBPTMjI+FE0nmgynX8lY78SMvW+G0ChxqPARuoIXbz1QORvIz/BfpSbzjKkx/b5rEGocLcw1dAsr52YQ==}
+  /langchain@0.0.157:
+    resolution: {integrity: sha512-G69Azp9KN/0ispqTM/Ns+UyaOm+GR4TAh3U41idA1gTyyG2n8zcO1hEC/HA4TwcxyNvWVHgX0vLo956Is5DcgQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -441,6 +441,7 @@ packages:
       mammoth: '*'
       mongodb: ^5.2.0
       mysql2: ^3.3.3
+      neo4j-driver: '*'
       node-llama-cpp: '*'
       notion-to-md: ^3.1.0
       pdf-parse: 1.1.1
@@ -583,6 +584,8 @@ packages:
       mongodb:
         optional: true
       mysql2:
+        optional: true
+      neo4j-driver:
         optional: true
       node-llama-cpp:
         optional: true
