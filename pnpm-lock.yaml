@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.159
-        version: 0.0.159
+        specifier: 0.0.160
+        version: 0.0.160
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -377,8 +377,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.159:
-    resolution: {integrity: sha512-+etcFu4QiFkYsGPMtWv3ggBU4LSQxVi/0h648Z7RippqaOuqlIm1lV+U+HCaJOLuMVF4ddEyXnxRVFug4JMkMg==}
+  /langchain@0.0.160:
+    resolution: {integrity: sha512-G4G3/3BOsG7JVmP7v5ii+xvmKG3a1ID+/T8eQbcSybOuaKCSKw2anksB95UYUtY2onIbaD/hc62SfhH5YFOB3A==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -402,7 +402,7 @@ packages:
       '@mozilla/readability': '*'
       '@notionhq/client': ^2.2.10
       '@opensearch-project/opensearch': '*'
-      '@pinecone-database/pinecone': '*'
+      '@pinecone-database/pinecone': ^1.1.0
       '@planetscale/database': ^1.8.0
       '@qdrant/js-client-rest': ^1.2.0
       '@raycast/api': ^1.55.2
