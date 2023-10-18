@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.167
-        version: 0.0.167
+        specifier: 0.0.168
+        version: 0.0.168
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -377,8 +377,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.167:
-    resolution: {integrity: sha512-3unZvKe4HJ7kiP/G4zGivz3B1deHVhl5RqkBHAMlHbKGQ01ZukATUr9ITmbB28y3q+z1CwA5JRy+vgJv3qsETw==}
+  /langchain@0.0.168:
+    resolution: {integrity: sha512-1dHkTwKiyNtwNO20VPl1XzSEAb1nUJnrnzdBRThUmhL2V4E8VMGqraQGH7QPrEoX/IZ10gEASLZNuLi1nZKgNA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -430,6 +430,9 @@ packages:
       cassandra-driver: ^4.6.4
       cheerio: ^1.0.0-rc.12
       chromadb: '*'
+      closevector-common: 0.1.0-alpha.1
+      closevector-node: 0.1.0-alpha.10
+      closevector-web: 0.1.0-alpha.16
       cohere-ai: '>=6.0.0'
       d3-dsv: ^2.0.0
       epub2: ^3.0.1
@@ -570,6 +573,12 @@ packages:
       cheerio:
         optional: true
       chromadb:
+        optional: true
+      closevector-common:
+        optional: true
+      closevector-node:
+        optional: true
+      closevector-web:
         optional: true
       cohere-ai:
         optional: true
