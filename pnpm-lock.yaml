@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.168
-        version: 0.0.168
+        specifier: 0.0.169
+        version: 0.0.169
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -377,8 +377,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.168:
-    resolution: {integrity: sha512-1dHkTwKiyNtwNO20VPl1XzSEAb1nUJnrnzdBRThUmhL2V4E8VMGqraQGH7QPrEoX/IZ10gEASLZNuLi1nZKgNA==}
+  /langchain@0.0.169:
+    resolution: {integrity: sha512-2JEYgLa827M+5GAWLX2hjWd5HuB8H4wYJBD6Ds5rCy49Oqffhz6h+af1yfLWooL2K3aoHDHiwt+YbI4gWeN+7w==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -395,7 +395,7 @@ packages:
       '@cloudflare/ai': ^1.0.12
       '@elastic/elasticsearch': ^8.4.0
       '@getmetal/metal-sdk': '*'
-      '@getzep/zep-js': ^0.7.0
+      '@getzep/zep-js': ^0.8.0
       '@gomomento/sdk': ^1.41.2
       '@gomomento/sdk-core': ^1.41.2
       '@gomomento/sdk-web': ^1.41.2
@@ -436,7 +436,7 @@ packages:
       cohere-ai: '>=6.0.0'
       d3-dsv: ^2.0.0
       epub2: ^3.0.1
-      faiss-node: ^0.3.0
+      faiss-node: ^0.5.1
       fast-xml-parser: ^4.2.7
       firebase-admin: ^11.9.0
       google-auth-library: ^8.9.0
@@ -446,7 +446,7 @@ packages:
       ignore: ^5.2.0
       ioredis: ^5.3.2
       jsdom: '*'
-      llmonitor: '*'
+      llmonitor: ^0.5.8
       lodash: ^4.17.21
       mammoth: '*'
       mongodb: ^5.2.0
@@ -458,7 +458,7 @@ packages:
       peggy: ^3.0.2
       pg: ^8.11.0
       pg-copy-streams: ^6.0.5
-      pickleparser: ^0.1.0
+      pickleparser: ^0.2.1
       playwright: ^1.32.1
       portkey-ai: ^0.1.11
       puppeteer: ^19.7.2
