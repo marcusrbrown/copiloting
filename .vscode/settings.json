@@ -1,12 +1,12 @@
 {
-    "cSpell.enabledLanguageIds": [],
-    "cSpell.enableFiletypes": [
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
         "git-commit",
-        "git-rebase",
+        "latex",
         "markdown",
         "plaintext",
-        "text",
-        "!json"
+        "restructuredtext",
+        "text"
     ],
 
     "editor.codeActionsOnSave": {
@@ -32,10 +32,11 @@
     },
 
     // Enable Sourcegraph Cody experimental features
-    "cody.autocomplete.experimental.triggerMoreEagerly": true,
-    "cody.experimental.chatPredictions": true,
+    "cody.autocomplete.experimental.graphContext": true,
     "cody.debug.enable": true,
+    "cody.experimental.chatPredictions": true,
+    "cody.telemetry.level": "off",
 
     // Disable GitHub Copilot suggestions in favor of Cody AI
-    "github.copilot.inlineSuggest.enable": false
+    "github.copilot.editor.enableAutoCompletions": false
 }
