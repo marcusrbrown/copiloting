@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.170
-        version: 0.0.170
+        specifier: 0.0.171
+        version: 0.0.171
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -377,8 +377,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.170:
-    resolution: {integrity: sha512-TdF7GWtrt/40GEhx+5fpdFlxodJmKk5cYU7Uugc/8SBNIaYehD2unXFPT9yjF6y/R/lSOWnl/j6bZRh/s3BZBw==}
+  /langchain@0.0.171:
+    resolution: {integrity: sha512-SSlo3Q2qYohdYxQZ2Iehu5/B2c9x4saKNHIhLhiTRlIiStQORYyxAXu71/eIkpVa9thrK0i3fuU3gXKWukGlyA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -396,9 +396,9 @@ packages:
       '@elastic/elasticsearch': ^8.4.0
       '@getmetal/metal-sdk': '*'
       '@getzep/zep-js': ^0.8.0
-      '@gomomento/sdk': ^1.41.2
-      '@gomomento/sdk-core': ^1.41.2
-      '@gomomento/sdk-web': ^1.41.2
+      '@gomomento/sdk': ^1.44.1
+      '@gomomento/sdk-core': ^1.44.1
+      '@gomomento/sdk-web': ^1.44.1
       '@google-ai/generativelanguage': ^0.2.1
       '@google-cloud/storage': ^6.10.1
       '@huggingface/inference': ^1.5.1
