@@ -32,11 +32,8 @@
     },
 
     // Enable Sourcegraph Cody experimental features
-    "cody.autocomplete.experimental.graphContext": true,
+    "cody.autocomplete.experimental.graphContext": "lsp-light",
     "cody.debug.enable": true,
     "cody.experimental.chatPredictions": true,
-    "cody.telemetry.level": "off",
-
-    // Disable GitHub Copilot suggestions in favor of Cody AI
-    "github.copilot.editor.enableAutoCompletions": false
+    "cody.telemetry.level": "off"
 }
