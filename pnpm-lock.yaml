@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.176
-        version: 0.0.176
+        specifier: 0.0.177
+        version: 0.0.177
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -385,8 +385,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.176:
-    resolution: {integrity: sha512-yu5CYzrEK8aLiZE5wux1E2TDlX9HiMCJ/MupOAmbUU7VBaOGL/iaaqT+zQ2/BrRIUaiclqUZAV/My3ViJBehjQ==}
+  /langchain@0.0.177:
+    resolution: {integrity: sha512-V2BPPxxNp4l9RPXqdKxWE6MG7m2w+CT9LlOD9yMDIQssFTDXq9DB8oTSWbnJhCj+a4F891acA8RYlPlWmzBuwA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -403,13 +403,13 @@ packages:
       '@cloudflare/ai': ^1.0.12
       '@elastic/elasticsearch': ^8.4.0
       '@getmetal/metal-sdk': '*'
-      '@getzep/zep-js': ^0.8.0
+      '@getzep/zep-js': ^0.9.0
       '@gomomento/sdk': ^1.44.1
       '@gomomento/sdk-core': ^1.44.1
       '@gomomento/sdk-web': ^1.44.1
       '@google-ai/generativelanguage': ^0.2.1
       '@google-cloud/storage': ^6.10.1
-      '@huggingface/inference': ^1.5.1
+      '@huggingface/inference': ^2.6.4
       '@mozilla/readability': '*'
       '@notionhq/client': ^2.2.10
       '@opensearch-project/opensearch': '*'
