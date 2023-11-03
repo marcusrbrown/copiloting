@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.178
-        version: 0.0.178
+        specifier: 0.0.179
+        version: 0.0.179
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -385,8 +385,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /langchain@0.0.178:
-    resolution: {integrity: sha512-M2nhrRLRA7LaI/rkIGu6dIbGCywBuGgmMsNq/97tyXsASPp6AgMPMNYTpyim/LC432JwQjEdf429AiGY+2eZow==}
+  /langchain@0.0.179:
+    resolution: {integrity: sha512-+uZKJCzc5Hva6/ZwJptNKpfvXuJZblxwWPXcm+2DngAm4l2S/L7NLXK6e53Z/4L7Dccwbijx9kgvWwKpSrakCw==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
