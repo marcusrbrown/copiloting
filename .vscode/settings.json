@@ -8,7 +8,7 @@
         "restructuredtext",
         "text"
     ],
-    "cSpell.words": ["Copiloting", "Devcontainer"],
+    "cSpell.words": ["Copiloting", "Devcontainer", "rtx"],
 
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
