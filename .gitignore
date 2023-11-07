@@ -112,3 +112,6 @@ dist
 
 # Python
 *.py[cod]
+
+# Embeddings
+.embeddings/

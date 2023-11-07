@@ -12,10 +12,18 @@ python = "~3.11"
 langchain = "^0.0.331"
 python-dotenv = "^1.0.0"
 openai = "0.28.1"
+chromadb = "^0.4.15"
+tiktoken = "^0.5.1"
 
 [tool.poetry.scripts]
 course = "course.chain.main:run"
+facts = "course.facts:main"
+facts-create-embeddings = "course.facts:create_embeddings"
 tchat = "course.tchat.main:run"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.26.0"
+matplotlib = "^3.8.1"
 
 [build-system]
 requires = ["poetry-core"]
