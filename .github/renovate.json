@@ -1,4 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>marcusrbrown/renovate-config"]
+  "extends": ["local>marcusrbrown/renovate-config"],
+  "constraints": {
+    "python": "~3.11"
+  }
 }

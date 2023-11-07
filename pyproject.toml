@@ -8,7 +8,7 @@ license = "MIT"
 packages = [{ include = "course" }]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "~3.11"
 langchain = "^0.0.331"
 python-dotenv = "^1.0.0"
 openai = "0.28.1"
