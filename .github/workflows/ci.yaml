@@ -45,7 +45,10 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Install Poetry
-        run: pipx install poetry==1.7.0
+        run: |
+          pip install --user pipx
+          pipx ensurepath
+          pipx install poetry==1.7.0
 
       - name: Setup Python
         uses: actions/setup-python@v4
