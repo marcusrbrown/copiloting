@@ -14,7 +14,8 @@ python-dotenv = "^1.0.0"
 openai = "0.28.1"
 
 [tool.poetry.scripts]
-course = "course.main:run"
+course = "course.chain.main:run"
+tchat = "course.tchat.main:run"
 
 [build-system]
 requires = ["poetry-core"]
