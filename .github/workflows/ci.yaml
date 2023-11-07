@@ -52,19 +52,5 @@ jobs:
       - name: Install Poetry
         uses: abatilo/actions-poetry@v2
 
-      - name: Configure Poetry
-        run: |
-          # Create a virtualenv in the project directory
-          poetry config virtualenvs.create true --local
-          poetry config virtualenvs.in-project true --local
-          # Install setuptools
-          pip install setuptools
-
-      - name: Cache virtualenv
-        uses: actions/cache@v3
-        with:
-          key: venv-${{ hashFiles('**/poetry.lock') }}
-          path: .venv
-
       - name: Install dependencies
         run: poetry install
