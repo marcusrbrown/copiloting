@@ -1,5 +1,4 @@
-from typing import Any, Dict, List, Optional
-from uuid import UUID
+from typing import Any, Dict, List
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.schema.messages import BaseMessage
 from pyboxen import boxen
@@ -14,12 +13,7 @@ class ChatModelStartHandler(BaseCallbackHandler):
         self,
         serialized: Dict[str, Any],
         messages: List[List[BaseMessage]],
-        *,
-        run_id: UUID,
-        parent_run_id: UUID | None = None,
-        tags: List[str] | None = None,
-        metadata: Dict[str, Any] | None = None,
-        **kwargs: Any,
+        **kwargs,
     ) -> Any:
         print("\n\n======== Sending Messages ========\n\n")
 
