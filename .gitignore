@@ -108,3 +108,7 @@ dist
 
 # *
 .DS_Store
+
+
+# Python
+*.py[cod]

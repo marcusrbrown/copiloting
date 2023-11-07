@@ -5,12 +5,16 @@ description = "Some experiments with AI copilots"
 authors = ["Marcus R. Brown <contact@marcusrbrown.com>"]
 readme = "README.md"
 license = "MIT"
-packages = [
-    { include = "course" },
-]
+packages = [{ include = "course" }]
 
 [tool.poetry.dependencies]
-python = "3.12.0"
+python = "^3.11"
+langchain = "^0.0.331"
+python-dotenv = "^1.0.0"
+openai = "0.28.1"
+
+[tool.poetry.scripts]
+course = "course.main:run"
 
 [build-system]
 requires = ["poetry-core"]
