@@ -14,8 +14,10 @@ python-dotenv = "^1.0.0"
 openai = "0.28.1"
 chromadb = "^0.4.15"
 tiktoken = "^0.5.1"
+pyboxen = "^1.2.0"
 
 [tool.poetry.scripts]
+agents = "course.agents:main"
 course = "course.chain.main:run"
 facts = "course.facts:main"
 facts-create-embeddings = "course.facts:create_embeddings"

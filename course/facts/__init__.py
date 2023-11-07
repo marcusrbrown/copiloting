@@ -5,16 +5,9 @@ from langchain.document_loaders import TextLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores.chroma import Chroma
-import os
+
+from course.utilities import get_module_path
 from .redundant_filter_retriever import RedundantFilterRetriever
-
-
-def get_module_dir():
-    return os.path.dirname(os.path.abspath(__file__))
-
-
-def get_module_path(file_name):
-    return os.path.join(get_module_dir(), file_name)
 
 
 def main():
