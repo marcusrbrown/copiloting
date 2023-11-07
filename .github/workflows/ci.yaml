@@ -57,6 +57,8 @@ jobs:
           # Create a virtualenv in the project directory
           poetry config virtualenvs.create true --local
           poetry config virtualenvs.in-project true --local
+          # Install setuptools
+          pip install setuptools
 
       - name: Cache virtualenv
         uses: actions/cache@v3
