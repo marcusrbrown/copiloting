@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0-development",
   "packageManager": "pnpm@8.10.2",
-  "description": "Some experiments with GitHub Copilot",
+  "description": "Some experiments with AI copilots",
   "author": "Marcus R. Brown <contact@marcusrbrown.com>",
   "license": "MIT",
   "engines": {

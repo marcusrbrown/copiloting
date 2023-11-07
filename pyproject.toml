@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "copiloting"
+version = "0.1.0"
+description = "Some experiments with AI copilots"
+authors = ["Marcus R. Brown <contact@marcusrbrown.com>"]
+readme = "README.md"
+license = "MIT"
+packages = [
+    { include = "course" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
