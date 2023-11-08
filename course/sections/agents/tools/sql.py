@@ -1,9 +1,9 @@
 import sqlite3
-from pydantic.v1 import BaseModel
+from pydantic import BaseModel
 from typing import Any, List
 from langchain.tools import Tool
 
-from course.utilities import get_module_path
+from course.sections.utilities import get_module_path
 
 __all__ = ["describe_tables_tool", "list_tables", "run_query_tool"]
 

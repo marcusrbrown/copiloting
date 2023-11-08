@@ -5,16 +5,20 @@ description = "Some experiments with AI copilots"
 authors = ["Marcus R. Brown <contact@marcusrbrown.com>"]
 readme = "README.md"
 license = "MIT"
-packages = [{ include = "course" }]
+packages = []
 
-[tool.poetry.dependencies]
+[tool.poetry.group.main.dependencies]
 python = "~3.11"
-langchain = "^0.0.331"
 python-dotenv = "^1.0.0"
 openai = "0.28.1"
-chromadb = "^0.4.15"
+langchain = "^0.0.331"
 tiktoken = "^0.5.1"
-pyboxen = "^1.2.0"
+
+[tool.poetry.group.pdf-dist.dependencies]
+pdf-dist =  { path = "course/pdf-dist", develop = true }
+
+[tool.poetry.group.sections.dependencies]
+sections = { path = "course/sections", develop = true }
 
 [tool.poetry.scripts]
 agents = "course.agents:main"

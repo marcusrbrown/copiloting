@@ -16,7 +16,7 @@
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
 
-    "typescript.enablePromptUseWorkspaceTsdk": false,
+    "typescript.enablePromptUseWorkspaceTsdk": true,
     "typescript.tsdk": "./node_modules/typescript/lib",
 
     "[json]": {

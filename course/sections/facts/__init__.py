@@ -6,7 +6,7 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores.chroma import Chroma
 
-from course.utilities import get_module_path
+from course.sections.utilities import get_module_path
 from .redundant_filter_retriever import RedundantFilterRetriever
 
 
