@@ -3,7 +3,6 @@ node_modules
 /build
 !/.svelte-kit/
 /.svelte-kit/*
-!/.svelte-kit/ambient.d.ts
 !/.svelte-kit/tsconfig.json
 !/.svelte-kit/types/
 /.svelte-kit/types/*
