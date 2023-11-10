@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from langchain.llms import OpenAI
+from langchain.llms.openai import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain
 import argparse
