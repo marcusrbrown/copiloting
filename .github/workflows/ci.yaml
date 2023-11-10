@@ -44,25 +44,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
+      - name: Install Poetry
+        run: pipx install poetry
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
+          cache: poetry
           python-version-file: 'pyproject.toml'
-
-      - name: Install Poetry
-        uses: abatilo/actions-poetry@v2
-
-      - name: Configure Poetry
-        run: |
-          # Create a virtualenv in the project directory
-          poetry config virtualenvs.create true --local
-          poetry config virtualenvs.in-project true --local
-
-      - name: Cache virtualenv
-        uses: actions/cache@v3
-        with:
-          key: venv-${{ hashFiles('**/poetry.lock') }}
-          path: .venv
 
       - name: Install dependencies
         run: poetry install
