@@ -113,7 +113,7 @@ const scoreConversation = async (score: number) => {
 
 const fetchConversations = async (documentId: number) => {
   const {data} = await api.get<Conversation[]>(
-    `/conversations?pdf_id=${documentId}`
+    `/conversations?pdf_id=${documentId}`,
   );
 
   if (data.length) {
@@ -128,7 +128,7 @@ const fetchConversations = async (documentId: number) => {
 
 const createConversation = async (documentId: number) => {
   const {data} = await api.post<Conversation>(
-    `/conversations?pdf_id=${documentId}`
+    `/conversations?pdf_id=${documentId}`,
   );
 
   set({

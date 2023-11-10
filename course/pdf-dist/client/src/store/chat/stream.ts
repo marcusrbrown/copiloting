@@ -15,7 +15,7 @@ const _addMessage = (message: Message) => {
 const _appendResponse = (id: number, text: string) => {
   store.update((state) => {
     const conv = state.conversations.find(
-      (c) => c.id === state.activeConversationId
+      (c) => c.id === state.activeConversationId,
     );
     if (!conv) {
       return;
@@ -60,7 +60,7 @@ export const sendMessage = async (userMessage: Message) => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
 
     const reader = response.body?.getReader();
@@ -79,7 +79,7 @@ export const sendMessage = async (userMessage: Message) => {
 
 const readResponse = async (
   reader: ReadableStreamDefaultReader<Uint8Array>,
-  responseMessage: Message
+  responseMessage: Message,
 ) => {
   let inProgress = true;
 
@@ -99,7 +99,7 @@ const readResponse = async (
 
 const readError = async (
   statusCode: number,
-  reader: ReadableStreamDefaultReader<Uint8Array>
+  reader: ReadableStreamDefaultReader<Uint8Array>,
 ) => {
   let inProgress = true;
   let message = '';

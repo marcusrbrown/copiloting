@@ -27,7 +27,7 @@ export const sendMessage = async (message: Message) => {
       `/conversations/${conversationId}/messages`,
       {
         input: message.content,
-      }
+      },
     );
 
     removeMessageFromActive(pendingId);

@@ -15,7 +15,7 @@ langchain = "^0.0.331"
 tiktoken = "^0.5.1"
 
 [tool.poetry.group.pdf-dist.dependencies]
-pdf-dist =  { path = "course/pdf-dist", develop = true }
+pdf-dist = { path = "course/pdf-dist", develop = true }
 
 [tool.poetry.group.sections.dependencies]
 sections = { path = "course/sections", develop = true }
