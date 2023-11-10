@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "copiloting"
 version = "0.1.0"
@@ -7,8 +11,10 @@ readme = "README.md"
 license = "MIT"
 packages = []
 
-[tool.poetry.group.main.dependencies]
+[tool.poetry.dependencies]
 python = "~3.11"
+
+[tool.poetry.group.main.dependencies]
 python-dotenv = "^1.0.0"
 openai = "0.28.1"
 langchain = "^0.0.331"
@@ -30,7 +36,3 @@ tchat = "course.tchat.main:run"
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.26.0"
 matplotlib = "^3.8.1"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"

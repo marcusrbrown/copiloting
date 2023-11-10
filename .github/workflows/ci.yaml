@@ -54,4 +54,4 @@ jobs:
           python-version-file: 'pyproject.toml'
 
       - name: Install dependencies
-        run: poetry install
+        run: poetry install --no-root
