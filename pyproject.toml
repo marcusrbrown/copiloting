@@ -28,10 +28,10 @@ sections = { path = "course/sections", develop = true }
 
 [tool.poetry.scripts]
 agents = "course.agents:main"
-course = "course.chain.main:run"
+course = "course.chain:main"
 facts = "course.facts:main"
 facts-create-embeddings = "course.facts:create_embeddings"
-tchat = "course.tchat.main:run"
+tchat = "course.tchat:main"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.26.0"
