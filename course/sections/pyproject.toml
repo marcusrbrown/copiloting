@@ -4,13 +4,13 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "sections"
-version = "0.0.0"
+version = "0.1.0"
 description = "Course sections"
 authors = []
 readme = "README.md"
 packages = [
     { include = "agents" },
-    { include = "chains" },
+    { include = "chain" },
     { include = "facts" },
     { include = "tchat" },
     { include = "utilities" },
