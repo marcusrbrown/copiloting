@@ -17,7 +17,7 @@ python = "~3.11"
 [tool.poetry.group.main.dependencies]
 python-dotenv = "^1.0.0"
 openai = "0.28.1"
-langchain = "^0.0.331"
+langchain = "0.0.331"
 tiktoken = "^0.5.1"
 
 [tool.poetry.group.pdf-dist.dependencies]
@@ -27,11 +27,11 @@ pdf-dist = { path = "course/pdf-dist", develop = true }
 sections = { path = "course/sections", develop = true }
 
 [tool.poetry.scripts]
-agents = "course.agents:main"
-course = "course.chain:main"
-facts = "course.facts:main"
-facts-create-embeddings = "course.facts:create_embeddings"
-tchat = "course.tchat:main"
+agents = "course.sections.agents:main"
+course = "course.sections.chain:main"
+facts = "course.sections.facts:main"
+facts-create-embeddings = "course.sections.facts:create_embeddings"
+tchat = "course.sections.tchat:main"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.26.0"

@@ -598,13 +598,13 @@ numpy = "*"
 
 [[package]]
 name = "chromadb"
-version = "0.4.17"
+version = "0.4.15"
 description = "Chroma."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "chromadb-0.4.17-py3-none-any.whl", hash = "sha256:8cb88162bc6124441ba5a4b93819463a10e9aaafbe05a3286e876cbdc7a7e11d"},
-    {file = "chromadb-0.4.17.tar.gz", hash = "sha256:120f9d364719b664d5314500f8e6097f0e0b24496bb97a429bc324f8d11f1b52"},
+    {file = "chromadb-0.4.15-py3-none-any.whl", hash = "sha256:4987529b563f31fe7ec7cb432b5fce9ad0148706e453b873c835ed0440a61bdf"},
+    {file = "chromadb-0.4.15.tar.gz", hash = "sha256:fd28621f4e33b168a9d489efb4014c988781a8ca065598781d336b72821a92d6"},
 ]
 
 [package.dependencies]
@@ -624,7 +624,6 @@ posthog = ">=2.4.0"
 pulsar-client = ">=3.1.0"
 pydantic = ">=1.9"
 pypika = ">=0.48.9"
-PyYAML = ">=6.0.0"
 requests = ">=2.28"
 tenacity = ">=8.2.3"
 tokenizers = ">=0.13.2"
@@ -3517,7 +3516,7 @@ files = []
 develop = true
 
 [package.dependencies]
-chromadb = "^0.4.15"
+chromadb = "0.4.15"
 pyboxen = "^1.2.0"
 
 [package.source]
@@ -4525,4 +4524,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "9f8d26a4cdeed7f98a58eaa940940c58436af210fba1db710b214e12c8b22293"
+content-hash = "bd5d1b61fc908d525e1cebbd0af43d21a12a797a3a10bbf6e34619bef5509be5"

@@ -9,14 +9,14 @@ description = "Course sections"
 authors = []
 readme = "README.md"
 packages = [
-    {include = "agents"},
-    {include = "chains"},
-    {include = "facts"},
-    {include = "tchat"},
-    {include = "utilities"},
+    { include = "agents" },
+    { include = "chains" },
+    { include = "facts" },
+    { include = "tchat" },
+    { include = "utilities" },
 ]
 
 [tool.poetry.dependencies]
 python = "~3.11"
-chromadb = "^0.4.15"
+chromadb = "0.4.15"
 pyboxen = "^1.2.0"
