@@ -109,10 +109,13 @@ dist
 
 # *
 .DS_Store
-
+uploads/
 
 # Python
 *.py[cod]
 
 # Embeddings
 .embeddings/
+
+# Redis
+dump.rdb
