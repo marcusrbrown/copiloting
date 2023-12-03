@@ -1,0 +1,22 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "sections"
+version = "0.1.0"
+description = "Course sections"
+authors = []
+readme = "README.md"
+packages = [
+    { include = "agents" },
+    { include = "chain" },
+    { include = "facts" },
+    { include = "tchat" },
+    { include = "utilities" },
+]
+
+[tool.poetry.dependencies]
+python = "~3.11"
+chromadb = "0.4.15"
+pyboxen = "^1.2.0"

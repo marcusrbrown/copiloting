@@ -12,8 +12,8 @@ env:
   NODE_VERSION: 20.9.0 # renovate: datasource=node depName=node
 
 jobs:
-  build:
-    name: Build
+  build-nodejs:
+    name: Build Node.js
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,3 +36,22 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+  build-python:
+    name: Build Python
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Install Poetry
+        run: pipx install poetry
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          cache: poetry
+          python-version-file: 'pyproject.toml'
+
+      - name: Install dependencies
+        run: poetry install --no-root

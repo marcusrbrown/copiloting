@@ -2,6 +2,8 @@ bracketSpacing: false
 jsxSingleQuote: true
 singleQuote: true
 tabWidth: 2
+plugins:
+  - 'prettier-plugin-svelte'
 overrides:
   - files:
       - '*.json'
@@ -12,3 +14,6 @@ overrides:
       - '.vscode/*.json'
     options:
       tabWidth: 4
+  - files: '*.svelte'
+    options:
+      parser: svelte

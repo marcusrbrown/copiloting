@@ -1,2 +1,3 @@
 packages:
+  - course/pdf-dist/client
   - tutorials
