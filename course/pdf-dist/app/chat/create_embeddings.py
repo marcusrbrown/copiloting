@@ -23,4 +23,12 @@ def create_embeddings_for_pdf(pdf_id: str, pdf_path: str):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
     loader = PyPDFLoader(pdf_path)
     docs = loader.load_and_split(text_splitter)
+
+    for doc in docs:
+        doc.metadata = {
+            "page": doc.metadata["page"],
+            "text": doc.page_content,
+            "pdf_id": pdf_id,
+        }
+
     vectorstore.add_documents(docs)
