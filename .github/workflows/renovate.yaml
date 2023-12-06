@@ -8,7 +8,7 @@ name: Renovate
   pull_request:
     types: [edited]
   push:
-    branches: [main]
+    branches: [main, 'renovate/reconfigure']
   workflow_dispatch:
     inputs:
       print_config:
@@ -49,7 +49,6 @@ jobs:
         uses: dorny/paths-filter@v2
         id: filter
         with:
-          base: ${{ github.ref }}
           filters: |
             changes:
               - '.github/workflows/renovate.yaml'
