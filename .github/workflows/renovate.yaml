@@ -49,12 +49,14 @@ jobs:
         uses: dorny/paths-filter@v2
         id: filter
         with:
+          base: ${{ github.ref }}
           filters: |
-            - '.github/workflows/renovate.yaml'
-            - '.github/renovate.json5?'
+            changes:
+              - '.github/workflows/renovate.yaml'
+              - '.github/renovate.json5'
       - id: create-output
         if: github.event_name != 'push' || steps.filter.outputs.changes == 'true'
-        run: echo "renovate=true" >> $GITHUB_OUTPUT
+        run: echo 'renovate=true' >> $GITHUB_OUTPUT
 
   renovate:
     if: needs.should-renovate.outputs.renovate == 'true'
