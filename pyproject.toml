@@ -12,7 +12,7 @@ license = "MIT"
 packages = []
 
 [tool.poetry.dependencies]
-python = "~3.11"
+python = "~3.12"
 
 [tool.poetry.group.main.dependencies]
 pydantic = "1.10.13"
