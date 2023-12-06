@@ -1,8 +1,8 @@
 {
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: ['github>bfra-me/renovate-config#v2.1.0'],
+  extends: ['github>marcusrbrown/renovate-config#v1.9.4'],
   constraints: {
-    python: '==3.11',
+    python: '3.11',
   },
   packageRules: [
     {
