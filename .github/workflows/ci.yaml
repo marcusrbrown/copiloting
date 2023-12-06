@@ -9,7 +9,7 @@ name: CI
 
 env:
   FORCE_COLOR: true
-  NODE_VERSION: 20.9.0 # renovate: datasource=node depName=node
+  NODE_VERSION: 20.10.0 # renovate: datasource=node depName=node
 
 jobs:
   build-nodejs:
