@@ -80,22 +80,22 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       '@typescript-eslint/eslint-plugin':
-        specifier: ^5.45.0
+        specifier: 5.45.0
         version: 5.45.0(@typescript-eslint/parser@5.45.0)(eslint@8.28.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^5.45.0
+        specifier: 5.45.0
         version: 5.45.0(eslint@8.28.0)(typescript@5.2.2)
       autoprefixer:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.23)
       eslint:
-        specifier: ^8.28.0
+        specifier: 8.28.0
         version: 8.28.0
       eslint-config-prettier:
-        specifier: ^8.5.0
+        specifier: 8.5.0
         version: 8.5.0(eslint@8.28.0)
       eslint-plugin-svelte:
-        specifier: ^2.26.0
+        specifier: 2.26.0
         version: 2.26.0(eslint@8.28.0)(svelte@3.54.0)
       postcss:
         specifier: ^8.4.23
