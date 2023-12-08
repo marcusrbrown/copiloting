@@ -11,10 +11,20 @@
     "cSpell.words": ["Copiloting", "Devcontainer", "rtx"],
 
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true
+    },
 
     "typescript.enablePromptUseWorkspaceTsdk": true,
     "typescript.tsdk": "./node_modules/typescript/lib",
@@ -33,8 +43,6 @@
     },
 
     // Enable Sourcegraph Cody experimental features
-    "cody.autocomplete.experimental.graphContext": "lsp-light",
     "cody.debug.enable": true,
-    "cody.experimental.chatPredictions": true,
     "cody.telemetry.level": "off"
 }
