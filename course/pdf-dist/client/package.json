@@ -42,7 +42,7 @@
     "immer": "9.0.21",
     "marked": "4.3.0",
     "material-icons": "1.13.12",
-    "pdfjs-dist": "3.5.141",
+    "pdfjs-dist": "3.11.174",
     "preline": "1.8.0",
     "uuid": "9.0.1"
   }

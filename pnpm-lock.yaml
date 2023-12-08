@@ -58,8 +58,8 @@ importers:
         specifier: 1.13.12
         version: 1.13.12
       pdfjs-dist:
-        specifier: 3.5.141
-        version: 3.5.141
+        specifier: 3.11.174
+        version: 3.11.174
       preline:
         specifier: 1.8.0
         version: 1.8.0
@@ -2700,16 +2700,16 @@ packages:
   /path2d-polyfill@2.0.1:
     resolution: {integrity: sha512-ad/3bsalbbWhmBo0D6FZ4RNMwsLsPpL6gnvhuSaU5Vm7b06Kr5ubSltQQ0T7YKsiJQO+g22zJ4dJKNTXIyOXtA==}
     engines: {node: '>=8'}
+    requiresBuild: true
     dev: false
+    optional: true
 
-  /pdfjs-dist@3.5.141:
-    resolution: {integrity: sha512-lYIvyi5grtYOIatsfCifIKwxHeAJ8eHyP22DTdvY4pm0yWVSFQnMafpgCPSw8gaNRDDdcHnBVOkqMsyK8SRxZg==}
-    engines: {node: '>=16'}
-    dependencies:
-      path2d-polyfill: 2.0.1
-      web-streams-polyfill: 3.2.1
+  /pdfjs-dist@3.11.174:
+    resolution: {integrity: sha512-TdTZPf1trZ8/UFu5Cx/GXB7GZM30LT+wWUNfsi6Bq8ePLnb+woNKtDymI2mxZYBpMbonNFqKmiz684DIfnd8dA==}
+    engines: {node: '>=18'}
     optionalDependencies:
       canvas: 2.11.2
+      path2d-polyfill: 2.0.1
     transitivePeerDependencies:
       - encoding
       - supports-color
