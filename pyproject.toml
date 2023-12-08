@@ -18,7 +18,7 @@ python = "3.11.7"
 pydantic = "1.10.13"
 python-dotenv = "1.0.0"
 openai = "0.28.1"
-langchain = "0.0.347"
+langchain = "0.0.348"
 tiktoken = "0.5.2"
 
 [tool.poetry.group.pdf-dist.dependencies]
