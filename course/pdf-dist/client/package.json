@@ -39,7 +39,7 @@
     "axios": "^1.0.0",
     "chart.js": "4.4.1",
     "classnames": "2.3.2",
-    "immer": "9.0.12",
+    "immer": "9.0.21",
     "marked": "4.3.0",
     "material-icons": "1.13.11",
     "pdfjs-dist": "3.5.141",
