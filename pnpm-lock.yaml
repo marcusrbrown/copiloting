@@ -61,8 +61,8 @@ importers:
         specifier: 3.11.174
         version: 3.11.174
       preline:
-        specifier: 1.8.0
-        version: 1.8.0
+        specifier: 1.9.0
+        version: 1.9.0
       uuid:
         specifier: 9.0.1
         version: 9.0.1
@@ -2848,8 +2848,8 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /preline@1.8.0:
-    resolution: {integrity: sha512-guttn86Fc/+AbvN9oKcr2z3zU7DL3Q5dl7nhcR4nTi5F02LXQc7WIYwgIXMR97kymCs52feiju6glXO3dUIpvA==}
+  /preline@1.9.0:
+    resolution: {integrity: sha512-zvOexsDBood9gBAQYSwz7iY8TaomtRD0/qxvCnJl3caq5pif6frl8Oe4b4DsxHHD3Clzl4I5RmVKTq9XjMvNJA==}
     dependencies:
       '@popperjs/core': 2.11.8
     dev: false
