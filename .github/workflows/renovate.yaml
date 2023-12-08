@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: github.event_name == 'push'
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       - if: github.event_name == 'push'
         uses: dorny/paths-filter@v2
         id: filter

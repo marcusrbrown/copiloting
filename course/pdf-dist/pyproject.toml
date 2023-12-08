@@ -11,7 +11,7 @@ readme = "README.md"
 packages = [{ include = "app" }]
 
 [tool.poetry.dependencies]
-python = "~3.11"
+python = "3.11.7"
 boto3 = "1.33.9"
 botocore = "1.33.9"
 celery = "5.3.6"
