@@ -11,3 +11,4 @@ node_modules
 .env
 .env.*
 !.env.template
+course/pdf-dist/client/build/

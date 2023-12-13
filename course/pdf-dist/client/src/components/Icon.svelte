@@ -11,7 +11,7 @@
       'material-icons-outlined': outlined,
       'material-icons': !outlined,
     },
-    klass
+    klass,
   );
 </script>
 
