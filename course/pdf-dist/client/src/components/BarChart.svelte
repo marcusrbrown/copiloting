@@ -15,7 +15,7 @@
 
     const labels = Object.keys(data);
     const chartValues = Object.values(data).map(
-      (scores) => scores.reduce((a, b) => a + b, 0) / scores.length
+      (scores) => scores.reduce((a, b) => a + b, 0) / scores.length,
     );
 
     new Chart(ctx, {
@@ -124,7 +124,7 @@
   function generateColors(
     rgb: {r: number; b: number; g: number},
     k: number,
-    alpha = 1
+    alpha = 1,
   ) {
     const result = [];
     const [h, s, l] = rgbToHsl(rgb.r, rgb.g, rgb.b);

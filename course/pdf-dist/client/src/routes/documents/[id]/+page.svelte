@@ -13,7 +13,7 @@
   function handleSubmit(content: string, useStreaming: boolean) {
     sendMessage(
       {role: 'user', content},
-      {useStreaming, documentId: document.id}
+      {useStreaming, documentId: document.id},
     );
   }
 
