@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       langchain:
-        specifier: 0.0.206
-        version: 0.0.206
+        specifier: 0.0.212
+        version: 0.0.212
     devDependencies:
       '@tsconfig/strictest':
         specifier: 2.0.2
@@ -457,8 +457,8 @@ packages:
     resolution: {integrity: sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==}
     dev: false
 
-  /@langchain/community@0.0.4:
-    resolution: {integrity: sha512-SV2QMR/rCam7MSuhXBa76H7wwT6/F2J+D+yo6k5F3erZbf3K56Gd8qU2aYktgJ36ye9UWRXHLixaGVjLlP5cyQ==}
+  /@langchain/community@0.0.11:
+    resolution: {integrity: sha512-8L19AyzBueHrRtawxU4JstRtmzqsHK2jDJtSg/bv9ivto0kDKlILnauIDijcb09V/4mql2XolaS9r7eGe99yGA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -471,6 +471,7 @@ packages:
       '@aws-sdk/credential-provider-node': ^3.388.0
       '@clickhouse/client': ^0.2.5
       '@cloudflare/ai': ^1.0.12
+      '@datastax/astra-db-ts': 0.1.2
       '@elastic/elasticsearch': ^8.4.0
       '@getmetal/metal-sdk': '*'
       '@getzep/zep-js': ^0.9.0
@@ -558,6 +559,8 @@ packages:
       '@clickhouse/client':
         optional: true
       '@cloudflare/ai':
+        optional: true
+      '@datastax/astra-db-ts':
         optional: true
       '@elastic/elasticsearch':
         optional: true
@@ -694,8 +697,8 @@ packages:
       ws:
         optional: true
     dependencies:
-      '@langchain/core': 0.1.1
-      '@langchain/openai': 0.0.5
+      '@langchain/core': 0.1.4
+      '@langchain/openai': 0.0.8
       flat: 5.0.2
       langsmith: 0.0.48
       uuid: 9.0.1
@@ -705,8 +708,8 @@ packages:
       - supports-color
     dev: false
 
-  /@langchain/core@0.1.1:
-    resolution: {integrity: sha512-p+BzmILzGAWjHxzNy1ZygfsNWxZcipWH3zvY0WC33ly+nmBp4n+MCVd25hKQ4YYWOqoOGGWSzFJukd5PxaXMDQ==}
+  /@langchain/core@0.1.4:
+    resolution: {integrity: sha512-Y3/mQLEiQ78ZbsTGYvPRj5bpvrhpTAcsbdyEtlYEvjMLbehEADfjQ41G9zc7U/emkrGtHRmxWO1ISmoeXeDmyQ==}
     engines: {node: '>=18'}
     dependencies:
       ansi-styles: 5.2.0
@@ -721,11 +724,11 @@ packages:
       zod: 3.22.3
     dev: false
 
-  /@langchain/openai@0.0.5:
-    resolution: {integrity: sha512-ojNx33zQPk29otCeeO4wn8Je79KMGWXcXe2ofUSL4VxK3EC6BuSeINzfODozP7KhQ24TWo7DKkl7vBqPzTI98w==}
+  /@langchain/openai@0.0.8:
+    resolution: {integrity: sha512-F8DD6vs5BvMAHiDprINWCVf7jyNaYHp2zAqHwYij3+YAKsgIORm2EQvI6YtT3qPnGghpE3qz8H3DKjTNPywIzQ==}
     engines: {node: '>=18'}
     dependencies:
-      '@langchain/core': 0.1.1
+      '@langchain/core': 0.1.4
       js-tiktoken: 1.0.8
       openai: 4.20.1
       zod: 3.22.3
@@ -2175,8 +2178,8 @@ packages:
     resolution: {integrity: sha512-Ne7wqW7/9Cz54PDt4I3tcV+hAyat8ypyOGzYRJQfdxnnjeWsTxt1cy8pjvvKeI5kfXuyvULyeeAvwvvtAX3ayQ==}
     dev: true
 
-  /langchain@0.0.206:
-    resolution: {integrity: sha512-WjBN13hME6OtCVUg9HOzl84QMJLa500BR9B3kapzpHOCJ6kedm7lBHzKK4VSfqXd1B6eecyg3tsvqd+Y8knGlQ==}
+  /langchain@0.0.212:
+    resolution: {integrity: sha512-zPcnAX3t1RuyWkbEkyqlIdR29j51Eylz7rcDcqET1baquR/r9xuk7P/HAJ6TFowiXDUg10d5YBD6VBvjwF/WDA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-s3': ^3.310.0
@@ -2195,7 +2198,7 @@ packages:
       '@vercel/kv': ^0.2.3
       '@xata.io/client': ^0.28.0
       apify-client: ^2.7.1
-      assemblyai: ^2.0.2
+      assemblyai: ^4.0.0
       axios: '*'
       cheerio: ^1.0.0-rc.12
       chromadb: '*'
@@ -2210,7 +2213,7 @@ packages:
       ignore: ^5.2.0
       ioredis: ^5.3.2
       jsdom: '*'
-      mammoth: '*'
+      mammoth: ^1.6.0
       mongodb: ^5.2.0
       node-llama-cpp: '*'
       notion-to-md: ^3.1.0
@@ -2335,9 +2338,9 @@ packages:
         optional: true
     dependencies:
       '@anthropic-ai/sdk': 0.9.1
-      '@langchain/community': 0.0.4
-      '@langchain/core': 0.1.1
-      '@langchain/openai': 0.0.5
+      '@langchain/community': 0.0.11
+      '@langchain/core': 0.1.4
+      '@langchain/openai': 0.0.8
       binary-extensions: 2.2.0
       expr-eval: 2.0.2
       js-tiktoken: 1.0.8
@@ -2360,6 +2363,7 @@ packages:
       - '@aws-sdk/client-lambda'
       - '@clickhouse/client'
       - '@cloudflare/ai'
+      - '@datastax/astra-db-ts'
       - '@elastic/elasticsearch'
       - '@getmetal/metal-sdk'
       - '@getzep/zep-js'
