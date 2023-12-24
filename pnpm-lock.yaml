@@ -22,8 +22,8 @@ importers:
         specifier: 16.3.1
         version: 16.3.1
       prettier:
-        specifier: 3.1.0
-        version: 3.1.0
+        specifier: 3.1.1
+        version: 3.1.1
       rimraf:
         specifier: 5.0.5
         version: 5.0.5
@@ -3035,12 +3035,6 @@ packages:
     dependencies:
       prettier: 3.1.1
       svelte: 3.59.2
-    dev: true
-
-  /prettier@3.1.0:
-    resolution: {integrity: sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==}
-    engines: {node: '>=14'}
-    hasBin: true
     dev: true
 
   /prettier@3.1.1:
