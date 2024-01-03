@@ -6,11 +6,6 @@ plugins:
   - 'prettier-plugin-svelte'
 overrides:
   - files:
-      - '*.json'
-    options:
-      singleQuote: false
-      trailingComma: none
-  - files:
       - '.vscode/*.json'
     options:
       tabWidth: 4
