@@ -50,7 +50,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - id: filter
         if: github.event_name == 'push'
-        uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
+        uses: dorny/paths-filter@7267a8516b6f92bdb098633497bad573efdbf271 # v2.12.0
         with:
           filters: |
             changes:
@@ -58,7 +58,7 @@ jobs:
               - '.github/renovate.json5'
       - if: github.event_name != 'push' || steps.filter.outputs.changes == 'true'
         name: Renovate
-        uses: bfra-me/renovate-action@0bbfd6701ceee8f39830bc8841795abf56396dd8 # v2.6.2
+        uses: bfra-me/renovate-action@bbba533e11820a6234b0db0133b6dc15ef4d99bc # v2.7.10
         with:
           branch: ${{ github.ref != 'refs/heads/main' && github.ref_name || '' }}
           cache: >-
