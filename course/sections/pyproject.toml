@@ -17,6 +17,6 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "3.11.7"
+python = "3.12.1"
 chromadb = "0.4.22"
 pyboxen = "1.2.0"
