@@ -36,4 +36,4 @@ tchat = "course.sections.tchat:main"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "6.29.0"
-matplotlib = "3.8.2"
+matplotlib = "3.8.3"
