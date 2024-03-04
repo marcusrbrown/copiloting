@@ -1,13 +1,13 @@
 {
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: ['github>marcusrbrown/renovate-config#v1.16.6'],
+  extends: ['github>marcusrbrown/renovate-config#v2'],
   constraints: {
-    python: '3.11.7',
+    python: '3.11',
   },
   packageRules: [
     {
-      matchFileNames: ['**/renovate.json5'],
-      branchTopic: 'reconfigure',
+      matchDepNames: ['python'],
+      allowedVersions: '<=3.11',
     },
   ],
 }

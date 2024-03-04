@@ -1,5 +1,4 @@
 bracketSpacing: false
-jsxSingleQuote: true
 singleQuote: true
 tabWidth: 2
 plugins:
