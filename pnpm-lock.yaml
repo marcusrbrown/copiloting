@@ -46,8 +46,8 @@ importers:
         specifier: 4.4.1
         version: 4.4.1
       classnames:
-        specifier: 2.3.2
-        version: 2.3.2
+        specifier: 2.5.1
+        version: 2.5.1
       immer:
         specifier: 9.0.21
         version: 9.0.21
@@ -1367,8 +1367,8 @@ packages:
     dev: false
     optional: true
 
-  /classnames@2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+  /classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
     dev: false
 
   /color-convert@2.0.1:
