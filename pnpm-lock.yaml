@@ -13,8 +13,8 @@ importers:
         version: 0.0.212
     devDependencies:
       '@tsconfig/strictest':
-        specifier: 2.0.2
-        version: 2.0.2
+        specifier: 2.0.8
+        version: 2.0.8
       '@types/node':
         specifier: 20.11.16
         version: 20.11.16
@@ -881,8 +881,8 @@ packages:
       - supports-color
     dev: true
 
-  /@tsconfig/strictest@2.0.2:
-    resolution: {integrity: sha512-jt4jIsWKvUvuY6adJnQJlb/UR7DdjC8CjHI/OaSQruj2yX9/K6+KOvDt/vD6udqos/FUk5Op66CvYT7TBLYO5Q==}
+  /@tsconfig/strictest@2.0.8:
+    resolution: {integrity: sha512-XnQ7vNz5HRN0r88GYf1J9JJjqtZPiHt2woGJOo2dYqyHGGcd6OLGqSlBB6p1j9mpzja6Oe5BoPqWmeDx6X9rLw==}
     dev: true
 
   /@types/cookie@0.5.4:
