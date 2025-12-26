@@ -40,9 +40,5 @@
     },
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-
-    // Enable Sourcegraph Cody experimental features
-    "cody.debug.enable": true,
-    "cody.telemetry.level": "off"
+    }
 }
