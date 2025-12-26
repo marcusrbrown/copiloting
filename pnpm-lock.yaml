@@ -55,8 +55,8 @@ importers:
         specifier: 4.3.0
         version: 4.3.0
       material-icons:
-        specifier: 1.13.12
-        version: 1.13.12
+        specifier: 1.13.14
+        version: 1.13.14
       pdfjs-dist:
         specifier: 3.11.174
         version: 3.11.174
@@ -2595,8 +2595,8 @@ packages:
     hasBin: true
     dev: false
 
-  /material-icons@1.13.12:
-    resolution: {integrity: sha512-/2YoaB79IjUK2B2JB+vIXXYGtBfHb/XG66LvoKVM5ykHW7yfrV5SP6d7KLX6iijY6/G9GqwgtPQ/sbhFnOURVA==}
+  /material-icons@1.13.14:
+    resolution: {integrity: sha512-kZOfc7xCC0rAT8Q3DQixYAeT+tBqZnxkseQtp2bxBxz7q5pMAC+wmit7vJn1g/l7wRU+HEPq23gER4iPjGs5Cg==}
     dev: false
 
   /math-intrinsics@1.1.0:
