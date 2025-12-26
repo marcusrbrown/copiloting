@@ -110,8 +110,8 @@ importers:
         specifier: 3.59.2
         version: 3.59.2
       svelte-check:
-        specifier: 3.6.3
-        version: 3.6.3(postcss@8.4.31)(svelte@3.59.2)
+        specifier: 3.8.6
+        version: 3.8.6(postcss@8.4.31)(svelte@3.59.2)
       tailwindcss:
         specifier: 3.4.1
         version: 3.4.1
@@ -3428,20 +3428,18 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check@3.6.3(postcss@8.4.31)(svelte@3.59.2):
-    resolution: {integrity: sha512-Q2nGnoysxUnB9KjnjpQLZwdjK62DHyW6nuH/gm2qteFnDk0lCehe/6z8TsIvYeKjC6luKaWxiNGyOcWiLLPSwA==}
+  /svelte-check@3.8.6(postcss@8.4.31)(svelte@3.59.2):
+    resolution: {integrity: sha512-ij0u4Lw/sOTREP13BdWZjiXD/BlHE6/e2e34XzmVmsp5IN4kVa3PWP65NM32JAgwjZlwBg/+JtiNV1MM8khu0Q==}
     hasBin: true
     peerDependencies:
       svelte: ^3.55.0 || ^4.0.0-next.0 || ^4.0.0 || ^5.0.0-next.0
     dependencies:
       '@jridgewell/trace-mapping': 0.3.20
       chokidar: 3.5.3
-      fast-glob: 3.3.2
-      import-fresh: 3.3.0
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 3.59.2
-      svelte-preprocess: 5.1.1(postcss@8.4.31)(svelte@3.59.2)(typescript@5.3.3)
+      svelte-preprocess: 5.1.4(postcss@8.4.31)(svelte@3.59.2)(typescript@5.3.3)
       typescript: 5.3.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -3481,16 +3479,16 @@ packages:
       svelte: 3.59.2
     dev: true
 
-  /svelte-preprocess@5.1.1(postcss@8.4.31)(svelte@3.59.2)(typescript@5.3.3):
-    resolution: {integrity: sha512-p/Dp4hmrBW5mrCCq29lEMFpIJT2FZsRlouxEc5qpbOmXRbaFs7clLs8oKPwD3xCFyZfv1bIhvOzpQkhMEVQdMw==}
-    engines: {node: '>= 14.10.0'}
+  /svelte-preprocess@5.1.4(postcss@8.4.31)(svelte@3.59.2)(typescript@5.3.3):
+    resolution: {integrity: sha512-IvnbQ6D6Ao3Gg6ftiM5tdbR6aAETwjhHV+UKGf5bHGYR69RQvF1ho0JKPcbUON4vy4R7zom13jPjgdOWCQ5hDA==}
+    engines: {node: '>= 16.0.0'}
     requiresBuild: true
     peerDependencies:
       '@babel/core': ^7.10.2
       coffeescript: ^2.5.1
       less: ^3.11.3 || ^4.0.0
       postcss: ^7 || ^8
-      postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0
+      postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
       pug: ^3.0.0
       sass: ^1.26.8
       stylus: ^0.55.0
@@ -3521,7 +3519,7 @@ packages:
     dependencies:
       '@types/pug': 2.0.9
       detect-indent: 6.1.0
-      magic-string: 0.27.0
+      magic-string: 0.30.5
       postcss: 8.4.31
       sorcery: 0.11.0
       strip-indent: 3.0.0
