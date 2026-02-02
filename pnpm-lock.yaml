@@ -86,8 +86,8 @@ importers:
         specifier: 5.62.0
         version: 5.62.0(eslint@8.57.1)(typescript@5.3.3)
       autoprefixer:
-        specifier: 10.4.23
-        version: 10.4.23(postcss@8.4.23)
+        specifier: 10.4.24
+        version: 10.4.24(postcss@8.4.23)
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -1231,8 +1231,8 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
 
-  /autoprefixer@10.4.23(postcss@8.4.23):
-    resolution: {integrity: sha512-YYTXSFulfwytnjAPlw8QHncHJmlvFKtczb8InXaAx9Q0LbfDnfEYDE55omerIJKihhmU61Ft+cAOSzQVaBUmeA==}
+  /autoprefixer@10.4.24(postcss@8.4.23):
+    resolution: {integrity: sha512-uHZg7N9ULTVbutaIsDRoUkoS8/h3bdsmVJYZ5l3wv8Cp/6UIIoRDm90hZ+BwxUj/hGBEzLxdHNSKuFpn8WOyZw==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
