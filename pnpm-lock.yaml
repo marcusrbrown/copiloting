@@ -41,7 +41,7 @@ importers:
         version: 4.3.2
       axios:
         specifier: ^1.0.0
-        version: 1.0.0
+        version: 1.12.0
       chart.js:
         specifier: 4.5.1
         version: 4.5.1
@@ -1246,8 +1246,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /axios@1.0.0:
-    resolution: {integrity: sha512-SsHsGFN1qNPFT5QhSoSD37SHDfGyLSW5AESmyLk2JeCMHv5g0I9g0Hz/zQHx2KNe0jGXh2q2hAm7OdkXm360CA==}
+  /axios@1.12.0:
+    resolution: {integrity: sha512-oXTDccv8PcfjZmPGlWsPSwtOJCZ/b6W5jAMCNcfwJbCzDckwG0jrYJFaWH1yvivfCXjVzV/SPDEhMB3Q+DSurg==}
     dependencies:
       follow-redirects: 1.15.11
       form-data: 4.0.5
