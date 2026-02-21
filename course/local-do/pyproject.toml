@@ -11,7 +11,7 @@ readme = "readme.md"
 packages = [{ include = "local_do", from = "app.py" }]
 
 [tool.poetry.dependencies]
-python = "3.11.7"
+python = "3.13.0"
 blinker = "1.9.0"
 click = "8.3.1"
 Flask = "2.3.3"
