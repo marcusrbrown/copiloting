@@ -1,7 +1,7 @@
 import os
 import pinecone
 from langchain.vectorstores.pinecone import Pinecone
-from app.chat.embeddings.openai import embeddings
+from app.chat.embeddings.openai import get_embeddings
 
 
 vectorstore = None
@@ -17,7 +17,7 @@ def get_vectorstore():
         )
 
         vectorstore = Pinecone.from_existing_index(
-            index_name=os.environ["PINECONE_INDEX_NAME"], embedding=embeddings
+            index_name=os.environ["PINECONE_INDEX_NAME"], embedding=get_embeddings()
         )
 
     return vectorstore
