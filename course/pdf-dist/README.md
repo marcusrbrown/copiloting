@@ -1,50 +1,72 @@
-# First Time Setup
+# PDF Dist
+
+Standalone Flask + SvelteKit PDF chat application.
+
+## First-Time Setup
+
+The default Python setup for this app comes from the repo root.
+
+From the repo root:
 
 ```sh
-# Create a virtual environment
-python -m venv .venv
-
-# On MacOS, WSL, Linux
-source .venv/bin/activate
-
-# On Windows
-.\.venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Initialize the database
-flask --app app.web init-db
+mise install
+poetry env use 3.11
+poetry install
+poetry run flask --app app.web init-db
+pnpm -C course/pdf-dist/client install --frozen-lockfile
 ```
 
-## Running the app
+## Running the App
 
-There are three separate processes that need to be running for the app to work: the server, the worker, and Redis.
+There are three backend processes plus the SvelteKit frontend during development.
 
-If you stop any of these processes, you will need to start them back up!
+Use the repo-root `.venv`. Do not run `poetry install` inside `course/pdf-dist/`.
 
-Commands to start each are listed below. If you need to stop them, select the terminal window the process is running in and press Control-C
+### Python server
 
-### To run the Python server
+From the repo root:
 
 ```sh
+source .venv/bin/activate
+cd course/pdf-dist
 inv dev
 ```
 
-### To run the worker
+### Worker
+
+From the repo root:
 
 ```sh
+source .venv/bin/activate
+cd course/pdf-dist
 inv devworker
 ```
 
-### To run Redis
+### Redis
 
 ```sh
 redis-server
 ```
 
-### To reset the database
+### Frontend
+
+From the repo root:
 
 ```sh
-flask --app app.web init-db
+pnpm -C course/pdf-dist/client run dev
 ```
+
+### Reset the database
+
+From the repo root:
+
+```sh
+poetry run flask --app app.web init-db
+```
+
+## Notes
+
+- Flask serves built static assets from `client/build/`
+- The root Poetry environment is the boring default for this app and `course/sections`
+- The repo root `poetry.toml` keeps the virtualenv in `./.venv`
+- `instance/sqlite.db` and `dump.rdb` are local state artifacts

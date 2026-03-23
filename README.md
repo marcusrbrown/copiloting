@@ -1,61 +1,70 @@
 # Copiloting
 
-[![Build Status](https://badges.github.com/github/marcusrbrown/copiloting/build-status.svg)](https://github.com/marcusrbrown/copiloting/actions)
-[![npm downloads](https://img.shields.io/npm/dt/@copiloting.svg?style=flat-square)](https://npmjs.com/package/@copiloting)
-[![Twitter Follow](https://img.shields.io/twitter/follow/username.svg?style=social)](https://twitter.com/username)
+Polyglot AI/LLM experimentation monorepo with:
 
-Welcome to Copiloting, a TypeScript-based collection of packages designed to harness the power of AI/ML frameworks to create and use unlimited "copilots". Copiloting provides chatbot building blocks and features using LangChain modules and other AI/ML frameworks.
+- TypeScript LangChain tutorials in `tutorials/`
+- Python LangChain demos in `course/sections/`
+- A Flask + SvelteKit PDF chat app in `course/pdf-dist/`
 
-## Table of Contents
+## Prerequisites
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Similar Projects](#similar-projects)
-- [License](#license)
+- [mise](https://mise.jdx.dev/) for local tool versions
 
-## Features
+`mise.toml` installs and pins the repo's Python, Poetry, pnpm, and Node versions.
 
-Copiloting offers:
+## Local Setup
 
-- **Unlimited Copilots**: Craft as many AI agents as you need to handle a range of tasks and questions.
-- **Powerful AI/ML Frameworks**: Utilize the cutting-edge capabilities of LangChain modules and other AI/ML frameworks.
-- **Chatbot Building Blocks**: Assemble your own chatbot using a variety of ready-made components and features.
-
-## Installation
-
-To install Copiloting, you'll need [pnpm](https://pnpm.io/) installed on your machine.
+Open the repo root in VS Code. The default Python workflow is repo-root based.
 
 ```bash
-# Install pnpm if not installed
-npm install -g pnpm
+# Install pinned tool versions from mise.toml
+mise install
 
-# Install Copiloting
-pnpm install @copiloting
+# Create/use the repo Python 3.11 environment
+poetry env use 3.11
+
+# Install Python dependencies for the root project plus editable path deps
+poetry install
+
+# Install JS workspace dependencies
+pnpm install --frozen-lockfile
 ```
 
-## Usage
+## VS Code
 
-Once installed, you can use Copiloting in your project as follows:
+- Open the repository root, not a nested Python directory
+- Install the recommended extensions (`ms-python.python`, `ms-python.vscode-pylance`)
+- VS Code is configured to use the repo `.venv`
+- Pylance is configured to resolve `course/pdf-dist` imports like `from app.web import ...`
 
-```typescript
-import {Copilot} from '@copiloting';
+If VS Code does not pick up the interpreter automatically, select `.venv` from the Python interpreter picker.
 
-let myCopilot = new Copilot();
-// Use myCopilot...
+## Python Commands
+
+```bash
+# Root Poetry scripts
+poetry run agents
+poetry run course
+poetry run facts
+poetry run facts-create-embeddings
+poetry run tchat
+
+# Flask DB init for the PDF app
+poetry run flask --app app.web init-db
 ```
 
-## Contributing
+## JavaScript Commands
 
-We appreciate all contributions to improve Copiloting. Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting a pull request.
+```bash
+pnpm build
+pnpm check-format
+pnpm -C tutorials run start:quickstart-llms
+pnpm -C course/pdf-dist/client run dev
+```
 
-## Similar Projects
+## Notes
 
-- [Project 1](#): Another project that also uses AI/ML frameworks.
-- [Project 2](#): A project that provides chatbot components.
-- [Project 3](#): A project that explores the use of LangChain modules.
-
-## License
-
-Copiloting is [MIT licensed](./LICENSE).
+- Root Poetry setup covers the main Python work in `course/sections` and `course/pdf-dist`
+- `poetry.toml` pins Poetry to an in-project virtualenv at `./.venv`
+- `course/local-do` is a separate optional Poetry project with its own setup
+- This repo pins Python `3.11.7`; your system `python3` version does not matter if `mise` and Poetry are used correctly
