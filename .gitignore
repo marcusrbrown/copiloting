@@ -113,9 +113,13 @@ uploads/
 
 # Python
 *.py[cod]
+.venv/
 
 # Embeddings
 .embeddings/
 
 # Redis
 dump.rdb
+
+# Local worktrees
+.worktrees/
