@@ -33,7 +33,7 @@
     "dotenv": "16.6.1",
     "prettier": "3.8.1",
     "rimraf": "5.0.10",
-    "typescript": "5.3.3"
+    "typescript": "5.9.3"
   },
   "dependencies": {
     "langchain": "0.0.212"
