@@ -13,5 +13,10 @@
   postUpgradeTasks: {
     commands: ['pnpm format', 'poetry lock'],
     executionMode: 'branch',
+    fileFilters: ['pnpm-lock.yaml', 'poetry.lock'],
+    installTools: {
+      pnpm: {},
+      poetry: {},
+    },
   },
 }
