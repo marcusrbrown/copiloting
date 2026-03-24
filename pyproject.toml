@@ -35,5 +35,5 @@ facts-create-embeddings = "course.sections.facts:create_embeddings"
 tchat = "course.sections.tchat:main"
 
 [tool.poetry.group.dev.dependencies]
-ipykernel = "6.29.0"
+ipykernel = "6.31.0"
 matplotlib = "3.8.2"
