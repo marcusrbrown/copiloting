@@ -6,6 +6,6 @@ _.python.venv = { path = ".venv", create = true }
 
 [tools]
 node = "20.20.1"
-pnpm = "8.15.9"
+pnpm = "10.28.2"
 poetry = "2.3.2"
 python = "3.11.7"
