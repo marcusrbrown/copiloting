@@ -10,4 +10,8 @@
       allowedVersions: '<=3.13',
     },
   ],
+  postUpgradeTasks: {
+    commands: ['pnpm format', 'poetry lock'],
+    executionMode: 'branch',
+  },
 }
