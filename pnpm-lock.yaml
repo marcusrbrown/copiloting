@@ -24,6 +24,9 @@ importers:
       prettier:
         specifier: 3.8.1
         version: 3.8.1
+      prettier-plugin-svelte:
+        specifier: 3.5.1
+        version: 3.5.1(prettier@3.8.1)(svelte@5.54.0)
       rimraf:
         specifier: 5.0.10
         version: 5.0.10

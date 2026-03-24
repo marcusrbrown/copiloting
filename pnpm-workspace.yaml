@@ -1,3 +1,10 @@
 packages:
   - course/pdf-dist/client
   - tutorials
+
+autoInstallPeers: true
+dedupePeerDependents: true
+resolvePeersFromWorkspaceRoot: true
+saveWorkspaceProtocol: rolling
+resolutionMode: lowest-direct
+saveExact: true
