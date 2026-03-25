@@ -1,10 +1,10 @@
 <script lang="ts">
-  import AssistantMessage from '$c/chat/AssistantMessage.svelte';
-  import UserMessage from '$c/chat/UserMessage.svelte';
-  import PendingMessage from '$c/chat/PendingMessage.svelte';
+  import AssistantMessage from "$c/chat/AssistantMessage.svelte";
+  import UserMessage from "$c/chat/UserMessage.svelte";
+  import PendingMessage from "$c/chat/PendingMessage.svelte";
 
   interface Message {
-    role: 'user' | 'system' | 'assistant' | 'pending' | 'human' | 'ai';
+    role: "user" | "system" | "assistant" | "pending" | "human" | "ai";
     content: string;
   }
   export let messages: Message[] = [];
@@ -22,11 +22,11 @@
 <div class="overflow-y-auto flex flex-col flex-1">
   <div class="flex flex-col flex-1 gap-3 px-1.5 py-1">
     {#each messages as message}
-      {#if message.role === 'user' || message.role === 'human'}
+      {#if message.role === "user" || message.role === "human"}
         <UserMessage content={message.content} />
-      {:else if message.role === 'assistant' || message.role === 'ai'}
+      {:else if message.role === "assistant" || message.role === "ai"}
         <AssistantMessage content={message.content} />
-      {:else if message.role === 'pending'}
+      {:else if message.role === "pending"}
         <PendingMessage />
       {/if}
     {/each}

@@ -1,12 +1,12 @@
 <script lang="ts">
-  import {beforeNavigate} from '$app/navigation';
-  import {resetAll, sendMessage} from '$s/chat/index';
-  import ChatPanel from '$c/chat/ChatPanel.svelte';
+  import { beforeNavigate } from "$app/navigation";
+  import { resetAll, sendMessage } from "$s/chat/index";
+  import ChatPanel from "$c/chat/ChatPanel.svelte";
 
   beforeNavigate(resetAll);
 
   function handleSubmit(content: string, useStreaming: boolean) {
-    sendMessage({role: 'user', content}, {useStreaming});
+    sendMessage({ role: "user", content }, { useStreaming });
   }
 </script>
 

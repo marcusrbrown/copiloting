@@ -1,17 +1,17 @@
 <script lang="ts">
-  import {onMount} from 'svelte';
-  import {errorStore, reset} from '$s/errors';
-  import ErrorMessage from '$c/ErrorMessage.svelte';
+  import { onMount } from "svelte";
+  import { errorStore, reset } from "$s/errors";
+  import ErrorMessage from "$c/ErrorMessage.svelte";
 
   const listener = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
+    if (event.key === "Escape") {
       reset();
     }
   };
 
   onMount(() => {
-    window.addEventListener('keydown', listener);
-    return () => window.removeEventListener('keydown', listener);
+    window.addEventListener("keydown", listener);
+    return () => window.removeEventListener("keydown", listener);
   });
 </script>
 
@@ -30,7 +30,7 @@
     <h1 class="text-3xl text-white-500 font-bold">An Error Occured...</h1>
     <div class="flex-1 bg-white overflow-y-scroll">
       {#each $errorStore.errors as error}
-        {#if error.contentType?.includes('text/html')}
+        {#if error.contentType?.includes("text/html")}
           <ErrorMessage message={error.message} />
         {:else}
           <p class="p-2 text-red-500">{error.message}</p>

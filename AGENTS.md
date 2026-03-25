@@ -77,9 +77,9 @@ copiloting/
 ```bash
 # From repo root — JS/TS
 pnpm install --frozen-lockfile       # install all workspaces
+pnpm lint                            # ESLint + Prettier check (runs in CI)
+pnpm fix                             # auto-fix lint + format issues
 pnpm build                           # build all workspaces recursively
-pnpm check-format                    # Prettier format check (runs in CI)
-pnpm format                          # Prettier auto-fix
 pnpm test                            # run TypeScript tests (vitest)
 
 # From repo root — Python
@@ -88,7 +88,7 @@ poetry lock                          # regenerate lock file
 poetry run pytest                    # run Python tests
 
 # Verification (run before committing)
-pnpm check-format                    # must pass
+pnpm lint                            # must pass
 pnpm build                           # must pass
 pnpm test                            # must pass
 poetry install                       # must pass
@@ -99,7 +99,7 @@ poetry run pytest                    # must pass
 
 - Renovate auto-updates deps; CI action pins use full SHA hashes (security practice)
 - Renovate `postUpgradeTasks` runs `poetry lock` for Python dep updates (scoped to poetry manager)
-- CI runs format check + build + test for Node, `poetry install` + `pytest` for Python
+- CI runs lint (ESLint + Prettier) + build + test for Node, `poetry install` + `pytest` for Python
 - `poetry.lock` covers all Poetry groups including `pdf-dist` and `sections` path deps
 - Both `pnpm` and `poetry` run independently — no cross-language tooling bridge
 - `course/pdf-dist` has its own `dump.rdb` and `instance/sqlite.db` — local dev state artifacts

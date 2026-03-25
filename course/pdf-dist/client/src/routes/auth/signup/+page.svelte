@@ -1,24 +1,24 @@
 <script lang="ts">
-  import {goto, beforeNavigate} from '$app/navigation';
-  import TextInput from '$c/TextInput.svelte';
-  import Button from '$c/Button.svelte';
-  import FormGroup from '$c/FormGroup.svelte';
-  import {auth, signup, clearErrors} from '$s/auth';
-  import Alert from '$c/Alert.svelte';
+  import { goto, beforeNavigate } from "$app/navigation";
+  import TextInput from "$c/TextInput.svelte";
+  import Button from "$c/Button.svelte";
+  import FormGroup from "$c/FormGroup.svelte";
+  import { auth, signup, clearErrors } from "$s/auth";
+  import Alert from "$c/Alert.svelte";
 
-  let email = '';
-  let password = '';
-  let passwordConfirm = '';
+  let email = "";
+  let password = "";
+  let passwordConfirm = "";
 
   function handleSubmit() {
     if (password !== passwordConfirm) {
-      return alert('Passwords do not match');
+      return alert("Passwords do not match");
     }
     signup(email, password);
   }
 
   $: if ($auth.user) {
-    goto('/');
+    goto("/");
   }
 
   beforeNavigate(clearErrors);

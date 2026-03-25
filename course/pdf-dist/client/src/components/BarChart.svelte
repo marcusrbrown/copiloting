@@ -1,14 +1,14 @@
 <script lang="ts">
-  import {onMount} from 'svelte';
-  import Chart from 'chart.js/auto';
+  import { onMount } from "svelte";
+  import Chart from "chart.js/auto";
 
-  export let data: {[key: string]: number[]};
-  export let startingColor: {r: number; g: number; b: number};
+  export let data: { [key: string]: number[] };
+  export let startingColor: { r: number; g: number; b: number };
 
   let chartCanvas: HTMLCanvasElement;
 
   onMount(() => {
-    const ctx = chartCanvas.getContext('2d');
+    const ctx = chartCanvas.getContext("2d");
     if (!ctx) {
       return;
     }
@@ -19,19 +19,19 @@
     );
 
     new Chart(ctx, {
-      type: 'bar',
+      type: "bar",
       options: {
         plugins: {
-          legend: {display: false},
+          legend: { display: false },
         },
         scales: {
           y: {
             min: -1,
             max: 1,
             grid: {
-              lineWidth: ({tick}) => (tick.value == 0 ? 2 : 1),
-              color: ({tick}) =>
-                tick.value === 0 ? 'rgba(0, 0, 0, 0.7)' : 'rgba(0, 0, 0, 0.1)',
+              lineWidth: ({ tick }) => (tick.value == 0 ? 2 : 1),
+              color: ({ tick }) =>
+                tick.value === 0 ? "rgba(0, 0, 0, 0.7)" : "rgba(0, 0, 0, 0.1)",
             },
             ticks: {
               stepSize: 0.33,
@@ -54,7 +54,7 @@
         datasets: [
           {
             base: 0,
-            label: '',
+            label: "",
             data: chartValues,
             backgroundColor: generateColors(startingColor, 7, 0.2),
             borderColor: generateColors(startingColor, 7),
@@ -122,7 +122,7 @@
   }
 
   function generateColors(
-    rgb: {r: number; b: number; g: number},
+    rgb: { r: number; b: number; g: number },
     k: number,
     alpha = 1,
   ) {
@@ -139,7 +139,7 @@
     return result;
   }
 
-  const colors = generateColors({r: 255, g: 99, b: 132}, 7);
+  const colors = generateColors({ r: 255, g: 99, b: 132 }, 7);
 </script>
 
 <canvas bind:this={chartCanvas} />

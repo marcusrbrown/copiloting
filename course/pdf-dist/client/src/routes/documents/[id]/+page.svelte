@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type {PageData} from './$types';
-  import {beforeNavigate} from '$app/navigation';
-  import {resetAll, sendMessage} from '$s/chat/index';
-  import PdfViewer from '$c/PdfViewer.svelte';
-  import ChatPanel from '$c/chat/ChatPanel.svelte';
+  import type { PageData } from "./$types";
+  import { beforeNavigate } from "$app/navigation";
+  import { resetAll, sendMessage } from "$s/chat/index";
+  import PdfViewer from "$c/PdfViewer.svelte";
+  import ChatPanel from "$c/chat/ChatPanel.svelte";
 
   export let data: PageData;
 
@@ -12,8 +12,8 @@
 
   function handleSubmit(content: string, useStreaming: boolean) {
     sendMessage(
-      {role: 'user', content},
-      {useStreaming, documentId: document.id},
+      { role: "user", content },
+      { useStreaming, documentId: document.id },
     );
   }
 

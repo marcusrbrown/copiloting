@@ -1,13 +1,13 @@
 <script lang="ts">
-  import {marked} from 'marked';
+  import { marked } from "marked";
 
-  export let content = '';
+  export let content = "";
 </script>
 
 <div
   class="message border rounded-md py-1 px-2.5 my-0.25 break-words self-end bg-slate-200"
 >
-  {@html marked(content, {breaks: true, gfm: true})}
+  {@html marked(content, { breaks: true, gfm: true })}
 </div>
 
 <style>

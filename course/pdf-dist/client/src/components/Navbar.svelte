@@ -1,6 +1,6 @@
 <script lang="ts">
-  import AuthLinks from '$c/auth/AuthLinks.svelte';
-  import {auth} from '$s/auth';
+  import AuthLinks from "$c/auth/AuthLinks.svelte";
+  import { auth } from "$s/auth";
 
   $: user = $auth.user;
 </script>

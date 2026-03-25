@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-static';
-import {vitePreprocess} from '@sveltejs/kit/vite';
+import adapter from '@sveltejs/adapter-static'
+import {vitePreprocess} from '@sveltejs/kit/vite'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -21,6 +21,6 @@ const config = {
       $api: 'src/api/axios.js',
     },
   },
-};
+}
 
-export default config;
+export default config

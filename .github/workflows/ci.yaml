@@ -1,6 +1,6 @@
 ---
 name: CI
-'on':
+on:
   pull_request:
     branches: [main]
   push:
@@ -37,8 +37,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --strict-peer-dependencies
 
-      - name: Check formatting
-        run: pnpm check-format
+      - name: Lint
+        run: pnpm lint
 
       - name: Build
         run: pnpm build

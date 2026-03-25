@@ -1,5 +1,5 @@
-import {sveltekit} from '@sveltejs/kit/vite';
-import {defineConfig} from 'vite';
+import {sveltekit} from '@sveltejs/kit/vite'
+import {defineConfig} from 'vite'
 
 export default defineConfig({
   build: {
@@ -11,4 +11,4 @@ export default defineConfig({
       '/api': 'http://localhost:8000',
     },
   },
-});
+})

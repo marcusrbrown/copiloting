@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let type: string = 'text';
-  export let value = '';
+  export let type: string = "text";
+  export let value = "";
 
   function typeAction(node: HTMLInputElement) {
     node.type = type;

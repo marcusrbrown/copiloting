@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let message = '';
+  export let message = "";
 
   function setDoc(node: HTMLIFrameElement, message: string) {
     node.srcdoc = message;

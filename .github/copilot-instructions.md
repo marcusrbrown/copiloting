@@ -5,7 +5,7 @@ Read `AGENTS.md` at the repository root first — it has the full project map, s
 ## Verification (run before every commit)
 
 ```bash
-pnpm check-format    # Prettier — must pass
+pnpm lint            # ESLint + Prettier — must pass
 pnpm build           # all workspaces — must pass
 poetry install       # Python deps — must pass
 ```
@@ -16,7 +16,7 @@ If you change Python dependency versions in any `pyproject.toml`, also run `poet
 
 ### TypeScript
 
-- `@tsconfig/strictest` is active — no `any`, no `@ts-ignore`, no `@ts-expect-error`
+- `@bfra.me/tsconfig` (strict) is active — no `any`, no `@ts-ignore`, no `@ts-expect-error`
 - ESM only: use `.js` extensions in all import paths (`import {foo} from './bar.js'`)
 - Module system is `nodenext` — no CommonJS, no `require()`
 
@@ -31,11 +31,12 @@ If you change Python dependency versions in any `pyproject.toml`, also run `poet
 - **Poetry only** for Python — never use pip directly
 - pnpm settings live in `pnpm-workspace.yaml`, not `.npmrc`
 
-### Formatting
+### Formatting & linting
 
-- Prettier: `singleQuote: true`, `bracketSpacing: false`, `tabWidth: 2`
-- Run `pnpm format` to auto-fix before committing
-- `.svelte` files use the `svelte` parser (configured in `.prettierrc.yaml`)
+- `@bfra.me/eslint-config` handles both ESLint rules and Prettier formatting
+- Run `pnpm fix` to auto-fix lint + format issues before committing
+- Prettier rules: `semi: false`, `singleQuote: true`, `bracketSpacing: false`, `printWidth: 100`
+- `.svelte` files use the `svelte` parser (configured in `prettier.config.js`)
 
 ### Security
 
@@ -49,9 +50,7 @@ All tool versions are managed by `mise.toml` — do not install Python, Node, pn
 
 ## What CI checks
 
-| Job           | Checks                                              |
-| ------------- | --------------------------------------------------- |
-| Build Node.js | `pnpm install` → `pnpm check-format` → `pnpm build` |
-| Build Python  | `poetry install`                                    |
-
-There are no test suites. `pnpm test` exits with an error intentionally.
+| Job           | Checks                                                    |
+| ------------- | --------------------------------------------------------- |
+| Build Node.js | `pnpm install` → `pnpm lint` → `pnpm build` → `pnpm test` |
+| Build Python  | `poetry install` → `poetry run pytest`                    |

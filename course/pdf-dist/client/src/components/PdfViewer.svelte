@@ -1,22 +1,22 @@
 <script lang="ts">
-  import {onMount, onDestroy} from 'svelte';
-  import * as pdfjs from 'pdfjs-dist';
+  import { onMount, onDestroy } from "svelte";
+  import * as pdfjs from "pdfjs-dist";
 
   pdfjs.GlobalWorkerOptions.workerSrc =
-    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.mjs';
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.mjs";
 
-  export let url = '';
+  export let url = "";
   let canvasContainer: HTMLDivElement;
 
   async function renderPage(page: pdfjs.PDFPageProxy) {
-    const viewport = page.getViewport({scale: 1.2});
+    const viewport = page.getViewport({ scale: 1.2 });
 
-    const wrapper = document.createElement('div');
-    wrapper.style.marginBottom = '16px';
-    wrapper.style.position = 'relative';
+    const wrapper = document.createElement("div");
+    wrapper.style.marginBottom = "16px";
+    wrapper.style.position = "relative";
     wrapper.id = `page-${page._pageIndex + 1}`;
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
 
     if (!ctx) {
       return;
@@ -32,8 +32,8 @@
       viewport: viewport,
     });
 
-    const textLayer = document.createElement('div');
-    textLayer.className = 'textLayer';
+    const textLayer = document.createElement("div");
+    textLayer.className = "textLayer";
     const textContent = await page.getTextContent();
     pdfjs.renderTextLayer({
       textContentSource: textContent,

@@ -1,17 +1,17 @@
-import type {PageLoad} from './$types';
-import type {Scores} from '$s/scores';
-import {api, getErrorMessage} from '$api';
+import type {Scores} from '$s/scores'
+import type {PageLoad} from './$types'
+import {api, getErrorMessage} from '$api'
 
 export const load = (async () => {
   try {
-    const {data} = await api.get<Scores>('/scores');
+    const {data} = await api.get<Scores>('/scores')
 
     return {
       scores: data,
-    };
-  } catch (err) {
+    }
+  } catch (error) {
     return {
-      error: getErrorMessage(err),
-    };
+      error: getErrorMessage(error),
+    }
   }
-}) satisfies PageLoad;
+}) satisfies PageLoad
