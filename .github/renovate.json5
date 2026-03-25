@@ -3,11 +3,5 @@
   extends: ['github>marcusrbrown/renovate-config#v4'],
   constraints: {python: '3.14'},
   packageRules: [{matchDepNames: ['python'], allowedVersions: '<=3.14'}],
-  postUpgradeTasks: {
-    commands: ['poetry lock'],
-    executionMode: 'branch',
-    fileFilters: ['poetry.lock'],
-    installTools: {python: {}, poetry: {}},
-  },
   rebaseWhen: 'behind-base-branch',
 }
