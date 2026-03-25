@@ -1,12 +1,12 @@
-import {describe, it, expect} from 'vitest';
+import {describe, expect, it} from 'vitest'
 
 describe('project setup', () => {
   it('should have correct Node.js version range', () => {
-    const major = parseInt(process.version.slice(1).split('.')[0] ?? '0', 10);
-    expect(major).toBeGreaterThanOrEqual(16);
-  });
+    const major = Number.parseInt(process.version.slice(1).split('.')[0] ?? '0', 10)
+    expect(major).toBeGreaterThanOrEqual(16)
+  })
 
   it('should have required environment support for ES modules', () => {
-    expect(typeof import.meta.url).toBe('string');
-  });
-});
+    expect(typeof import.meta.url).toBe('string')
+  })
+})

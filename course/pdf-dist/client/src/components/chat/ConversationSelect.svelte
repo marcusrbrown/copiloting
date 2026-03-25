@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type {Conversation} from '$s/chat';
-  import {onMount} from 'svelte';
-  import {setActiveConversationId} from '$s/chat';
+  import type { Conversation } from "$s/chat";
+  import { onMount } from "svelte";
+  import { setActiveConversationId } from "$s/chat";
 
   export let conversations: Conversation[] = [];
   let isOpen = false;
@@ -13,8 +13,8 @@
   }
 
   onMount(() => {
-    window.addEventListener('click', (e: any) => {
-      if (e.target && !e.target.closest('.relative')) {
+    window.addEventListener("click", (e: any) => {
+      if (e.target && !e.target.closest(".relative")) {
         isOpen = false;
       }
     });

@@ -1,32 +1,32 @@
-import {writable as base} from 'svelte/store';
-import produce, {enableMapSet} from 'immer';
+import produce, {enableMapSet} from 'immer'
+import {writable as base} from 'svelte/store'
 
-enableMapSet();
+enableMapSet()
 
 export interface Writable<T> {
-  set(this: void, value: T): void;
-  update(this: void, updater: (value: T) => void): void;
-  subscribe(this: void, run: (value: T) => void): () => void;
-  get(): T;
+  set: (this: void, value: T) => void
+  update: (this: void, updater: (value: T) => void) => void
+  subscribe: (this: void, run: (value: T) => void) => () => void
+  get: () => T
 }
 
 export const writable = <T>(value: T): Writable<T> => {
-  const store = base(value);
+  const store = base(value)
 
-  let val = value;
-  store.subscribe((v) => {
-    val = v;
-  });
+  let val = value
+  store.subscribe(v => {
+    val = v
+  })
 
   return {
     ...store,
     get: () => {
-      return val;
+      return val
     },
     update: (fn: (value: T) => void) => {
-      store.update((value) => {
-        return produce(value, fn);
-      });
+      store.update(value => {
+        return produce(value, fn)
+      })
     },
-  };
-};
+  }
+}

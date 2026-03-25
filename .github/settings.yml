@@ -10,7 +10,7 @@ branches:
     protection:
       required_status_checks:
         strict: true
-        contexts: [Fro Bot, Build Node.js, Build Python, 'Renovate / Renovate']
+        contexts: [Fro Bot, Build Node.js, Build Python, Renovate / Renovate]
       enforce_admins: true
       required_pull_request_reviews: null
       restrictions: null

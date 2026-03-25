@@ -1,15 +1,15 @@
 <script lang="ts">
-  import c from 'classnames';
+  import c from "classnames";
 
-  export let name = '';
+  export let name = "";
   export let outlined = false;
-  export let size = '16px';
-  export let klass = '';
+  export let size = "16px";
+  export let klass = "";
 
   const klasses = c(
     {
-      'material-icons-outlined': outlined,
-      'material-icons': !outlined,
+      "material-icons-outlined": outlined,
+      "material-icons": !outlined,
     },
     klass,
   );

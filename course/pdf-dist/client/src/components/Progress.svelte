@@ -1,5 +1,5 @@
 <script>
-  import {tweened} from 'svelte/motion';
+  import { tweened } from "svelte/motion";
 
   export let progress = 0;
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import {onMount} from 'svelte';
-  import {goto, beforeNavigate} from '$app/navigation';
-  import {signout, clearErrors} from '$s/auth';
+  import { onMount } from "svelte";
+  import { goto, beforeNavigate } from "$app/navigation";
+  import { signout, clearErrors } from "$s/auth";
 
   let timeout: NodeJS.Timeout | null = null;
 
@@ -9,7 +9,7 @@
     await signout();
 
     timeout = setTimeout(() => {
-      goto('/');
+      goto("/");
     }, 2500);
   });
 

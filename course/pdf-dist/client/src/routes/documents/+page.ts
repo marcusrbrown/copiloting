@@ -1,16 +1,16 @@
-import type {Document} from '$s/documents';
-import type {PageLoad} from './$types';
-import {api, getErrorMessage} from '$api';
+import type {Document} from '$s/documents'
+import type {PageLoad} from './$types'
+import {api, getErrorMessage} from '$api'
 
 export const load = (async () => {
   try {
-    const {data} = await api.get<Document[]>('/pdfs');
+    const {data} = await api.get<Document[]>('/pdfs')
     return {
       documents: data,
-    };
-  } catch (err) {
+    }
+  } catch (error) {
     return {
-      error: getErrorMessage(err),
-    };
+      error: getErrorMessage(error),
+    }
   }
-}) satisfies PageLoad;
+}) satisfies PageLoad

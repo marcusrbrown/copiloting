@@ -2,6 +2,7 @@
 _.path = [
   "./node_modules/.bin",
 ]
+
 _.python.venv = { path = ".venv", create = true }
 
 [tools]

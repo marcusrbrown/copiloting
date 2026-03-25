@@ -1,23 +1,23 @@
 <script lang="ts">
-  import {onMount} from 'svelte';
+  import { onMount } from "svelte";
   import {
     store,
     resetError,
     fetchConversations,
     createConversation,
     getActiveConversation,
-  } from '$s/chat';
-  import Alert from '$c/Alert.svelte';
-  import ChatInput from '$c/chat/ChatInput.svelte';
-  import ChatList from '$c/chat/ChatList.svelte';
-  import ConversationSelect from '$c/chat/ConversationSelect.svelte';
+  } from "$s/chat";
+  import Alert from "$c/Alert.svelte";
+  import ChatInput from "$c/chat/ChatInput.svelte";
+  import ChatList from "$c/chat/ChatList.svelte";
+  import ConversationSelect from "$c/chat/ConversationSelect.svelte";
 
   export let onSubmit: (text: string, useStreaming: boolean) => void;
   export let documentId: number;
 
-  let useStreaming = !!localStorage.getItem('streaming');
+  let useStreaming = !!localStorage.getItem("streaming");
 
-  $: localStorage.setItem('streaming', useStreaming ? 'true' : '');
+  $: localStorage.setItem("streaming", useStreaming ? "true" : "");
   $: activeConversation = $store.activeConversationId
     ? getActiveConversation()
     : null;

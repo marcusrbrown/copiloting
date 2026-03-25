@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type {PageData} from './$types';
-  import AuthGuard from '$c/AuthGuard.svelte';
+  import type { PageData } from "./$types";
+  import AuthGuard from "$c/AuthGuard.svelte";
 
   export let data: PageData;
 

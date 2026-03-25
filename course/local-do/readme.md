@@ -13,7 +13,7 @@ poetry install
 poetry run python app.py
 ```
 
-# Notes
+## Notes
 
 - In the PDF app `.env`, set `UPLOAD_URL=http://localhost:8050`
 - Restart the PDF app after changing `UPLOAD_URL`

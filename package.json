@@ -1,43 +1,50 @@
 {
   "name": "copiloting",
-  "private": true,
   "version": "0.0.0-development",
-  "packageManager": "pnpm@10.32.1",
+  "private": true,
   "description": "Some experiments with AI copilots",
-  "author": "Marcus R. Brown <contact@marcusrbrown.com>",
-  "license": "MIT",
-  "engines": {
-    "node": ">=16",
-    "pnpm": ">=10.28.2"
+  "keywords": [
+    "GitHub Copilot"
+  ],
+  "homepage": "https://github.com/marcusrbrown/copiloting#readme",
+  "bugs": {
+    "url": "https://github.com/marcusrbrown/copiloting/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcusrbrown/copiloting.git"
   },
-  "keywords": [
-    "GitHub Copilot"
-  ],
-  "bugs": {
-    "url": "https://github.com/marcusrbrown/copiloting/issues"
-  },
-  "homepage": "https://github.com/marcusrbrown/copiloting#readme",
+  "license": "MIT",
+  "author": "Marcus R. Brown <contact@marcusrbrown.com>",
+  "type": "module",
   "scripts": {
     "build": "pnpm -r run build",
-    "check-format": "prettier --check .",
-    "format": "prettier --write .",
+    "fix": "eslint --fix",
+    "lint": "eslint",
     "test": "vitest run"
   },
+  "dependencies": {
+    "langchain": "0.0.212"
+  },
   "devDependencies": {
-    "@tsconfig/strictest": "2.0.8",
+    "@bfra.me/eslint-config": "0.50.1",
+    "@bfra.me/prettier-config": "0.16.7",
+    "@bfra.me/tsconfig": "0.12.2",
     "@types/node": "20.19.37",
     "dotenv": "16.6.1",
+    "eslint": "10.1.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.5",
+    "jiti": "2.6.1",
     "prettier": "3.8.1",
     "prettier-plugin-svelte": "3.5.1",
     "rimraf": "5.0.10",
     "typescript": "5.9.3",
     "vitest": "^2.1.9"
   },
-  "dependencies": {
-    "langchain": "0.0.212"
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=10.28.2"
   }
 }

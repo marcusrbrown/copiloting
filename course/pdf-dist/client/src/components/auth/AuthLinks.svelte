@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {auth} from '$s/auth';
+  import { auth } from "$s/auth";
 </script>
 
 {#if $auth.user}

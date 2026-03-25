@@ -1,9 +1,9 @@
 <script lang="ts">
-  import {goto, beforeNavigate} from '$app/navigation';
-  import Alert from '$c/Alert.svelte';
-  import Button from '$c/Button.svelte';
-  import {documents, upload, clearErrors} from '$s/documents';
-  import Progress from '$c/Progress.svelte';
+  import { goto, beforeNavigate } from "$app/navigation";
+  import Alert from "$c/Alert.svelte";
+  import Button from "$c/Button.svelte";
+  import { documents, upload, clearErrors } from "$s/documents";
+  import Progress from "$c/Progress.svelte";
 
   let files: FileList;
   let loading = false;
@@ -16,7 +16,7 @@
       uploadComplete = true;
 
       setTimeout(() => {
-        goto('/documents');
+        goto("/documents");
         loading = false;
       }, 2000);
     } else {
