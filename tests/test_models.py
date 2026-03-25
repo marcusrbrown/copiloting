@@ -3,6 +3,27 @@
 import pytest
 
 
+class TestBaseModel:
+    """Tests for the BaseModel mixin methods."""
+
+    def test_update_does_not_change_id(self, app):
+        """update() must never mutate the primary key."""
+        from app.web.db.models import User
+
+        user = User.create(email="nopk@example.com", password="pw")
+        original_id = user.id
+        user.update(id=999, email="changed@example.com")
+        assert user.id == original_id
+
+    def test_update_changes_non_pk_attribute(self, app):
+        """update() should update non-PK attributes normally."""
+        from app.web.db.models import User
+
+        user = User.create(email="before@example.com", password="pw")
+        user.update(email="after@example.com")
+        assert user.email == "after@example.com"
+
+
 class TestUserModel:
     """Tests for the User model."""
 

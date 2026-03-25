@@ -52,7 +52,7 @@ class BaseModel(db.Model):
 
     def update(self, commit=True, **kwargs):
         for attr, value in kwargs.items():
-            if attr != ["id"]:
+            if attr != "id":
                 setattr(self, attr, value)
         if commit:
             return self.save()
