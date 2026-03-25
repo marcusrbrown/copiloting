@@ -1,14 +1,9 @@
 {
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
   extends: ['github>marcusrbrown/renovate-config#v4'],
-  constraints: {
-    python: '3.14',
-  },
+  constraints: {python: '3.14'},
   packageRules: [
-    {
-      matchDepNames: ['python'],
-      allowedVersions: '<=3.14',
-    },
+    {matchDepNames: ['python'], allowedVersions: '<=3.14'},
     {
       matchManagers: ['poetry'],
       postUpgradeTasks: {
@@ -16,8 +11,8 @@
         executionMode: 'branch',
         fileFilters: ['poetry.lock'],
         installTools: {
-          python: {constraint: '3.14'},
           poetry: {},
+          packageRules: [{matchCategories: ['python'], constraint: '3.14'}],
         },
       },
     },
