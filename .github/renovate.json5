@@ -11,18 +11,12 @@
     },
   ],
   postUpgradeTasks: {
-    commands: ['pnpm format', 'poetry lock'],
+    commands: ['poetry lock'],
     executionMode: 'branch',
+    fileFilters: ['poetry.lock'],
     installTools: {
-      pnpm: {},
-      python: {},
+      python: {constraint: '3.14'},
       poetry: {},
-      packageRules: [
-        {
-          matchCategories: ['python'],
-          constraint: '3.14',
-        },
-      ],
     },
   },
 }
