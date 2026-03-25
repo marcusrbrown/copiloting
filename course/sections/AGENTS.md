@@ -38,14 +38,14 @@ sections/
 
 ## CONVENTIONS
 
-- All modules use `langchain==0.0.352` (Python) — not compatible with modern langchain 0.1+/0.3+ APIs
+- **Stale imports**: deps are now langchain `^0.3`, chromadb `^1.0`, pydantic `^2.10`, but code still uses old `0.0.352`-era imports — needs migration
 - `load_dotenv()` called at module init — reads from root `.env`
 - Each module is runnable via `poetry run <script>` from repo root (defined in root `pyproject.toml`)
 - SQLite DB for agents demo: `agents/db.sqlite`
 
 ## ANTI-PATTERNS
 
-- Do not use modern langchain imports (`from langchain_openai import ...`) — only `langchain.llms.openai`, `langchain.chat_models`, etc. work at `0.0.352`
+- Do not mix old and new langchain import styles in the same file — either migrate fully or leave on old imports
 - Do not add new Poetry scripts here — they're declared in root `pyproject.toml`, not this `pyproject.toml`
 
 ## COMMANDS

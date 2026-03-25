@@ -42,7 +42,7 @@ pdf-dist/
 ## ANTI-PATTERNS
 
 - Do not use `pip install` — this is a Poetry project (`poetry install` from repo root)
-- Flask app uses `langchain==0.0.x` — modern langchain chain APIs don't apply here
+- Python deps were upgraded (langchain 0.3, openai v1, pydantic v2) but application code still uses old import paths — check actual imports before writing new code
 - `instance/sqlite.db` and `dump.rdb` are local dev artifacts — not production state
 
 ## COMMANDS
