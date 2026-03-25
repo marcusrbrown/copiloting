@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from langchain.schema import BaseChatMessageHistory
+from langchain_core.chat_history import BaseChatMessageHistory
 
 from app.web.api import add_message_to_conversation, get_messages_by_conversation_id
 

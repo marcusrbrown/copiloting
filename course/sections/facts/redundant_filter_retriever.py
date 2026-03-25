@@ -1,7 +1,7 @@
-from langchain.embeddings.base import Embeddings
-from langchain.schema import BaseRetriever
-from langchain.schema.document import Document
-from langchain.vectorstores.chroma import Chroma
+from langchain_core.embeddings import Embeddings
+from langchain_core.retrievers import BaseRetriever
+from langchain_core.documents import Document
+from langchain_community.vectorstores import Chroma
 from typing import List
 
 

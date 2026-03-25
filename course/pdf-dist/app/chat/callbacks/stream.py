@@ -1,9 +1,9 @@
 from queue import Queue
 from typing import Any, Dict, List, Optional
 from uuid import UUID
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.schema.messages import BaseMessage
-from langchain.schema.output import LLMResult
+from langchain_core.callbacks import BaseCallbackHandler
+from langchain_core.messages import BaseMessage
+from langchain_core.outputs import LLMResult
 
 
 class StreamingHandler(BaseCallbackHandler):

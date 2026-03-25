@@ -1,13 +1,13 @@
 from dotenv import load_dotenv
 from langchain.agents import AgentExecutor, OpenAIFunctionsAgent
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import (
     ChatPromptTemplate,
     HumanMessagePromptTemplate,
     MessagesPlaceholder,
 )
-from langchain.schema import SystemMessage
+from langchain_core.messages import SystemMessage
 
 from .handlers.chat_model_start_handler import ChatModelStartHandler
 from .tools.report import write_report_tool

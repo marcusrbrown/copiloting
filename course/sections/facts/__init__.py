@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI
 from langchain.document_loaders import TextLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.vectorstores.chroma import Chroma
+from langchain_community.vectorstores import Chroma
 
 from course.sections.utilities import get_module_path
 from .redundant_filter_retriever import RedundantFilterRetriever
