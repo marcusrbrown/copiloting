@@ -1,0 +1,211 @@
+---
+name: Fro Bot Autoheal
+
+'on':
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: Custom autoheal prompt (leave empty for default)
+        type: string
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fro-bot-autoheal
+  cancel-in-progress: false
+
+env:
+  AUTOHEAL_PROMPT: |
+    Perform daily repository autohealing for copiloting — a polyglot
+    Python 3.14 (Poetry) + TypeScript (pnpm 10) AI/LLM experimentation
+    monorepo with a Flask + SvelteKit PDF chat app.
+    Read AGENTS.md for full project conventions before making changes.
+
+    EXECUTION MODEL
+    Analyze all categories independently, but perform write actions serially.
+    Do not keep multiple branches checked out at once. Complete one mutation,
+    return to a clean working tree, then continue.
+
+    DEDUPLICATION (applies to ALL categories)
+    Before creating any new PR or issue, search for an existing open
+    bot-authored PR/issue for the same root cause. Reuse or update the
+    existing item instead of creating a duplicate.
+
+    SCOPE CAP
+    If the smallest safe fix is not clearly minimal and reversible (e.g.,
+    broad refactor, architecture change, or many-file edit), do not
+    auto-heal it. Open or update an issue and log it under "Needs Human
+    Attention".
+
+    DEPENDENCY OWNERSHIP
+    Renovate owns routine dependency/version bumps. You may change dependency
+    versions only when remediating a confirmed security advisory
+    (critical/high) or repairing an existing security-update PR. Do not
+    create non-security version-bump PRs. Do NOT modify pyproject.toml or
+    package.json versions outside category 2 security remediation.
+
+    1. ERRORED PRs
+       Find open PRs with failing CI checks. Skip dependency/security update
+       PRs here; handle them only in category 2.
+       Only fix PRs whose head branch is in this repository, writable by
+       this token, and authored by a trusted source (repository
+       owner/collaborator or an approved automation bot such as
+       Renovate/Dependabot). If author trust cannot be established, skip
+       the PR and log it under "Needs Human Attention".
+       If the PR touches workflows, automation prompts, package-manager
+       config, lockfiles, or execution scripts, do not run project commands
+       from that branch. Skip it and log why.
+       For each fixable PR:
+       a. Check out the PR branch.
+       b. Read the failing check logs to diagnose the root cause.
+       c. Fix the issue — common failures in this repo:
+          - `pnpm check-format` failure → run `pnpm format` and commit
+          - `pnpm build` failure → fix TS compilation errors
+          - `poetry install` failure → run `poetry lock` if lock file is stale
+       d. Commit with a clear message and push to the PR branch.
+       e. Comment on the PR explaining what failed and what was fixed.
+
+    2. SECURITY
+       Review Dependabot/Renovate alerts and open PRs for vulnerable deps.
+       - If a security update PR exists but has conflicts or failures,
+         fix and push to that PR branch.
+       - For unaddressed critical/high advisories with no existing PR,
+         create a new PR with the remediation.
+       - Do NOT bulk-update unrelated deps in a security PR.
+       If security advisory/alert data is unavailable to the token or CLI,
+       skip this category and note "security alerts unavailable" under
+       "Needs Human Attention". Do not guess.
+
+    3. CODE QUALITY & PROGRESSIVE IMPROVEMENT
+       This category drives the repo toward health over time. Focus on
+       things only a code-aware agent can catch:
+
+       a. STALE PYTHON IMPORTS (highest priority progressive task)
+          Python deps were upgraded (langchain ^0.3, openai ^1.10,
+          pydantic ^2.10, chromadb ^1.0) but application code still uses
+          old import paths. Per file:
+          - `from langchain.chat_models import ChatOpenAI` → `from langchain_openai import ChatOpenAI`
+          - `from langchain.llms import OpenAI` → `from langchain_openai import OpenAI`
+          - `import openai; openai.ChatCompletion.create(...)` → new client API
+          - pydantic v1 validators → pydantic v2 model_validator/field_validator
+          Only migrate ONE file per run to keep diffs minimal and reviewable.
+          Open a PR for each migration. Test with `poetry install` after changes.
+
+       b. CONVENTION COMPLIANCE
+          Verify: no `any` type annotations in .ts files, no CommonJS
+          require() calls, .js extensions on all TS import paths, no npm/yarn
+          usage. Report findings but put code fixes into category 4.
+
+       c. AGENTS.md ACCURACY
+          Check that AGENTS.md files accurately reflect current directory
+          structure. If drift is found, open a PR with corrections.
+
+    4. DEVELOPER EXPERIENCE
+       Ensure consistent linting, formatting, and static analysis.
+       Run `pnpm check-format`; run `pnpm build`. Fix any failures.
+       Open a PR for all fixes — never commit directly to the default
+       branch. Group related lint/format fixes into a single PR.
+
+    Hard boundaries:
+    - Never force-push, rewrite history, or delete branches.
+    - Never push directly to the default branch.
+    - Never merge PRs, submit reviews/approvals, close/reopen PRs or
+      issues, or modify branch protection.
+    - Never modify secrets, org settings, environments, or branch
+      protection.
+    - Never make checks pass by disabling tests, deleting failing
+      assertions, weakening lint/type rules, or editing workflows only
+      to suppress failures.
+    - Do not modify .github/workflows/, lint/test/build config, or
+      automation prompt files unless the failing run is caused by a
+      genuine bug in that file and the change is narrowly scoped.
+    - If the smallest safe fix would weaken a guardrail, skip it and
+      log it under "Needs Human Attention".
+
+    Project conventions (MUST follow for code changes):
+    - TypeScript strict mode: no `any`, no `@ts-ignore`, no `@ts-expect-error`
+    - Pure ESM only: no `require()`, no `module.exports`
+    - .js extensions in all TypeScript import paths
+    - Package managers: pnpm 10 for JS/TS, Poetry for Python
+    - Prettier: singleQuote, no bracketSpacing, tabWidth 2
+    - Python ^3.14 via Poetry; each subdirectory has its own pyproject.toml
+    - GitHub Actions pinned by full SHA hash
+    - YAML extension: .yaml, not .yml
+
+    OUTPUT FORMAT — SINGLE SUMMARY ISSUE
+    After completing all work, find an existing open issue titled
+    "Daily Autohealing Report — YYYY-MM-DD" (using today's UTC date).
+    If it exists, update its body. If not, create it.
+
+    The issue body MUST use this structure. If a section has no rows, do
+    not emit an empty table — write "None." directly under that heading.
+
+    ## Daily Autohealing Report — YYYY-MM-DD (UTC)
+
+    ### Errored PRs
+    | PR | Failure | Fix | Status |
+    | --- | --- | --- | --- |
+    | #N | [root cause] | [what was fixed] | ✅ Fixed / ⚠️ Needs review |
+
+    ### Security
+    | Advisory / PR | Severity | Action Taken |
+    | --- | --- | --- |
+    | [advisory or #N] | Critical/High/Medium | [fix pushed / PR created / skipped] |
+
+    ### Code Quality & Progressive Improvement
+    | Check | Result | Action |
+    | --- | --- | --- |
+    | Stale imports | N files remaining | [#N migrated or None] |
+    | Convention compliance | ✅ Clean / ⚠️ Issues | [details or #N] |
+    | AGENTS.md accuracy | ✅ Current / ⚠️ Drifted | [#N or None] |
+
+    ### Developer Experience
+    - [list of each PR or fix with summary link]
+
+    ### Needs Human Attention
+    - [items that could not be auto-fixed, with context]
+
+    Do NOT create multiple issues. Do NOT comment on individual issues.
+    Produce exactly one summary issue per run.
+
+jobs:
+  fro-bot-autoheal:
+    name: Fro Bot Autoheal
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.FRO_BOT_PAT }}
+
+      - name: Setup environment
+        uses: ./.github/actions/setup
+
+      - name: Install Node.js dependencies
+        run: pnpm install --frozen-lockfile --strict-peer-dependencies
+
+      - name: Build Node.js workspaces
+        run: pnpm build
+
+      - name: Install Python dependencies
+        run: poetry install
+
+      - name: Run Fro Bot
+        uses: fro-bot/agent@v0
+        env:
+          OPENCODE_PROMPT_ARTIFACT: 'true'
+        with:
+          auth-json: ${{ secrets.OPENCODE_AUTH_JSON }}
+          github-token: ${{ secrets.FRO_BOT_PAT }}
+          prompt: ${{ github.event.inputs.prompt || env.AUTOHEAL_PROMPT }}
