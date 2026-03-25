@@ -10,7 +10,7 @@
         commands: ['poetry lock'],
         executionMode: 'branch',
         fileFilters: ['poetry.lock'],
-        installTools: {poetry: {}},
+        installTools: {python: {}, poetry: {}},
       },
     },
   ],
