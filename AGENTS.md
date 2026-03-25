@@ -1,12 +1,14 @@
 # AGENTS.md
 
-**Generated:** 2026-03-23 | **Commit:** 89328ad | **Branch:** main
+**Generated:** 2026-03-25 | **Commit:** 7af32e0 | **Branch:** main
 
 ## OVERVIEW
 
 Polyglot AI/LLM experimentation monorepo — LangChain-based copilot experiments. Contains a production-ish Flask + SvelteKit PDF chat app (`course/pdf-dist`) and standalone Python/TypeScript tutorial scripts. Course/exploration code, not a shipped product.
 
-**Stack:** Python 3.11.7 (Poetry) · TypeScript 5.3 (pnpm) · Flask · SvelteKit · LangChain (old 0.0.x) · OpenAI · Pinecone · Redis · Celery · SQLAlchemy
+**Stack:** Python 3.14 (Poetry) · TypeScript 5.3 (pnpm 10) · Flask · SvelteKit · LangChain 0.3 · OpenAI v1 · Pinecone · Redis · Celery · SQLAlchemy
+
+**Tooling:** mise (tool version manager) · Renovate (automated dependency updates)
 
 ## STRUCTURE
 
@@ -24,7 +26,8 @@ copiloting/
 ├── copiloting/          # Empty Python stub (ignore)
 ├── package.json         # Root pnpm workspace + Prettier scripts
 ├── pyproject.toml       # Root Poetry config — defines CLI entry points
-├── pnpm-workspace.yaml  # JS workspaces: tutorials, course/pdf-dist/client
+├── pnpm-workspace.yaml  # JS workspaces + pnpm settings (replaces .npmrc)
+├── mise.toml            # Tool versions: python, node, pnpm, poetry
 └── tsconfig.json        # Extends @tsconfig/strictest, ES2022, nodenext
 ```
 
@@ -44,23 +47,28 @@ copiloting/
 | Celery worker           | `course/pdf-dist/app/celery/worker.py`                     |
 | Env vars                | `.env.template` (safe) / `.env` (real keys — do not share) |
 | CI pipeline             | `.github/workflows/ci.yaml`                                |
+| Tool versions           | `mise.toml`                                                |
+| Renovate config         | `.github/renovate.json5`                                   |
 
 ## CONVENTIONS
 
+- **Tool management**: mise manages all tool versions (Python, Node, pnpm, Poetry) — see `mise.toml`
 - **TypeScript**: Extends `@tsconfig/strictest` — maximum strictness; no `any`, no suppression
 - **Module format**: `"module": "nodenext"` — requires `.js` extensions in TS imports
 - **Prettier**: `singleQuote: true`, `bracketSpacing: false`, `tabWidth: 2`; `.svelte` files use svelte parser
-- **Python**: pinned to `3.11.7`, managed by Poetry; each subdirectory is an independent Poetry project
-- **Package manager**: pnpm `≥7` only for JS/TS — never npm or yarn in this repo
+- **Python**: `^3.14`, managed by Poetry; each subdirectory is an independent Poetry project
+- **Package manager**: pnpm 10 only for JS/TS — never npm or yarn in this repo
+- **pnpm settings**: Configured in `pnpm-workspace.yaml` (not `.npmrc`)
 - **Line endings**: LF, enforced by EditorConfig across all files
 - **SvelteKit path aliases**: `$c` → `src/components`, `$s` → `src/store`, `$api` → `src/api/axios.js`
+- **GitHub Actions**: Pin actions by full SHA hash (security practice); Renovate updates them
 
 ## ANTI-PATTERNS
 
 - **`.env` contains real committed secrets** — never copy or commit actual API keys
-- **LangChain versions are ancient**: JS at `0.0.212`, Python at `0.0.352` — modern LangChain docs don't apply; imports and APIs are completely different
 - **No tests** — `pnpm test` intentionally exits with error; no pytest setup exists
 - **`copiloting/__init__.py`** is an empty stub — not a real importable package
+- **Python code imports are stale** — deps were recently upgraded (pydantic v2, openai v1, langchain 0.3, chromadb 1.x) but application code has not been updated to match new APIs
 
 ## COMMANDS
 
@@ -71,25 +79,21 @@ pnpm build                           # build all workspaces recursively
 pnpm check-format                    # Prettier format check (runs in CI)
 pnpm format                          # Prettier auto-fix
 
-# Run TypeScript tutorial (requires SERPAPI_API_KEY + OPENAI_API_KEY in .env)
-pnpm -C tutorials run start:quickstart-llms
-
-# SvelteKit dev server
-pnpm -C course/pdf-dist/client run dev
-
 # From repo root — Python
 poetry install                       # install all Python deps
-poetry run agents                    # SQL agent demo (course/sections/agents)
-poetry run course                    # LangChain chain demo (course/sections/chain)
-poetry run facts                     # facts RAG demo (course/sections/facts)
-poetry run facts-create-embeddings   # create Chroma embeddings
-poetry run tchat                     # terminal chat demo
+poetry lock                          # regenerate lock file
+
+# Verification (run before committing)
+pnpm check-format                    # must pass
+pnpm build                           # must pass
+poetry install                       # must pass
 ```
 
 ## NOTES
 
 - Renovate auto-updates deps; CI action pins use full SHA hashes (security practice)
+- Renovate `postUpgradeTasks` runs `poetry lock` for Python dep updates (scoped to poetry manager)
 - CI runs format check + build for Node, `poetry install` only for Python (no lint/test)
-- `poetry.lock` (388KB) covers all Poetry groups including `pdf-dist` and `sections` path deps
+- `poetry.lock` covers all Poetry groups including `pdf-dist` and `sections` path deps
 - Both `pnpm` and `poetry` run independently — no cross-language tooling bridge
 - `course/pdf-dist` has its own `dump.rdb` and `instance/sqlite.db` — local dev state artifacts
