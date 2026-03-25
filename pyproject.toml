@@ -17,7 +17,7 @@ python = "^3.14"
 [tool.poetry.group.main.dependencies]
 pydantic = "^2.10"
 python-dotenv = "^1.0"
-openai = "^1.10"
+openai = "^2.30"
 langchain = "^0.3"
 langchain-openai = ">=0.3,<1.0"
 langchain-community = ">=0.3,<1.0"
