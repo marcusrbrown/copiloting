@@ -1,7 +1,7 @@
 import sqlite3
 from pydantic import BaseModel
 from typing import Any, List
-from langchain.tools import Tool
+from langchain_core.tools import Tool
 
 from course.sections.utilities import get_module_path
 

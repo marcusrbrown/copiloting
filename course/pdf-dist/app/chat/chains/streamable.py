@@ -3,8 +3,8 @@ from threading import Thread
 from typing import Any, Optional
 from flask import current_app
 from langchain.chains.base import Chain
-from langchain.schema.runnable.config import RunnableConfig
-from langchain.schema.runnable.utils import Input
+from langchain_core.runnables import RunnableConfig
+from langchain_core.runnables.utils import Input
 
 from app.chat.callbacks.stream import StreamingHandler
 

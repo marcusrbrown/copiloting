@@ -137,7 +137,7 @@ class TestMessageModel:
 
     def test_message_as_lc_message_human(self, app):
         """Test converting a human message to a LangChain message."""
-        from langchain.schema.messages import HumanMessage
+        from langchain_core.messages import HumanMessage
         from app.web.db.models import User, Pdf, Conversation, Message
 
         user = User.create(email="lc1@example.com", password="pw")
@@ -152,7 +152,7 @@ class TestMessageModel:
 
     def test_message_as_lc_message_ai(self, app):
         """Test converting an AI message to a LangChain message."""
-        from langchain.schema.messages import AIMessage
+        from langchain_core.messages import AIMessage
         from app.web.db.models import User, Pdf, Conversation, Message
 
         user = User.create(email="lc2@example.com", password="pw")
@@ -167,7 +167,7 @@ class TestMessageModel:
 
     def test_message_as_lc_message_system(self, app):
         """Test converting a system message to a LangChain message."""
-        from langchain.schema.messages import SystemMessage
+        from langchain_core.messages import SystemMessage
         from app.web.db.models import User, Pdf, Conversation, Message
 
         user = User.create(email="lc3@example.com", password="pw")

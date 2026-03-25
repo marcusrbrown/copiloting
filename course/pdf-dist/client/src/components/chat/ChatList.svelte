@@ -31,5 +31,5 @@
       {/if}
     {/each}
   </div>
-  <div class="pt-4" use:scrollIntoView={messages} />
+  <div class="pt-4" use:scrollIntoView={messages}></div>
 </div>

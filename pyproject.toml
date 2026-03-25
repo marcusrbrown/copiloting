@@ -17,9 +17,9 @@ python = "^3.14"
 [tool.poetry.group.main.dependencies]
 pydantic = "^2.10"
 python-dotenv = "^1.0"
-openai = "^1.10"
-langchain = "^0.3"
-langchain-openai = ">=0.3,<1.0"
+openai = "^2.0"
+langchain = "^1.2"
+langchain-openai = "^1.1"
 langchain-community = ">=0.3,<1.0"
 tiktoken = "^0.12"
 
@@ -37,7 +37,7 @@ facts-create-embeddings = "course.sections.facts:create_embeddings"
 tchat = "course.sections.tchat:main"
 
 [tool.poetry.group.dev.dependencies]
-ipykernel = "^6.30"
+ipykernel = "^7.2"
 matplotlib = "^3.10"
 pytest = "^9.0.2"
 

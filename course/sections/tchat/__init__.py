@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from langchain.chains import LLMChain
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationSummaryMemory
-from langchain.prompts import (
+from langchain_core.prompts import (
     ChatPromptTemplate,
     HumanMessagePromptTemplate,
     MessagesPlaceholder,

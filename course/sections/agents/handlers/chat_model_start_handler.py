@@ -1,6 +1,6 @@
 from typing import Any, Dict, List
-from langchain.callbacks.base import BaseCallbackHandler
-from langchain.schema.messages import BaseMessage
+from langchain_core.callbacks.base import BaseCallbackHandler
+from langchain_core.messages import BaseMessage
 from pyboxen import boxen
 
 
