@@ -15,11 +15,11 @@ packages = []
 python = "^3.14"
 
 [tool.poetry.group.main.dependencies]
-pydantic = "1.10.14"
-python-dotenv = "1.0.1"
-openai = "0.28.1"
-langchain = "0.0.352"
-tiktoken = "0.5.2"
+pydantic = "^2.10"
+python-dotenv = "^1.0"
+openai = "^1.10"
+langchain = "^0.3"
+tiktoken = "^0.12"
 
 [tool.poetry.group.pdf-dist.dependencies]
 pdf-dist = { path = "course/pdf-dist", develop = true }
@@ -35,5 +35,5 @@ facts-create-embeddings = "course.sections.facts:create_embeddings"
 tchat = "course.sections.tchat:main"
 
 [tool.poetry.group.dev.dependencies]
-ipykernel = "6.29.0"
-matplotlib = "3.8.2"
+ipykernel = "^6.30"
+matplotlib = "^3.10"
