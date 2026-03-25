@@ -55,11 +55,11 @@ chat/
 - Component names are stored in the `Conversation` DB record; reused on subsequent messages to same conversation
 - `ChatArgs` carries `conversation_id`, `pdf_id`, `metadata`, `streaming: bool`
 - `TraceableChain` + `StreamableChain` applied as mixins before `ConversationalRetrievalChain` in MRO
-- langchain 0.0.352 Python — use `from langchain.chat_models import ChatOpenAI`, NOT `from langchain_openai import ...`
+- **Stale imports**: deps are now langchain `^0.3` / openai `^1.10` / pydantic `^2.10`, but the code still uses old `0.0.352`-era imports. The correct modern imports (`from langchain_openai import ChatOpenAI`) are installed but the code hasn't been migrated yet.
 
 ## ANTI-PATTERNS
 
-- Do not import from `langchain_openai`, `langchain_community`, etc. — those packages don't exist at `0.0.352`
+- Do not mix old and new langchain import styles in the same file — either migrate a file fully or leave it on old imports
 - Do not bypass `build_chat()` — component selection + persistence must go through it
 - Do not call DB layer directly from chat — use `app.web.api` functions
 
