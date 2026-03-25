@@ -94,11 +94,6 @@ jobs:
   fro-bot:
     name: Fro Bot
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
     if: >-
       (
         github.event.pull_request == null ||
@@ -129,7 +124,7 @@ jobs:
       )
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
           ref: >-
@@ -138,12 +133,7 @@ jobs:
               || github.event.pull_request.head.sha
               || ''
             }}
-          token: >-
-            ${{
-              github.event_name == 'workflow_dispatch'
-              && secrets.GITHUB_TOKEN
-              || secrets.FRO_BOT_PAT
-            }}
+          token: ${{ secrets.FRO_BOT_PAT }}
 
       - name: Setup environment
         uses: ./.github/actions/setup
@@ -158,7 +148,7 @@ jobs:
         run: poetry install
 
       - name: Run Fro Bot
-        uses: fro-bot/agent@v0
+        uses: fro-bot/agent@9083d9d3fe350d32c4917bd0312fe78f241ad0aa # v0.32.1
         env:
           OPENCODE_PROMPT_ARTIFACT: 'true'
           PROMPT: >-
@@ -169,11 +159,7 @@ jobs:
               || ''
             }}
         with:
-          github-token: >-
-            ${{
-              github.event_name == 'workflow_dispatch'
-              && secrets.GITHUB_TOKEN
-              || secrets.FRO_BOT_PAT
-            }}
           auth-json: ${{ secrets.OPENCODE_AUTH_JSON }}
+          github-token: ${{ secrets.FRO_BOT_PAT }}
           prompt: ${{ env.PROMPT }}
+          timeout: 0

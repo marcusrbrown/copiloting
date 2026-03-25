@@ -177,14 +177,9 @@ jobs:
   fro-bot-autoheal:
     name: Fro Bot Autoheal
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
           token: ${{ secrets.FRO_BOT_PAT }}
@@ -202,10 +197,11 @@ jobs:
         run: poetry install
 
       - name: Run Fro Bot
-        uses: fro-bot/agent@v0
+        uses: fro-bot/agent@9083d9d3fe350d32c4917bd0312fe78f241ad0aa # v0.32.1
         env:
           OPENCODE_PROMPT_ARTIFACT: 'true'
         with:
           auth-json: ${{ secrets.OPENCODE_AUTH_JSON }}
           github-token: ${{ secrets.FRO_BOT_PAT }}
           prompt: ${{ github.event.inputs.prompt || env.AUTOHEAL_PROMPT }}
+          timeout: 0
