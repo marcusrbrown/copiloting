@@ -43,6 +43,9 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Test
+        run: pnpm test
+
   build-python:
     name: Build Python
     runs-on: ubuntu-latest
@@ -63,3 +66,6 @@ jobs:
 
       - name: Install dependencies
         run: poetry install
+
+      - name: Test
+        run: poetry run pytest

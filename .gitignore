@@ -114,6 +114,7 @@ uploads/
 # Python
 *.py[cod]
 .venv/
+.pytest_cache/
 
 # Embeddings
 .embeddings/

@@ -49,6 +49,9 @@ copiloting/
 | CI pipeline             | `.github/workflows/ci.yaml`                                |
 | Tool versions           | `mise.toml`                                                |
 | Renovate config         | `.github/renovate.json5`                                   |
+| Python tests            | `tests/` (pytest — app factory, DB models, auth views)     |
+| TypeScript tests        | `tests/ts/` (vitest)                                       |
+| Test configuration      | `pyproject.toml` (`[tool.pytest]`), `vitest.config.ts`     |
 
 ## CONVENTIONS
 
@@ -66,7 +69,6 @@ copiloting/
 ## ANTI-PATTERNS
 
 - **`.env` contains real committed secrets** — never copy or commit actual API keys
-- **No tests** — `pnpm test` intentionally exits with error; no pytest setup exists
 - **`copiloting/__init__.py`** is an empty stub — not a real importable package
 - **Python code imports are stale** — deps were recently upgraded (pydantic v2, openai v1, langchain 0.3, chromadb 1.x) but application code has not been updated to match new APIs
 
@@ -78,22 +80,26 @@ pnpm install --frozen-lockfile       # install all workspaces
 pnpm build                           # build all workspaces recursively
 pnpm check-format                    # Prettier format check (runs in CI)
 pnpm format                          # Prettier auto-fix
+pnpm test                            # run TypeScript tests (vitest)
 
 # From repo root — Python
 poetry install                       # install all Python deps
 poetry lock                          # regenerate lock file
+poetry run pytest                    # run Python tests
 
 # Verification (run before committing)
 pnpm check-format                    # must pass
 pnpm build                           # must pass
+pnpm test                            # must pass
 poetry install                       # must pass
+poetry run pytest                    # must pass
 ```
 
 ## NOTES
 
 - Renovate auto-updates deps; CI action pins use full SHA hashes (security practice)
 - Renovate `postUpgradeTasks` runs `poetry lock` for Python dep updates (scoped to poetry manager)
-- CI runs format check + build for Node, `poetry install` only for Python (no lint/test)
+- CI runs format check + build + test for Node, `poetry install` + `pytest` for Python
 - `poetry.lock` covers all Poetry groups including `pdf-dist` and `sections` path deps
 - Both `pnpm` and `poetry` run independently — no cross-language tooling bridge
 - `course/pdf-dist` has its own `dump.rdb` and `instance/sqlite.db` — local dev state artifacts

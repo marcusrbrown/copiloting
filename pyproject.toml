@@ -37,3 +37,9 @@ tchat = "course.sections.tchat:main"
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.30"
 matplotlib = "^3.10"
+pytest = "^9.0.2"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Allow tests to import the Flask app from course/pdf-dist/app/
+pythonpath = ["course/pdf-dist"]
