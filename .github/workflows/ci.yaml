@@ -3,8 +3,32 @@ name: CI
 on:
   pull_request:
     branches: [main]
+    paths:
+      - '**.py'
+      - '**.ts'
+      - '**.svelte'
+      - package.json
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
+      - pyproject.toml
+      - poetry.lock
+      - mise.toml
+      - prettier.config.js
+      - .github/actions/**
   push:
     branches: [main]
+    paths:
+      - '**.py'
+      - '**.ts'
+      - '**.svelte'
+      - package.json
+      - pnpm-lock.yaml
+      - pnpm-workspace.yaml
+      - pyproject.toml
+      - poetry.lock
+      - mise.toml
+      - prettier.config.js
+      - .github/actions/**
   workflow_dispatch:
 
 env:
@@ -34,8 +58,24 @@ jobs:
           restore-keys: |
             pnpm-${{ runner.os }}-
 
+      - name: Cache ESLint
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          path: node_modules/.cache/.eslintcache
+          key: eslint-${{ runner.os }}-${{ hashFiles('**/*.ts', '**/*.svelte') }}
+          restore-keys: |
+            eslint-${{ runner.os }}-
+
+      - name: Cache SvelteKit build
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          path: course/pdf-dist/client/.svelte-kit
+          key: svelte-kit-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            svelte-kit-${{ runner.os }}-
+
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --strict-peer-dependencies
+        run: pnpm install --frozen-lockfile --strict-peer-dependencies --prefer-offline
 
       - name: Lint
         run: pnpm lint
@@ -65,7 +105,7 @@ jobs:
             poetry-${{ runner.os }}-
 
       - name: Install dependencies
-        run: poetry install
+        run: poetry install --with dev,main,pdf-dist,sections
 
       - name: Test
         run: poetry run pytest
