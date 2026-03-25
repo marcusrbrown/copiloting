@@ -20,6 +20,6 @@
       class="flex flex-col justify-center overflow-hidden bg-blue-800"
       role="progressbar"
       style="width: {$width}%"
-    />
+    ></div>
   </div>
 {/if}

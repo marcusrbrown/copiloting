@@ -1,6 +1,6 @@
 import os
 import pinecone
-from langchain.vectorstores.pinecone import Pinecone
+from langchain_community.vectorstores.pinecone import Pinecone
 from app.chat.embeddings.openai import get_embeddings
 
 

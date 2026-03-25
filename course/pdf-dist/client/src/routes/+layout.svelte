@@ -6,8 +6,6 @@
   import ErrorModal from "$c/ErrorModal.svelte";
   import { getUser, auth } from "$s/auth";
 
-  export const ssr = false;
-
   $: user = $auth.user;
 
   onMount(() => {

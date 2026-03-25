@@ -46,7 +46,7 @@
       />
     </div>
 
-    <div class="my-4" />
+    <div class="my-4"></div>
 
     {#if loading && !$documents.error}
       <Progress progress={$documents.uploadProgress}>
