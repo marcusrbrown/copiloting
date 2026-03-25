@@ -100,9 +100,6 @@ importers:
       '@sveltejs/kit':
         specifier: ^1.5.0
         version: 1.5.0(svelte@5.54.1)(vite@8.0.0(@types/node@20.19.37)(jiti@1.21.7)(yaml@2.8.3))
-      '@types/uuid':
-        specifier: 9.0.8
-        version: 9.0.8
       autoprefixer:
         specifier: 10.4.27
         version: 10.4.27(postcss@8.4.31)

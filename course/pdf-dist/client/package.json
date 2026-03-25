@@ -29,7 +29,6 @@
     "@sveltejs/adapter-auto": "2.1.1",
     "@sveltejs/adapter-static": "2.0.3",
     "@sveltejs/kit": "^1.5.0",
-    "@types/uuid": "9.0.8",
     "autoprefixer": "10.4.27",
     "postcss": "^8.4.23",
     "svelte": "5.54.1",
