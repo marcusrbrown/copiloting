@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@microsoft/fetch-event-source": "2.0.1",
-    "@types/marked": "4.3.2",
+    "@types/marked": "6.0.0",
     "axios": "^1.0.0",
     "chart.js": "4.5.1",
     "classnames": "2.5.1",
