@@ -1,13 +1,17 @@
-from pydantic import BaseModel, Extra
+from pydantic import BaseModel, ConfigDict
 
 
-class Metadata(BaseModel, extra=Extra.allow):
+class Metadata(BaseModel):
+    model_config = ConfigDict(extra="allow")
+
     conversation_id: str
     user_id: str
     pdf_id: str
 
 
-class ChatArgs(BaseModel, extra=Extra.allow):
+class ChatArgs(BaseModel):
+    model_config = ConfigDict(extra="allow")
+
     conversation_id: str
     pdf_id: str
     metadata: Metadata

@@ -2,6 +2,8 @@ from pydantic import BaseModel
 from langchain_core.chat_history import BaseChatMessageHistory
 
 from app.web.api import add_message_to_conversation, get_messages_by_conversation_id
+from app.web.db import db
+from app.web.db.models import Message
 
 
 class SqlMessageHistory(BaseChatMessageHistory, BaseModel):
@@ -19,4 +21,7 @@ class SqlMessageHistory(BaseChatMessageHistory, BaseModel):
         )
 
     def clear(self):
-        pass
+        db.session.query(Message).filter_by(
+            conversation_id=self.conversation_id
+        ).delete()
+        db.session.commit()

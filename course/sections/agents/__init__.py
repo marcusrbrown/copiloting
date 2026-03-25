@@ -1,13 +1,8 @@
 from dotenv import load_dotenv
-from langchain.agents import AgentExecutor, OpenAIFunctionsAgent
+from langchain.agents import create_agent
 from langchain_openai import ChatOpenAI
-from langchain.memory import ConversationBufferMemory
-from langchain_core.prompts import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    MessagesPlaceholder,
-)
-from langchain_core.messages import SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
+from langgraph.checkpoint.memory import MemorySaver
 
 from .handlers.chat_model_start_handler import ChatModelStartHandler
 from .tools.report import write_report_tool
@@ -20,29 +15,27 @@ def main():
     handler = ChatModelStartHandler()
     chat = ChatOpenAI(callbacks=[handler])
     tables = list_tables()
-    prompt = ChatPromptTemplate(
-        messages=[
-            SystemMessage(
-                content=(
-                    "You are an AI that has access to a SQLite database.\n"
-                    f"The database has tables of: {tables}\n"
-                    "Do not make any assumptions about what tables exist "
-                    "or what columns exist. Instead, use the 'describe_tables' function"
-                )
-            ),
-            MessagesPlaceholder(variable_name="chat_history"),
-            HumanMessagePromptTemplate.from_template("{input}"),
-            MessagesPlaceholder(variable_name="agent_scratchpad"),
-        ]
+    system_msg = (
+        "You are an AI that has access to a SQLite database.\n"
+        f"The database has tables of: {tables}\n"
+        "Do not make any assumptions about what tables exist "
+        "or what columns exist. Instead, use the 'describe_tables' function"
     )
-    memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     tools = [describe_tables_tool, run_query_tool, write_report_tool]
-    agent = OpenAIFunctionsAgent(llm=chat, prompt=prompt, tools=tools)
-    executor = AgentExecutor(agent=agent, memory=memory, tools=tools)
+    checkpointer = MemorySaver()
+    executor = create_agent(
+        model=chat, tools=tools, system_prompt=system_msg, checkpointer=checkpointer
+    )
 
-    executor(
+    config = {"configurable": {"thread_id": "default"}}
+
+    for question in [
         "How many orders are there? Write the result to an html report.",
-    )
-    executor(
         "Repeat the exact same process for users.",
-    )
+    ]:
+        result = executor.invoke(
+            {"messages": [HumanMessage(content=question)]}, config
+        )
+        last_msg = result["messages"][-1]
+        if hasattr(last_msg, "content"):
+            print(last_msg.content)

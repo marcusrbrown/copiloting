@@ -1,5 +1,5 @@
 from langchain_core.tools import StructuredTool
-from pydantic.v1 import BaseModel
+from pydantic import BaseModel
 
 __all__ = ["write_report_tool"]
 
