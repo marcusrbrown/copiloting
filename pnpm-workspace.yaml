@@ -2,9 +2,12 @@ packages:
   - course/pdf-dist/client
   - tutorials
 
+allowBuilds:
+  '@sveltejs/kit': true
+
 autoInstallPeers: true
 dedupePeerDependents: true
-resolvePeersFromWorkspaceRoot: true
-saveWorkspaceProtocol: rolling
 resolutionMode: lowest-direct
+resolvePeersFromWorkspaceRoot: true
 saveExact: true
+saveWorkspaceProtocol: rolling
