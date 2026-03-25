@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
   "name": "Copiloting",
-  "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:0-20",
+  "image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:4-20",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "configureZshAsDefaultShell": true
