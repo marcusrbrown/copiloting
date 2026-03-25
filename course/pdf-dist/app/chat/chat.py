@@ -1,4 +1,4 @@
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from app.chat.models import ChatArgs
 from app.chat.vectorstores import retriever_map
 from app.chat.llms import llm_map
