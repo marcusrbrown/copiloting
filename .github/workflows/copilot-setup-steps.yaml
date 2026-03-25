@@ -1,0 +1,53 @@
+---
+name: Copilot Setup Steps
+
+'on':
+  workflow_dispatch:
+  push:
+    paths: [.github/workflows/copilot-setup-steps.yaml]
+  pull_request:
+    paths: [.github/workflows/copilot-setup-steps.yaml]
+
+permissions:
+  contents: read
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Setup environment
+        uses: ./.github/actions/setup
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Cache pnpm dependencies
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: pnpm-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-${{ runner.os }}-
+
+      - name: Install Node.js dependencies
+        run: pnpm install --frozen-lockfile --strict-peer-dependencies
+
+      - name: Build Node.js workspaces
+        run: pnpm build
+
+      - name: Cache Poetry dependencies
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          path: .venv
+          key: poetry-${{ runner.os }}-${{ hashFiles('poetry.lock') }}
+          restore-keys: |
+            poetry-${{ runner.os }}-
+
+      - name: Install Python dependencies
+        run: poetry install
