@@ -12,3 +12,4 @@ node_modules
 .env.*
 !.env.template
 course/pdf-dist/client/build/
+.pytest_cache

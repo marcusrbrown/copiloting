@@ -25,7 +25,7 @@
     "build": "pnpm -r run build",
     "check-format": "prettier --check .",
     "format": "prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@tsconfig/strictest": "2.0.8",
@@ -34,7 +34,8 @@
     "prettier": "3.8.1",
     "prettier-plugin-svelte": "3.5.1",
     "rimraf": "5.0.10",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vitest": "^2.1.9"
   },
   "dependencies": {
     "langchain": "0.0.212"
