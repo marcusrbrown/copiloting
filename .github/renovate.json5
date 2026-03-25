@@ -9,14 +9,17 @@
       matchDepNames: ['python'],
       allowedVersions: '<=3.14',
     },
-  ],
-  postUpgradeTasks: {
-    commands: ['poetry lock'],
-    executionMode: 'branch',
-    fileFilters: ['poetry.lock'],
-    installTools: {
-      python: {constraint: '3.14'},
-      poetry: {},
+    {
+      matchManagers: ['poetry'],
+      postUpgradeTasks: {
+        commands: ['poetry lock'],
+        executionMode: 'branch',
+        fileFilters: ['poetry.lock'],
+        installTools: {
+          python: {constraint: '3.14'},
+          poetry: {},
+        },
+      },
     },
-  },
+  ],
 }
