@@ -19,7 +19,7 @@
     "chart.js": "4.5.1",
     "classnames": "2.5.1",
     "immer": "9.0.21",
-    "marked": "4.3.0",
+    "marked": "17.0.5",
     "material-icons": "1.13.14",
     "pdfjs-dist": "4.10.38",
     "preline": "1.9.0",
