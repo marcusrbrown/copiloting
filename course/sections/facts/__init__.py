@@ -1,10 +1,12 @@
 from dotenv import load_dotenv
-from langchain.chains import RetrievalQA
 from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnablePassthrough
 
 from course.sections.utilities import get_module_path
 from .redundant_filter_retriever import RedundantFilterRetriever
@@ -22,13 +24,24 @@ def main():
         chroma=chroma,
     )
 
-    chain = RetrievalQA.from_chain_type(
-        chain_type="stuff",
-        llm=chat,
-        retriever=retriever,
+    prompt = ChatPromptTemplate.from_messages(
+        [
+            (
+                "system",
+                "Use the following context to answer the question:\n\n{context}",
+            ),
+            ("human", "{question}"),
+        ]
     )
 
-    result = chain.run("What is an interesting fact about the English language?")
+    chain = (
+        {"context": retriever, "question": RunnablePassthrough()}
+        | prompt
+        | chat
+        | StrOutputParser()
+    )
+
+    result = chain.invoke("What is an interesting fact about the English language?")
     print(result)
 
 

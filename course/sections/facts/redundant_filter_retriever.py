@@ -9,11 +9,11 @@ class RedundantFilterRetriever(BaseRetriever):
     embeddings: Embeddings
     chroma: Chroma
 
-    def get_relevant_documents(
+    def _get_relevant_documents(
         self,
         query: str,
     ) -> List[Document]:
-        # Calculate emebddings for the query
+        # Calculate embeddings for the query
         embedding = self.embeddings.embed_query(query)
 
         # Search for similar documents
@@ -21,5 +21,5 @@ class RedundantFilterRetriever(BaseRetriever):
             embedding=embedding, lambda_mult=0.8
         )
 
-    async def aget_relevant_documents(self) -> List[Document]:
+    async def _aget_relevant_documents(self, query: str) -> List[Document]:
         return []

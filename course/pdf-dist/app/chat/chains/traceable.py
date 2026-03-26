@@ -1,23 +1,28 @@
-from langchain.chains.base import Chain
-from langfuse.model import CreateTrace
+from typing import Any
 
-from app.chat.tracing.langfuse import langfuse
+from langchain_core.callbacks import BaseCallbackHandler
 
 
-class TraceableChain(Chain):
-    """A chain that can be traced."""
+class TraceableChain:
+    """Mixin that adds Langfuse tracing callbacks to a chain invocation."""
 
-    def __call__(self, *args, **kwargs):
-        if hasattr(self, "metadata"):
+    def _get_trace_callbacks(self) -> list[BaseCallbackHandler]:
+        """Return a list of Langfuse callbacks if tracing metadata is present."""
+        callbacks: list[BaseCallbackHandler] = []
+        if not hasattr(self, "metadata"):
+            return callbacks
+        try:
+            from langfuse.model import CreateTrace
+
+            from app.chat.tracing.langfuse import langfuse
+
             trace = langfuse.trace(
                 CreateTrace(
                     id=self.metadata.get("conversation_id"),
                     metadata=self.metadata,
                 )
             )
-
-            callbacks = kwargs.get("callbacks", [])
             callbacks.append(trace.get_langchain_handler())
-            kwargs["callbacks"] = callbacks
-
-        return super().__call__(*args, **kwargs)
+        except Exception:
+            pass
+        return callbacks
