@@ -1,4 +1,4 @@
-import produce, {enableMapSet} from 'immer'
+import {produce, enableMapSet} from 'immer'
 import {writable as base} from 'svelte/store'
 
 enableMapSet()
