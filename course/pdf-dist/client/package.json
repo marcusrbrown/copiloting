@@ -18,7 +18,7 @@
     "axios": "^1.0.0",
     "chart.js": "4.5.1",
     "classnames": "2.5.1",
-    "immer": "9.0.21",
+    "immer": "11.1.4",
     "marked": "17.0.5",
     "material-icons": "1.13.14",
     "pdfjs-dist": "5.5.207",
