@@ -1,4 +1,5 @@
 from flask import Blueprint, g, request, Response, jsonify, stream_with_context
+from werkzeug.exceptions import BadRequest
 from app.web.hooks import login_required, load_model
 from app.web.db.models import Pdf, Conversation
 from app.chat import build_chat, ChatArgs
@@ -26,8 +27,11 @@ def create_conversation(pdf):
 @login_required
 @load_model(Conversation)
 def create_message(conversation):
-    input = request.json.get("input")
-    streaming = request.args.get("stream", False)
+    input = request.json.get("input") if request.json else None
+    streaming = request.args.get("stream", "false").lower() == "true"
+
+    if not input or not isinstance(input, str) or not input.strip():
+        raise BadRequest("Message input is required.")
 
     pdf = conversation.pdf
 

@@ -14,8 +14,12 @@ class BaseModel(db.Model):
         return instance.save(commit)
 
     @classmethod
-    def find_by(cls: Type[T], **kwargs) -> Optional[T]:
+    def find_by(cls: Type[T], **kwargs) -> T:
         return db.session.execute(db.select(cls).filter_by(**kwargs)).scalar_one()
+
+    @classmethod
+    def find_by_or_none(cls: Type[T], **kwargs) -> Optional[T]:
+        return db.session.execute(db.select(cls).filter_by(**kwargs)).scalar_one_or_none()
 
     @classmethod
     def where(cls: Type[T], **kwargs) -> List[T]:

@@ -53,6 +53,22 @@ class TestUserModel:
         found = User.find_by(email="find@example.com")
         assert found.email == "find@example.com"
 
+    def test_find_by_or_none_returns_none(self, app):
+        """Test find_by_or_none returns None when no row found."""
+        from app.web.db.models import User
+
+        result = User.find_by_or_none(email="nonexistent@example.com")
+        assert result is None
+
+    def test_find_by_or_none_returns_instance(self, app):
+        """Test find_by_or_none returns instance when row exists."""
+        from app.web.db.models import User
+
+        User.create(email="exists@example.com", password="pw")
+        result = User.find_by_or_none(email="exists@example.com")
+        assert result is not None
+        assert result.email == "exists@example.com"
+
 
 class TestPdfModel:
     """Tests for the Pdf model."""
