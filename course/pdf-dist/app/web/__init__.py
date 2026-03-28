@@ -1,3 +1,5 @@
+import logging
+
 from flask import Flask
 from flask_cors import CORS
 
@@ -5,13 +7,14 @@ from app.web.db import db, init_db_command
 from app.web.db import models
 from app.celery import celery_init_app
 from app.web.config import Config
-from app.web.hooks import load_logged_in_user, handle_error
+from app.web.hooks import load_logged_in_user, log_request, handle_error
 from app.web.views import (
     auth_views,
     pdf_views,
     score_views,
     client_views,
     conversation_views,
+    health_views,
 )
 
 
@@ -20,6 +23,7 @@ def create_app():
     app.url_map.strict_slashes = False
     app.config.from_object(Config)
 
+    configure_logging(app)
     register_extensions(app)
     register_hooks(app)
     register_blueprints(app)
@@ -27,6 +31,22 @@ def create_app():
         celery_init_app(app)
 
     return app
+
+
+def configure_logging(app):
+    log_level = app.config.get("LOG_LEVEL", logging.INFO)
+    log_format = app.config.get("LOG_FORMAT", "text")
+
+    if log_format == "json":
+        fmt = (
+            '{"time":"%(asctime)s","level":"%(levelname)s",'
+            '"logger":"%(name)s","message":"%(message)s"}'
+        )
+    else:
+        fmt = "%(asctime)s %(levelname)s %(name)s %(message)s"
+
+    logging.basicConfig(level=log_level, format=fmt)
+    app.logger.setLevel(log_level)
 
 
 def register_extensions(app):
@@ -39,10 +59,12 @@ def register_blueprints(app):
     app.register_blueprint(pdf_views.bp)
     app.register_blueprint(score_views.bp)
     app.register_blueprint(conversation_views.bp)
+    app.register_blueprint(health_views.bp)
     app.register_blueprint(client_views.bp)
 
 
 def register_hooks(app):
     CORS(app)
     app.before_request(load_logged_in_user)
+    app.after_request(log_request)
     app.register_error_handler(Exception, handle_error)

@@ -1,12 +1,15 @@
 import functools
-import tempfile
-import uuid
-import os
 import logging
+import os
+import tempfile
+import time
+import uuid
 from flask import g, session, request
 from sqlalchemy.exc import IntegrityError, NoResultFound
 from werkzeug.exceptions import Unauthorized, BadRequest
 from app.web.db.models import User, Model
+
+logger = logging.getLogger(__name__)
 
 
 def load_model(Model: Model, extract_id_lambda=None):
@@ -49,6 +52,9 @@ def login_required(view):
 
 
 def load_logged_in_user():
+    g.correlation_id = request.headers.get("X-Correlation-ID", str(uuid.uuid4()))
+    g.request_start = time.monotonic()
+
     user_id = session.get("user_id")
 
     if user_id is None:
@@ -58,6 +64,23 @@ def load_logged_in_user():
             g.user = User.find_by(id=user_id)
         except Exception:
             g.user = None
+
+
+def log_request(response):
+    start = g.get("request_start")
+    duration_ms = round((time.monotonic() - start) * 1000) if start is not None else None
+    logger.info(
+        "request completed",
+        extra={
+            "method": request.method,
+            "path": request.path,
+            "status": response.status_code,
+            "duration_ms": duration_ms,
+            "correlation_id": g.get("correlation_id", ""),
+        },
+    )
+    response.headers["X-Correlation-ID"] = g.get("correlation_id", "")
+    return response
 
 
 def handle_file_upload(fn):
