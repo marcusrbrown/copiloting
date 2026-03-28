@@ -74,7 +74,7 @@ def handle_file_upload(fn):
         allowed_extensions = {".pdf"}
         ext = os.path.splitext(file.filename)[1].lower()
         if ext not in allowed_extensions:
-            raise BadRequest(f"File type '{ext}' is not allowed. Only PDF files are accepted.")
+            raise BadRequest("Only PDF files are accepted.")
 
         file_id = str(uuid.uuid4())
 

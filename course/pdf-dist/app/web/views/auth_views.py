@@ -21,7 +21,7 @@ def signup():
 
     if not email or not isinstance(email, str) or not email.strip():
         raise BadRequest("Email is required.")
-    if not password or not isinstance(password, str) or len(password) < 1:
+    if not password or not isinstance(password, str):
         raise BadRequest("Password is required.")
 
     user = User.create(email=email.strip(), password=generate_password_hash(password))
