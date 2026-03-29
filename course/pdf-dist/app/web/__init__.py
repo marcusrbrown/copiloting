@@ -1,3 +1,4 @@
+import json
 import logging
 
 from flask import Flask
@@ -16,6 +17,57 @@ from app.web.views import (
     conversation_views,
     health_views,
 )
+
+# Attributes present on every LogRecord that should not be treated as extra fields.
+_STANDARD_LOG_ATTRS = frozenset(
+    {
+        "args",
+        "asctime",
+        "created",
+        "exc_info",
+        "exc_text",
+        "filename",
+        "funcName",
+        "id",
+        "levelname",
+        "levelno",
+        "lineno",
+        "message",
+        "module",
+        "msecs",
+        "msg",
+        "name",
+        "pathname",
+        "process",
+        "processName",
+        "relativeCreated",
+        "stack_info",
+        "taskName",
+        "thread",
+        "threadName",
+    }
+)
+
+
+class JsonFormatter(logging.Formatter):
+    """Formats log records as JSON, including any extra fields."""
+
+    def format(self, record: logging.LogRecord) -> str:
+        record.message = record.getMessage()
+        data: dict = {
+            "time": self.formatTime(record, self.datefmt),
+            "level": record.levelname,
+            "logger": record.name,
+            "message": record.message,
+        }
+        for key, value in record.__dict__.items():
+            if key not in _STANDARD_LOG_ATTRS:
+                data[key] = value
+        if record.exc_info and not record.exc_text:
+            record.exc_text = self.formatException(record.exc_info)
+        if record.exc_text:
+            data["exception"] = record.exc_text
+        return json.dumps(data, default=str)
 
 
 def create_app():
@@ -38,14 +90,14 @@ def configure_logging(app):
     log_format = app.config.get("LOG_FORMAT", "text")
 
     if log_format == "json":
-        fmt = (
-            '{"time":"%(asctime)s","level":"%(levelname)s",'
-            '"logger":"%(name)s","message":"%(message)s"}'
-        )
+        formatter: logging.Formatter = JsonFormatter()
     else:
-        fmt = "%(asctime)s %(levelname)s %(name)s %(message)s"
+        formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s %(message)s")
 
-    logging.basicConfig(level=log_level, format=fmt)
+    handler = logging.StreamHandler()
+    handler.setFormatter(formatter)
+    # force=True removes pre-existing handlers so reconfiguring in tests is idempotent.
+    logging.basicConfig(level=log_level, handlers=[handler], force=True)
     app.logger.setLevel(log_level)
 
 
