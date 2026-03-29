@@ -1,7 +1,15 @@
+import logging
 import os
+
 from dotenv import load_dotenv
 
 load_dotenv()
+
+_LOG_LEVEL_NAME = os.environ.get("LOG_LEVEL", "INFO").upper()
+_LOG_LEVEL = getattr(logging, _LOG_LEVEL_NAME, None)
+if not isinstance(_LOG_LEVEL, int):
+    logging.warning("Invalid LOG_LEVEL %r, falling back to INFO", _LOG_LEVEL_NAME)
+    _LOG_LEVEL = logging.INFO
 
 
 class Config:
@@ -14,3 +22,5 @@ class Config:
         "task_ignore_result": True,
         "broker_connection_retry_on_startup": False,
     }
+    LOG_LEVEL: int = _LOG_LEVEL
+    LOG_FORMAT: str = os.environ.get("LOG_FORMAT", "text")
