@@ -1,4 +1,5 @@
 import functools
+import json
 import logging
 import os
 import tempfile
@@ -10,6 +11,44 @@ from werkzeug.exceptions import Unauthorized, BadRequest
 from app.web.db.models import User, Model
 
 logger = logging.getLogger(__name__)
+
+
+class StructuredLoggingFormatter(logging.Formatter):
+    """Custom formatter that captures extra fields for both text and JSON output."""
+
+    def __init__(self, fmt=None, datefmt=None, style="%", validate=True, json_format=False):
+        super().__init__(fmt, datefmt, style, validate)
+        self.json_format = json_format
+
+    def format(self, record):
+        # Extract extra fields from the record
+        extra_fields = {
+            key: record.__dict__.get(key)
+            for key in ("method", "path", "status", "duration_ms", "correlation_id")
+            if key in record.__dict__
+        }
+
+        if self.json_format:
+            return self._format_json(record, extra_fields)
+        else:
+            return self._format_text(record, extra_fields)
+
+    def _format_json(self, record, extra_fields):
+        log_entry = {
+            "time": self.formatTime(record, self.datefmt),
+            "level": record.levelname,
+            "logger": record.name,
+            "message": record.getMessage(),
+            **extra_fields,
+        }
+        return json.dumps(log_entry)
+
+    def _format_text(self, record, extra_fields):
+        base_msg = super().format(record)
+        if extra_fields:
+            extra_str = " ".join(f"{k}={v}" for k, v in extra_fields.items())
+            return f"{base_msg} {extra_str}"
+        return base_msg
 
 
 def load_model(Model: Model, extract_id_lambda=None):

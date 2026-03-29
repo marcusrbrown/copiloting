@@ -70,6 +70,20 @@ class JsonFormatter(logging.Formatter):
         return json.dumps(data, default=str)
 
 
+class TextFormatterWithExtras(logging.Formatter):
+    """Formats log records as text, appending extra fields as key=value pairs."""
+
+    def format(self, record: logging.LogRecord) -> str:
+        base_msg = super().format(record)
+        extra_parts = []
+        for key, value in record.__dict__.items():
+            if key not in _STANDARD_LOG_ATTRS:
+                extra_parts.append(f"{key}={value}")
+        if extra_parts:
+            return f"{base_msg} {' '.join(extra_parts)}"
+        return base_msg
+
+
 def create_app():
     app = Flask(__name__, static_folder="../../client/build")
     app.url_map.strict_slashes = False
@@ -92,7 +106,7 @@ def configure_logging(app):
     if log_format == "json":
         formatter: logging.Formatter = JsonFormatter()
     else:
-        formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s %(message)s")
+        formatter = TextFormatterWithExtras("%(asctime)s %(levelname)s %(name)s %(message)s")
 
     handler = logging.StreamHandler()
     handler.setFormatter(formatter)

@@ -122,3 +122,36 @@ def test_json_formatter_includes_extra_fields(app):
     assert output["status"] == 200
     assert "time" in output
     assert output["level"] == "INFO"
+
+
+def test_health_check_returns_503_when_redis_ping_fails(app, client, caplog):
+    """Test that /api/healthz returns 503 when Redis is configured but redis.ping() fails."""
+    import redis as redis_lib
+
+    with patch.object(redis_lib, "from_url") as mock_from_url:
+        mock_redis = MagicMock()
+        mock_redis.ping.side_effect = redis_lib.ConnectionError("Connection refused")
+        mock_from_url.return_value = mock_redis
+
+        with caplog.at_level(logging.WARNING):
+            response = client.get("/api/healthz")
+
+    assert response.status_code == 503
+    data = response.get_json()
+    assert data["status"] == "unhealthy"
+    assert data["checks"]["redis"] is False
+
+
+def test_health_check_returns_500_when_db_query_fails(client):
+    """Test that /api/healthz returns 503 when the DB query fails."""
+    from sqlalchemy import text
+
+    with patch("app.web.views.health_views.db") as mock_db:
+        mock_db.session.execute.side_effect = Exception("DB connection lost")
+
+        response = client.get("/api/healthz")
+
+    assert response.status_code == 503
+    data = response.get_json()
+    assert data["status"] == "unhealthy"
+    assert data["checks"]["db"] is False
