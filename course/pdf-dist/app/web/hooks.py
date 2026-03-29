@@ -56,14 +56,26 @@ def load_logged_in_user():
     else:
         try:
             g.user = User.find_by(id=user_id)
-        except Exception:
+        except NoResultFound:
             g.user = None
 
 
 def handle_file_upload(fn):
     @functools.wraps(fn)
     def wrapped(*args, **kwargs):
+        if "file" not in request.files:
+            raise BadRequest("No file provided.")
+
         file = request.files["file"]
+
+        if not file.filename:
+            raise BadRequest("No file selected.")
+
+        allowed_extensions = {".pdf"}
+        ext = os.path.splitext(file.filename)[1].lower()
+        if ext not in allowed_extensions:
+            raise BadRequest("Only PDF files are accepted.")
+
         file_id = str(uuid.uuid4())
 
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -90,6 +102,6 @@ def handle_error(err):
         return {"message": err.description}, 401
     elif isinstance(err, BadRequest):
         logging.error(err)
-        return {"message": err.description}, 401
+        return {"message": err.description}, 400
 
     raise err
