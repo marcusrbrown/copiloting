@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@config "../tailwind.config.js";
+@source "../node_modules/preline/dist/*.js";
 @import "preline/variants.css";
 
 pre {

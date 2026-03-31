@@ -24,7 +24,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@langchain/core": "^0.3.68",
+    "@langchain/core": "^0.3.80",
     "@langchain/openai": "0.6.17",
     "langchain": "0.3.37"
   },
