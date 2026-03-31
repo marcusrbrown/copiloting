@@ -24,7 +24,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "langchain": "0.0.212"
+    "langchain": "0.3.37"
   },
   "devDependencies": {
     "@bfra.me/eslint-config": "0.50.1",
