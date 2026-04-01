@@ -1,9 +1,9 @@
 // Quickstart using LLMs
 // This tutorial is a quick walkthrough about building an end-to-end language model application using LangChain.
 
+import {PromptTemplate} from '@langchain/core/prompts'
+import {OpenAI} from '@langchain/openai'
 import {LLMChain} from 'langchain/chains'
-import {OpenAI} from 'langchain/llms/openai'
-import {PromptTemplate} from 'langchain/prompts'
 
 const llm = new OpenAI({temperature: 0})
 
