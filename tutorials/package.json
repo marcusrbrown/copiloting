@@ -8,5 +8,9 @@
     "build": "pnpm run clean && tsc",
     "test": "echo \"No tests configured for tutorials\" && exit 0",
     "start:quickstart-llms": "pnpm run build && node -r dotenv/config dist/quickstart-llms.js"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.29",
+    "@langchain/openai": "^0.4.0"
   }
 }
