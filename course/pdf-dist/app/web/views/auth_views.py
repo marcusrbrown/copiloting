@@ -1,4 +1,5 @@
 from flask import Blueprint, g, request, session, jsonify
+from werkzeug.exceptions import BadRequest
 from werkzeug.security import check_password_hash, generate_password_hash
 from app.web.db.models import User
 
@@ -18,7 +19,12 @@ def signup():
     email = request.json.get("email")
     password = request.json.get("password")
 
-    user = User.create(email=email, password=generate_password_hash(password))
+    if not email or not isinstance(email, str) or not email.strip():
+        raise BadRequest("Email is required.")
+    if not password or not isinstance(password, str):
+        raise BadRequest("Password is required.")
+
+    user = User.create(email=email.strip(), password=generate_password_hash(password))
     session["user_id"] = user.id
 
     return user.as_dict()
@@ -29,10 +35,15 @@ def signin():
     email = request.json.get("email")
     password = request.json.get("password")
 
-    user = User.find_by(email=email)
+    if not email or not isinstance(email, str) or not email.strip():
+        raise BadRequest("Email is required.")
+    if not password or not isinstance(password, str):
+        raise BadRequest("Password is required.")
 
-    if not check_password_hash(user.password, password):
-        return {"message": "Incorrect password."}, 400
+    user = User.find_by_or_none(email=email.strip())
+
+    if not user or not check_password_hash(user.password, password):
+        return {"message": "Invalid credentials."}, 401
 
     session.permanent = True
     session["user_id"] = user.id

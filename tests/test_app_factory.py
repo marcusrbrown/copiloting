@@ -15,6 +15,6 @@ def test_app_testing_config(app):
 
 def test_app_has_blueprints(app):
     """Test that all expected blueprints are registered."""
-    expected = {"auth", "pdf", "score", "conversation", "client"}
+    expected = {"auth", "pdf", "score", "conversation", "client", "health"}
     registered = set(app.blueprints.keys())
     assert expected.issubset(registered)

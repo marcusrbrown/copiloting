@@ -36,7 +36,7 @@ def test_signin(client):
 
 
 def test_signin_wrong_password(client):
-    """Test signin with incorrect password returns 400."""
+    """Test signin with incorrect password returns 401."""
     client.post(
         "/api/auth/signup",
         data=json.dumps({"email": "wrong@example.com", "password": "correct"}),
@@ -46,6 +46,58 @@ def test_signin_wrong_password(client):
     response = client.post(
         "/api/auth/signin",
         data=json.dumps({"email": "wrong@example.com", "password": "incorrect"}),
+        content_type="application/json",
+    )
+    assert response.status_code == 401
+
+
+def test_signin_nonexistent_user(client):
+    """Test signin with nonexistent email returns 401 instead of crashing."""
+    response = client.post(
+        "/api/auth/signin",
+        data=json.dumps({"email": "nobody@example.com", "password": "pass123"}),
+        content_type="application/json",
+    )
+    assert response.status_code == 401
+    data = response.get_json()
+    assert "Invalid credentials" in data["message"]
+
+
+def test_signup_missing_email(client):
+    """Test signup without email returns 400."""
+    response = client.post(
+        "/api/auth/signup",
+        data=json.dumps({"password": "pass123"}),
+        content_type="application/json",
+    )
+    assert response.status_code == 400
+
+
+def test_signup_missing_password(client):
+    """Test signup without password returns 400."""
+    response = client.post(
+        "/api/auth/signup",
+        data=json.dumps({"email": "test@example.com"}),
+        content_type="application/json",
+    )
+    assert response.status_code == 400
+
+
+def test_signin_missing_email(client):
+    """Test signin without email returns 400."""
+    response = client.post(
+        "/api/auth/signin",
+        data=json.dumps({"password": "pass123"}),
+        content_type="application/json",
+    )
+    assert response.status_code == 400
+
+
+def test_signin_missing_password(client):
+    """Test signin without password returns 400."""
+    response = client.post(
+        "/api/auth/signin",
+        data=json.dumps({"email": "test@example.com"}),
         content_type="application/json",
     )
     assert response.status_code == 400
