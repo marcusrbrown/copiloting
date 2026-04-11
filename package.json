@@ -27,7 +27,7 @@
     "langchain": "0.0.212"
   },
   "devDependencies": {
-    "@bfra.me/eslint-config": "0.50.2",
+    "@bfra.me/eslint-config": "0.50.3",
     "@bfra.me/prettier-config": "0.16.7",
     "@bfra.me/tsconfig": "0.12.2",
     "@types/node": "24.12.0",
