@@ -8,5 +8,5 @@ _.python.venv = { path = ".venv", create = true }
 [tools]
 node = "24.14.1"
 pnpm = "10.33.0"
-poetry = "2.3.3"
+poetry = "2.3.4"
 python = "3.14"
