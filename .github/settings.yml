@@ -2,8 +2,11 @@ _extends: .github:common-settings.yaml
 
 repository:
   name: copiloting
-  description: Polyglot AI/LLM experimentation monorepo with LangChain-based copilot experiments, Flask + SvelteKit PDF chat app, and standalone tutorial scripts.
+  description: Polyglot AI/LLM experimentation monorepo with LangChain-based copilot experiments, Flask + SvelteKit PDF
+    chat app, and standalone tutorial scripts.
   topics: langchain, typescript, python, sveltekit, flask, openai, llm, ai, copilot, pnpm, poetry
+
+  archived: true
 
 branches:
   - name: main
