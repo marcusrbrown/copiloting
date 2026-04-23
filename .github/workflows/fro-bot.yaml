@@ -10,8 +10,8 @@ on:
     types: [opened, edited]
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review, review_requested]
-  schedule:
-    - cron: '30 15 * * *'
+  # schedule:
+  #   - cron: '30 15 * * *'
   workflow_dispatch:
     inputs:
       prompt:
